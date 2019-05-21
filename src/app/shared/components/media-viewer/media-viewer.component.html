@@ -1,0 +1,26 @@
+<div class="media-viewer">
+  <div class="media-viewer__controls" *ngIf="sources.length > 1">
+    <figure (click)="back()">
+      <img class="rotate" src="assets/images/dashboard/arrow-white.svg">
+    </figure>
+    <figure (click)="next()">
+      <img src="assets/images/dashboard/arrow-white.svg">
+    </figure>
+  </div>
+  <div class="media-viewer__content" *ngIf="sources.length !== 0">
+  <a target="_blank" [href]="sources[current].url" >
+   <div  *ngFor="let source of sources; index as i"
+        class="source"
+         [@mediaChange]="source.status"
+        [style.backgroundImage]="'url(' + getBackgroundUrl(source) + ')'"
+   >
+     <figure *ngIf="source.type === 'video'">
+       <img src="assets/images/dashboard/video.svg">
+     </figure>
+     <div class="counter" *ngIf="sources.length > 1">
+       <span>{{i + 1}}/{{sources.length}}</span>
+     </div>
+   </div>
+    </a>
+  </div>
+</div>

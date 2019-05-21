@@ -1,0 +1,108 @@
+<div class="wrapper" *ngIf="calculated">
+  <table style="width:100%">
+    <tr>
+      <th *ngFor="let title of columnNames" valign="middle" [ngClass]="getHeaderClass(title)">
+        <div class="title-item flex">
+          <img
+            *ngIf="getHeaderIcon(title)"
+            class="header__icon"
+            src="assets/images/channels/{{getHeaderIcon(title)}}" alt="">
+          <span *ngIf="!isPaidOrganic(title)" class="header__title" translate>{{title.title}}</span>
+          <span *ngIf="isPaidOrganic(title)">
+            <span class="paid" translate>Performance.paid</span>
+            <span class="organic" translate>Performance.organic</span>
+          </span>
+        </div>
+      </th>
+    </tr>
+    <tbody *ngIf="isFacebook" [@fadeInAnimation]="true">
+      <tr *ngIf="!data.length"><td colspan="7" class="no-data" translate>Performance.noData</td></tr>
+      <tr *ngFor="let row of data | sort: 'name'">
+        <td class="truncated-text">{{row.channel.name}}</td>
+        <td class="total-reach-value">
+          <span slBold slBlack>{{ row.metrics.facebook_total_reach || 0 | prettyNumber }}</span>
+          <span slGrey [ngClass]="getClassNameForGain(row.metrics.facebook_total_reach_gain)">
+            {{ row.metrics.facebook_total_reach_gain | prettyNumber}}%
+          </span>
+        </td>
+        <td class="reach-chart">
+          <sl-reach-chart
+            *ngIf="row.metrics.facebook_total_reach; else noTotalReach"
+            [paidPercent]="row.paidPercent">
+          </sl-reach-chart>
+          <ng-template #noTotalReach><span class="no-total">&#x0005F;</span></ng-template>
+        </td>
+        <td>
+          <span slBold slBlue>{{ row.metrics.post_likes || 0 | prettyNumber }}</span>
+          <span slGrey [ngClass]="getClassNameForGain(row.metrics.post_likes_gain_percent)">
+            {{ row.metrics.post_likes_gain_percent || 0 | prettyNumber}}%
+          </span>
+        </td>
+        <td>
+          <span slBold slPink>{{ row.metrics.post_comments || 0 | prettyNumber }}</span>
+          <span slGrey [ngClass]="getClassNameForGain(row.metrics.post_comments_gain_percent)">
+            {{ row.metrics.post_comments_gain_percent || 0 | prettyNumber}}%
+          </span>
+        </td>
+        <td>
+          <span slBold slYellow>{{ row.metrics.post_shares || 0 | prettyNumber }}</span>
+          <span slGrey [ngClass]="getClassNameForGain(row.metrics.post_shares_gain)">
+            {{ row.metrics.post_shares_gain || 0 | prettyNumber}}
+          </span>
+        </td>
+        <td class="fb__posts">
+          <span slBold slBlack>{{ row.metrics.fb_post_count || 0 | prettyNumber }}</span>
+          <img
+            [title]="!row.metrics.fb_post_count ? 'No posts for selected period' : ''"
+            [src]="row.metrics.fb_post_count ?
+              '../../../../assets/images/social-performance/icons-object-orang-show-password.svg' :
+              '../../../../assets/images/social-performance/icons-object-color-show-password.svg'"
+            class="icon-eye"
+            [ngClass]="{disabledEye : !row.metrics.fb_post_count}"
+            (click)="onViewPosts(row)"
+            alt="eye">
+        </td>
+      </tr>
+    </tbody>
+    <tbody *ngIf="isInstagram">
+      <tr *ngIf="!data.length"><td colspan="5" class="no-data" translate>Performance.noData</td></tr>
+      <tr *ngFor="let row of data | sort: 'name'">
+        <td class="truncated-text">{{row.channel.name}}</td>
+        <td>
+          <span slBold slYellow>{{ row.metrics.followers_count || 0 | prettyNumber }}</span>
+          <span slGrey [ngClass]="getClassNameForGain(row.metrics.followers_count_gain)">
+            {{ row.metrics.followers_count_gain || 0 | prettyNumber}}
+          </span>
+        </td>
+        <td><div slBold>{{ row.metrics.insta_post_count || 0 | prettyNumber }}</div></td>
+      </tr>
+    </tbody>
+    <tbody *ngIf="isTwitter">
+      <tr *ngIf="!data.length"><td colspan="5" class="no-data" translate>Performance.noData</td></tr>
+      <tr *ngFor="let row of data | sort: 'name'">
+        <td class="truncated-text">{{row.channel.name}}</td>
+        <td>
+          <span slBold slBlue>{{ row.metrics.twitter_retweets || 0 | prettyNumber }}</span>
+          <span slGrey [ngClass]="getClassNameForGain(row.metrics.twitter_retweets_gain_percent)">
+            {{ row.metrics.twitter_retweets_gain_percent || 0 | prettyNumber}}%
+          </span>
+        </td>
+        <td>
+          <span slBold slPink>{{ row.metrics.twitter_mentions || 0 | prettyNumber }}</span>
+          <span slGrey [ngClass]="getClassNameForGain(row.metrics.twitter_mentions_gain_percent)">
+            {{ row.metrics.twitter_mentions_gain_percent || 0 | prettyNumber}}%
+          </span>
+        </td>
+        <td>
+          <span slBold slYellow>{{ row.metrics.twitter_followers || 0 | prettyNumber }}</span>
+          <span slGrey [ngClass]="getClassNameForGain(row.metrics.twitter_followers_gain)">
+            {{ row.metrics.twitter_followers_gain || 0 | prettyNumber}}
+          </span>
+        </td>
+        <td>
+          <div slBold slBlack>{{ row.metrics.twitter_tweets || 0 | prettyNumber }}</div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

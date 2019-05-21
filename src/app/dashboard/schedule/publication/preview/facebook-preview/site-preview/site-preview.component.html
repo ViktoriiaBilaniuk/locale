@@ -1,0 +1,34 @@
+<a [href]="data?.url" target="_blank">
+  <div class="container" *ngIf="!loading; else spinner" [ngClass]="{'flex': !isHorizontalImage}">
+    <div
+      *ngIf="data.metadata.image && !isHorizontalImage"
+      class="image"
+      [ngStyle]="{'background-image': 'url(' + data?.metadata?.image + ')'}">
+    </div>
+    <img
+      *ngIf="data.metadata.image && isHorizontalImage"
+      class="horizontal-image"
+      [src]="data?.metadata?.image" alt="image">
+    <div class="info flex" [ngStyle]="{'width': getInfoWidth()}">
+      <div class="info__left" [ngStyle]="{'width': getInfoLeftWidth()}">
+        <p class="info__name">{{getSiteName(data?.url)}}</p>
+        <p class="info__title">{{data?.metadata?.title}}</p>
+        <p
+          class="info__desc truncated-text"
+          *ngIf="data?.metadata?.description">
+          {{data?.metadata?.description}}
+        </p>
+      </div>
+      <div class="cta" *ngIf="data.callToActionButton && data.callToActionButton.value">
+        <button class="btn-cta">{{data.callToActionButton.value}}</button>
+      </div>
+    </div>
+  </div>
+  <ng-template #spinner>
+    <div class="loading">
+      <sl-loading></sl-loading>
+    </div>
+  </ng-template>
+</a>
+
+<img class="info-image" *ngIf="data.metadata.image" #image [src]="data?.metadata?.image" (load)="infoImageChange()" alt="">

@@ -1,0 +1,60 @@
+<div
+  class="container"
+  [ngClass]="{'grey-bg': !isCounts()}">
+  <div>
+    <div class="cover" *ngIf="(isCounts() || (!day.isPast && postManagementPermission)) && day.inMonth"></div>
+    <div class="cover__content">
+      <button
+        *ngIf="isCounts() && day.inMonth"
+        class="btn btn_small btn-fancy"
+        (click)="dayClicked.emit(day.date)"
+        translate>
+        PostsView.view
+      </button>
+      <div
+        class="btn-wrapp"
+        (mouseover)="hoverOnBtn = true"
+        (mouseleave)="hoverOnBtn = false">
+        <button
+          [ngClass]="{'margin-top': isCounts(), 'disabled': allChannelsAreDissconnected || !channelsExists}"
+          *ngIf="!day.isPast && postManagementPermission && day.inMonth"
+          class="btn btn_small btn-fancy"
+          (click)="createClick($event)"
+          translate>
+          PostsView.create
+        </button>
+        <sl-tooltip-light
+          *ngIf="allChannelsAreDissconnected || !channelsExists"
+          [content]="getTooltipText()"
+          [top]="'80px'"
+          [hover]="hoverOnBtn">
+        </sl-tooltip-light>
+      </div>
+    </div>
+  </div>
+
+  <div class="day">
+    <span
+      class="day__date"
+      [ngClass]="{'grey': !day.inMonth, 'tangerine': day.isToday }">
+      {{day.date.getDate()}}
+    </span>
+    <div
+      *ngIf="isCounts(); else noPosts"
+      class="counts">
+      <span *ngFor="let network of getNetworks()">
+        <span *ngIf="counts[network]" class="count" [ngClass]="network">
+          <img [src]="'../../../../../assets/images/channels/' + network + '.svg'">
+          <span>{{counts[network]}}</span>
+        </span>
+      </span>
+    </div>
+    <ng-template #noPosts>
+      <div *ngIf="day.inMonth" class="no-post" translate>
+        PostsView.noPosts
+      </div>
+    </ng-template>
+  </div>
+</div>
+
+

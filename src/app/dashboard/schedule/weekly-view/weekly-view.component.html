@@ -1,0 +1,17 @@
+<div
+  #weeklyContainer
+  class="container flex"
+  [ngClass]="{'expanded': expandStatus === 'closed', 'collapsed': expandStatus === 'expanded'}">
+  <div *ngFor="let day of days" [id]="day.date">
+    <sl-day-view
+      (onEdit)="onEdit.emit($event)"
+      (onCopy)="onCopy.emit($event)"
+      (onDelete)="onDelete.emit($event)"
+      (onCreatePostClick)="onCreatePost.emit($event)"
+      [allChannelsAreDissconnected]="allChannelsAreDissconnected"
+      [channelsExists]="channelsExists"
+      [postManagementPermission]="postManagementPermission"
+      [data]="day">
+    </sl-day-view>
+  </div>
+</div>

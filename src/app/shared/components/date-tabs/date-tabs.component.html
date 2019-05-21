@@ -1,0 +1,26 @@
+<div class="tabs">
+  <div
+    class="tabs__month"
+    *ngFor="let item of months; let i = index"
+    [ngClass]="{'checked': item.selected}"
+    (click)="selectMonth(item, i)">
+    <span>{{item.month}}</span>
+    <hr>
+  </div>
+</div>
+
+<div class="slider_wrapper">
+  <div class="slider">
+    <i class="icon-arrow-left hoverable" (click)="back()" [ngClass]="{'disabled': !canMoveBack}"></i>
+    <span>{{displayDate}}</span>
+    <i class="icon-arrow-right hoverable" (click)="next()" [ngClass]="{'disabled': !canMoveNext}"></i>
+  </div>
+  <div class="slider__circles">
+    <div
+      class="slider__circles--item"
+      *ngFor="let item of months; let i = index"
+      (click)="selectMonth(item, i)"
+      [ngClass]="{'checked': item.selected}">
+    </div>
+  </div>
+</div>

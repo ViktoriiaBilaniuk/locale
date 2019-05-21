@@ -1,0 +1,29 @@
+<div class="sidebar-search" [style.marginRight]="getRightMarginForContainer()">
+  <div class="sidebar-search__input-wrapper" [ngClass]="{'hidden': !filesExist}">
+    <i class="icon-magnifier"></i>
+    <input
+      #searchInput
+      id="searchInput"
+      [disabled]="disable"
+      type="text"
+      class="floated sidebar-search__input padded"
+      (keyup)="search(searchInput.value)"
+      [ngClass]="{'not-empty': searchInput.value}">
+  </div>
+  <div class="flex upload">
+
+    <div class="upload__file">
+      <input
+        multiple
+        (change)="fileChange($event)"
+        #fileInput
+        type="file"
+        name="file"
+        id="file"
+        class="inputfile"
+        [accept]="fileTypes()" />
+      <i class="icon-cloud-download upload__icon"></i>
+      <span translate>Rightbar.uploadFiles</span>
+    </div>
+  </div>
+</div>

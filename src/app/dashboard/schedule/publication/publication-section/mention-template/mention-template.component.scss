@@ -1,0 +1,25 @@
+@import '~scss/_variables.scss';
+
+.mention {
+  width: 280px;
+  padding: 4px 20px;
+  align-items: center;
+  background-color: white;
+  &:hover {
+    background-color: $white;
+    cursor: pointer;
+  }
+  &__photo {
+    width: 24px;
+    height: 24px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+  &__name {
+    font-size: 14px;
+    color: $greyish-brown-two
+  }
+}

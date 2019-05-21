@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/app/settings/profile-photo/profile-photo.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">All files</a> / <a href="index.html">src/app/settings/profile-photo</a> profile-photo.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">36.51% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>23/63</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">5.26% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/19</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">38.18% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>21/55</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, OnInit, ViewChild } from '@angular/core';
+&nbsp;
+import { Store } from '../../core/store/store';
+import { UserService } from '../../core/services/user/user.service';
+import { UtilsService } from '../../core/services/utils/utils.service';
+import { TrackingSerivce } from './../../core/services/tracking/tracking.service';
+&nbsp;
+@Component({
+  selector: 'sl-profile-photo',
+  templateUrl: './profile-photo.component.html',
+  styleUrls: ['./profile-photo.component.scss']
+})
+export class ProfilePhotoComponent implements OnInit {
+  @ViewChild('fileInput') fileInput;
+  public avatarUrl: string;
+  private <span class="cstat-no" title="statement not covered" >maxFileSize = 5;</span>
+  private <span class="cstat-no" title="statement not covered" >mimeTypes = ['image/png', 'image/jpeg', 'image/bmp'];</span>
+  public error: string;
+  public localImageStyle: any;
+  public showLocalCover: boolean;
+&nbsp;
+<span class="fstat-no" title="function not covered" >  constructor(</span>
+    private <span class="cstat-no" title="statement not covered" >store: Store,</span>
+    private <span class="cstat-no" title="statement not covered" >userService: UserService,</span>
+    private <span class="cstat-no" title="statement not covered" >utils: UtilsService,</span>
+    private <span class="cstat-no" title="statement not covered" >track: TrackingSerivce)</span> { }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  ngOnInit() {</span></span>
+<span class="cstat-no" title="statement not covered" >    this.store.select('current-user')</span>
+      .filter(<span class="fstat-no" title="function not covered" >(</span>user: any) =&gt; <span class="cstat-no" title="statement not covered" >user)</span>
+      .subscribe(<span class="fstat-no" title="function not covered" >(</span>user: any) =&gt; {
+<span class="cstat-no" title="statement not covered" >        this.avatarUrl = user.image;</span>
+      });
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  get file () {</span>
+<span class="cstat-no" title="statement not covered" >    return this.fileInput.nativeElement.files.length ?</span>
+      this.fileInput.nativeElement.files[0] :
+      null;
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  get isValid () {</span>
+<span class="cstat-no" title="statement not covered" >    return !this.file || (this.validType &amp;&amp; this.validSize);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  get validSize () {</span>
+<span class="cstat-no" title="statement not covered" >    return ((this.file.size / 1024) / 1024) &lt; this.maxFileSize;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  get validType () {</span>
+<span class="cstat-no" title="statement not covered" >    return this.mimeTypes.indexOf(this.file.type) !== -1;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  fileChange () {</span>
+<span class="cstat-no" title="statement not covered" >    if (!this.isValid) {</span>
+<span class="cstat-no" title="statement not covered" >      return;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    this.error = '';</span>
+<span class="cstat-no" title="statement not covered" >    this.uploadFile();</span>
+<span class="cstat-no" title="statement not covered" >    this.readFile();</span>
+<span class="cstat-no" title="statement not covered" >    this.track.userDataWasEdited(['avatar']);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  uploadFile () {</span>
+<span class="cstat-no" title="statement not covered" >    this.userService.getPreSignedUrl({</span>
+        file_name: this.file.name,
+        file_type: this.file.type
+      })
+      .subscribe(this.postFile.bind(this));
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  postFile (</span>res) {
+    const <span class="cstat-no" title="statement not covered" >{<span class="cstat-no" title="statement not covered" >file_url,</span> <span class="cstat-no" title="statement not covered" >signed_request </span>} = res.data;</span>
+<span class="cstat-no" title="statement not covered" >    this.avatarUrl = file_url;</span>
+<span class="cstat-no" title="statement not covered" >    this.userService.uploadProfilePhoto(signed_request, this.fileInput.nativeElement.files[0])</span>
+      .subscribe(this.updateUser.bind(this));
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  updateUser () {</span></span>
+<span class="cstat-no" title="statement not covered" >    this.userService.updateUser({ image: this.avatarUrl })</span>
+      .subscribe(<span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        this.clearFile();</span>
+<span class="cstat-no" title="statement not covered" >        this.showModal();</span>
+      });
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  setCoverImage(</span>src) {
+<span class="cstat-no" title="statement not covered" >    this.localImageStyle = {'background-image': `url(${src})`};</span>
+<span class="cstat-no" title="statement not covered" >    this.showLocalCover = true;</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  readFile () {</span></span>
+    const file = <span class="cstat-no" title="statement not covered" >this.file;</span>
+    const reader = <span class="cstat-no" title="statement not covered" >new FileReader();</span>
+<span class="cstat-no" title="statement not covered" >    reader.onload = <span class="fstat-no" title="function not covered" >(</span>e: any) =&gt; <span class="cstat-no" title="statement not covered" >this.setCoverImage(e.target.result);</span></span>
+<span class="cstat-no" title="statement not covered" >    reader.readAsDataURL(file);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  clearFile () {</span>
+<span class="cstat-no" title="statement not covered" >    this.fileInput.nativeElement.value = '';</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  showModal () {</span>
+<span class="cstat-no" title="statement not covered" >    this.utils.showInfoModal('Settings.modalTitle', 'Settings.modalText');</span>
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Oct 26 2018 12:25:15 GMT+0300 (EEST)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

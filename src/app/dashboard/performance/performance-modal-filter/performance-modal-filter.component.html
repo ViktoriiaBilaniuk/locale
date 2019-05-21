@@ -1,0 +1,26 @@
+<div class="performance-modal-filter">
+  <div class="performance-modal-filter__sort" (click)="togglePerformanceMenu($event)">
+    <img src="../../../assets/images/social-performance/icons-action-orang-filter.svg" alt="filter">
+    <ng-container [ngSwitch]="currentPostFilter">
+      <span class="performance-modal-filter__sort--label" *ngIf="currentPostFilter" translate>Performance.sortBy</span>
+      <ng-container *ngFor="let option of options">
+        <span
+          class="performance-modal-filter__sort--option"
+          *ngSwitchCase="option.value"
+          translate>
+          {{option.title}}
+        </span>
+      </ng-container>
+    </ng-container>
+    <i class="icon-arrow-down hoverable"></i>
+  </div>
+</div>
+
+<div
+  class="performance-modal__menu"
+  (clickOutside)="onClickedOutside($event)"
+  [ngClass]="{'performance-modal__menu--visible': performanceMenuIsActive}">
+  <sl-performance-modal-dropdown
+    (onChangeOptionAndCloseMenu)="changeOptionAndCloseMenu($event)"
+  ></sl-performance-modal-dropdown>
+</div>

@@ -1,0 +1,127 @@
+<div class="wrapper flex" *ngIf="venueDetails" [@fadeInAnimation]="true">
+  <div class="section__left">
+
+    <div class="image" [ngStyle]="{'background-image': 'url('+ venueDetails?.image +')'}"></div>
+
+    <sl-objective
+      class="venue-details__section"
+      (onEdit)="updateVenueDetails('current_objective', $event)"
+      [canEdit]="canEditDetails"
+      [objective]="venueDetails.current_objective">
+    </sl-objective>
+
+    <sl-details-item
+      class="venue-details__section"
+      (onEdit)="updateVenueDetails('brand_guidelines', $event)"
+      [canEdit]="canEditDetails"
+      [title]="'brandGuidelines'"
+      [data]="venueDetails.brand_guidelines || ''">
+    </sl-details-item>
+
+    <sl-opening-hours
+      class="venue-details__section"
+      (onEdit)="updateVenueDetails('opening_hours', $event)"
+      [canEdit]="canEditDetails"
+      [timetable]="venueDetails.opening_hours">
+    </sl-opening-hours>
+
+    <sl-location
+      class="venue-details__section"
+      [location]="venueDetails.location">
+    </sl-location>
+
+    <sl-details-item
+      class="venue-details__section"
+      (onEdit)="updateVenueDetails('special_offers', $event)"
+      [canEdit]="canEditDetails"
+      [title]="'specialOffers'"
+      [data]="venueDetails.special_offers || ''">
+    </sl-details-item>
+  </div>
+  <div class="section__right">
+    <sl-details-item
+      class="venue-details__section"
+      (onEdit)="updateVenueDetails('unique_selling_points', $event)"
+      [canEdit]="canEditDetails"
+      [title]="'uniqueSellingPoints'"
+      [data]="venueDetails.unique_selling_points || ''">
+    </sl-details-item>
+
+    <sl-details-item
+      class="venue-details__section"
+      (onEdit)="updateVenueDetails('offers', $event)"
+      [canEdit]="canEditDetails"
+      [title]="'offers'"
+      [data]="venueDetails.offers || ''">
+    </sl-details-item>
+
+    <sl-details-item
+      class="venue-details__section"
+      (onEdit)="updateVenueDetails('hashtags', $event)"
+      [canEdit]="canEditDetails"
+      [title]="'hashtags'"
+      [data]="venueDetails.hashtags || ''">
+    </sl-details-item>
+
+    <sl-details-item
+      class="venue-details__section"
+      (onEdit)="updateVenueDetails('tone_of_voice', $event)"
+      [canEdit]="canEditDetails"
+      [title]="'toneOfVoice'"
+      [data]="venueDetails.tone_of_voice || ''">
+    </sl-details-item>
+
+    <sl-details-item
+      class="venue-details__section"
+      (onEdit)="updateVenueDetails('values', $event)"
+      [canEdit]="canEditDetails"
+      [title]="'values'"
+      [data]="venueDetails.values || ''">
+    </sl-details-item>
+
+    <sl-details-item
+      class="venue-details__section"
+      (onEdit)="updateVenueDetails('brand_message', $event)"
+      [canEdit]="canEditDetails"
+      [title]="'brandMessage'"
+      [data]="venueDetails.brand_message || ''">
+    </sl-details-item>
+
+    <sl-target-market
+      class="venue-details__section"
+      [canEdit]="canEditDetails"
+      (onEdit)="updateVenueDetails('target_market', $event)"
+      [data]="venueDetails.target_market || []">
+    </sl-target-market>
+
+    <sl-demographic
+      class="venue-details__section"
+      [canEdit]="canEditDetails"
+      (onEdit)="updateVenueDetails('demographic', $event)"
+      [data]="venueDetails.demographic || []">
+    </sl-demographic>
+
+    <sl-details-item
+      class="venue-details__section"
+      (onEdit)="updateVenueDetails('local_attractions_and_events', $event)"
+      [canEdit]="canEditDetails"
+      [title]="'localAttractionsAndEvents'"
+      [data]="venueDetails.local_attractions_and_events || ''">
+    </sl-details-item>
+
+    <sl-menus
+      class="venue-details__section"
+      (onEdit)="updateVenueDetails('menus', $event)"
+      [canEdit]="canEditDetails"
+      [menus]="venueDetails.menus || []">
+    </sl-menus>
+
+    <sl-named-links
+      [canEdit]="canEditDetails"
+      [links]="venueDetails.named_links || []"
+      [venueId]="venueDetails.id">
+    </sl-named-links>
+
+  </div>
+</div>
+

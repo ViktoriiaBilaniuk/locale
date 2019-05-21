@@ -1,0 +1,26 @@
+<div class="forgot-pass" [@fadeInAnimation]="true">
+  <form class="forgot-pass__form" *ngIf="!sendSuccessfully; else sendSuccess" [formGroup]="forgotForm" (ngSubmit)="sentResetEmail()" autocomplete="off">
+    <div class="form-group">
+      <input type="text"
+             id="email"
+             class="floated"
+             [ngClass]="{'not-empty': forgotForm.value.email}"
+             formControlName="email">
+      <label for="email" class="control-label" translate>Auth.email</label>
+
+      <div class="sl-error-msg"
+           *ngIf="email.invalid && (email.touched || formIsSubmitted)">
+        <div *ngIf="email.errors.required" translate>Validation.email.required</div>
+        <div *ngIf="email.errors.pattern" translate>Validation.email.format</div>
+      </div>
+    </div>
+
+    <button class="btn btn-fancy forgot-pass__submit" type="submit" translate>Auth.reset</button>
+  </form>
+
+  <ng-template #sendSuccess>
+    <p class="forgot-pass__success-msg" translate>Auth.forgotPassSuccess</p>
+  </ng-template>
+
+  <a [routerLink]="['./../login']" class="forgot-pass__login-link" translate>Auth.backToLogin</a>
+</div>

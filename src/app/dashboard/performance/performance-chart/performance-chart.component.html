@@ -1,0 +1,23 @@
+<div class="main-chart" *ngIf="isData(); else noData" #mainChart>
+  <div [hidden]="isChart">
+    <sl-chart
+      (isChartVisible)="isChartVisible($event)"
+      [chartSource]="chartSource"
+      [tableSource]="tableSource"
+      [chartConfig]="chartConfig">
+    </sl-chart>
+  </div>
+  <div [hidden]="!isChart" class="main-chart-empty">
+    <img src="../../../../assets/images/social-performance/chart-empty.svg" alt="chart-empty">
+    <div class="main-chart-empty__title" translate>Performance.chatEmptyTitle</div>
+    <div class="main-chart-empty__description" translate>Performance.chatEmptyDescription</div>
+  </div>
+  <p class="reach-text" translate>Performance.reachCalculation</p>
+</div>
+
+<ng-template #noData>
+  <div class="no-data">
+    <img src="../../../assets/images/social-performance/no-perf-data.png" alt="" class="no-data__img">
+    <p class="no-data__title" translate>Performance.noData</p>
+  </div>
+</ng-template>

@@ -1,0 +1,56 @@
+<div class="wrap">
+  <div class="upload">
+    <div class="upload__icon">
+      <i class="icon-cloud-download"></i>
+      <input
+        (change)="fileChange($event)"
+        #fileInput
+        type="file"
+        name="file"
+        id="file"
+        class="inputfile"
+        multiple
+        [accept]="fileTypes()"/>
+    </div>
+    <div class="upload__text">
+      <h4 translate>Channels.uploadFromComputer</h4>
+      <p translate>Channels.fbFileUploadInfoForAlbum</p>
+    </div>
+  </div>
+
+  <sl-content-pool
+    (onAttach)="onAttachFileFromContentPool()"
+    [multiple]="true">
+  </sl-content-pool>
+
+  <div class="album-header" [@fadeInAnimation]="true">
+    <header class="flex">
+      <input
+        class="title"
+        type="text"
+        [(ngModel)]="publicationProxy.albumName"
+        [maxLength]="maxAlbumNameLength"
+        [placeholder]="'Channels.newAlbum' | translate">
+      <div class="counter flex">
+        <span>{{publicationProxy.albumName.length}}</span>
+        <span>/</span>
+        <span>{{maxAlbumNameLength}}</span>
+      </div>
+    </header>
+  </div>
+
+  <div class="error flex" *ngIf="filesError" [@fadeInAnimation]="true">
+    <div>
+      <span translate>Channels.imageError</span>
+      <span>{{maxImageSize}} MB.</span>
+      <span translate>Channels.tryUploadAgain</span>
+    </div>
+    <button class="error__btn btn btn-gray btn_small" (click)="hideError()" translate> Channels.ok </button>
+  </div>
+
+  <div class="files">
+    <div *ngFor="let file of publicationProxy.albumFiles; let i = index" [@fadeInAnimation]="true">
+      <sl-photo-item [file]="file" (remove)="removeFile(i)"></sl-photo-item>
+    </div>
+  </div>
+</div>

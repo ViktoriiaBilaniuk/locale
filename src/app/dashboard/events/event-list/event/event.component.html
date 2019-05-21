@@ -1,0 +1,65 @@
+<div class="event">
+
+  <div class="event__wrapper">
+    <span class="event__wrapper--title">{{event.title}}</span>
+    <div class="button hoverable" [ngClass]="{'button__disabled': disabledButtons}" (click)="eventAction(event)"  *ngIf="!loading">
+      <div
+        class="icon-plus"
+        [ngClass]="{'button__plus': !event.isMyEvent,
+        'button__remove':event.isMyEvent}">
+      </div>
+    </div>
+    <div class="loading" *ngIf="loading">
+      <sl-loading></sl-loading>
+    </div>
+  </div>
+
+  <div class="event__wrapper">
+    <div class="info">
+      <div class="flex">
+        <div class="flex flex_align-items-center">
+          <div [class]="dotClass"></div>
+          <div class="info__text">
+            {{event.relevance || 0}}/100 relevance
+          </div>
+        </div>
+        <div class="flex flex_align-items-center">
+          <div class="info__img icon-location-pin"></div>
+          <div class="info__text--distance">
+            {{ getDistance(event.distance)}} km away
+          </div>
+        </div>
+      </div>
+      <div class="info__event-type" translate>
+        Events.categories.{{event.category}}
+      </div>
+    </div>
+    <div *ngIf="myEvents" class="event__wrapper--date">{{eventDate}}</div>
+  </div>
+
+</div>
+
+<!-- START: Confirm removing event -->
+<sl-modal *ngIf="visibleConfirmWindow" (close)="closeConfirmModal()">
+  <p class="modal-title" translate> EventsModal.confirmRemovingEvent </p>
+  <div class="flex space-evenly">
+    <button class="btn btn-fancy textarea__btn" (click)="removeEventFromMyEvents()" translate> EventsModal.delete </button>
+    <button class="btn btn-gray textarea__btn" (click)="closeConfirmModal()" translate> EventsModal.cancel </button>
+  </div>
+</sl-modal>
+<!-- END: Confirm removing event modal-->
+
+<!-- START: Can not add event  modal-->
+<sl-modal *ngIf="canNotAddEvent" (close)="closeInfoModal()">
+  <p class="modal-title" translate> EventsModal.canNotAddEvent </p>
+  <p class="modal-text" translate> EventsModal.needToRemoveEvent </p>
+  <button class="btn btn-fancy textarea__btn" (click)="closeInfoModal()" translate> EventsModal.ok </button>
+</sl-modal>
+<!-- END: Can not add event  modal-->
+
+<!-- START: Event added  modal-->
+<sl-modal *ngIf="eventAdded" (close)="closeAddInfoModal()">
+  <p class="modal-title" translate> EventsModal.eventAdded </p>
+  <button class="btn btn-fancy textarea__btn" (click)="closeAddInfoModal()" translate> EventsModal.ok </button>
+</sl-modal>
+<!-- END: Event added  modal-->

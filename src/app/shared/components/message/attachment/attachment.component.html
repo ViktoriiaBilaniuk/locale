@@ -1,0 +1,35 @@
+<a class="attachment" (click)="click.emit()">
+  <sl-new-tab-wrapper [url]="message?.content?.url">
+    <figure *ngIf="isImage">
+      <img class="message__attached-image" [src]="message?.content?.url" alt="attachment" (load)="imageLoaded()">
+    </figure>
+  </sl-new-tab-wrapper>
+  <div class="file" *ngIf="!isImage">
+    <sl-new-tab-wrapper [url]="message?.content?.url">
+      <div [class.video-title]="!searchResult" [class.video-title-small]="searchResult">
+        <i class="font-icon-large video-title__icon" [ngClass]="getClass()"></i>
+        <span
+          class="video-title__name"
+          *ngIf="!searchResult">
+          <span *ngIf="!expand">{{ fileName | trim: 11: 10 }}</span>
+          <span *ngIf="expand">{{ fileName | trim: 25: 24 }}</span>
+        </span>
+        <span
+          class="video-title__name video-title__name-small"
+          *ngIf="searchResult" innerHTML = "{{ fileName }}">
+        </span>
+      </div>
+    </sl-new-tab-wrapper>
+    <video
+      class="video"
+      [ngClass]="{'video_expand': expand}"
+      #videoPlayer
+      *ngIf="isVideo && !searchResult"
+      preload="auto"
+      controls
+      [src]="message?.content?.url"
+      [poster]="message?.content?.thumb || ''">
+    </video>
+    <div class="video-hack" (click)="togglePlay()"></div>
+  </div>
+</a>

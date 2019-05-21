@@ -1,0 +1,12 @@
+<div class="sorting">
+  <div class="sorting__label" translate>Events.sortBy</div>
+  <ul class="sorting__list">
+    <li
+      class="sorting__list--item"
+      *ngFor="let option of availableOptions"
+      (click)="selectedOption(option)">
+        <div class="circle" [ngClass]="{circle__active: option.selected}"></div>
+        <span translate>{{option.title}}</span>
+    </li>
+  </ul>
+</div>

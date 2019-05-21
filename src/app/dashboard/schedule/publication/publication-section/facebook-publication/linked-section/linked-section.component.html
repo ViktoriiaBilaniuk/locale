@@ -1,0 +1,39 @@
+<div class="flex top">
+  <sl-main-link></sl-main-link>
+  <sl-cta-buttons-selection (change)="selectCtaButton($event)"></sl-cta-buttons-selection>
+</div>
+
+<div class="carousel-btn">
+  <button
+    class="btn btn-gray"
+    translate
+    *ngIf="!carouselItems().length"
+    (click)="makeCarouselPost()">
+    LinkedPost.makeCarouselPost
+  </button>
+  <button
+    class="btn btn-gray"
+    translate
+    *ngIf="carouselItems().length"
+    (click)="addNewLinkSection()">
+    LinkedPost.addCarouselItem
+  </button>
+</div>
+
+<div class="carousel-wrap" *ngIf="carouselItems().length">
+  <sl-link-section
+    *ngFor="let item of carouselItems(); let i = index"
+    [item]="item"
+    (onRemoveItem)="removeCarouselItem(i)"
+    (onOpenContentPool)="openContentPool(i)">
+  </sl-link-section>
+</div>
+
+<sl-content-pool
+  [showTitle]="false"
+  [open]="isContentPoolOpen"
+  (onAttach)="onAttachFileFromContentPool($event)">
+</sl-content-pool>
+
+
+

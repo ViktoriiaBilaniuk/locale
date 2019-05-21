@@ -1,0 +1,20 @@
+<div class="wrapper">
+  <textarea
+    #mainInput
+    class="textarea_default section-text"
+    [placeholder]="placeholder"
+    maxlength="1000"
+    [value]="value">
+  </textarea>
+
+  <div class="wrapper__formats">
+    <b>*bold*</b>
+    <i>_italic_</i>
+    <span>~strike~</span>
+  </div>
+
+  <div class="flex btns">
+    <button class="btn btn-white btn_small" (click)="onCancelClick()" translate>{{ cancelTitle }}</button>
+    <button class="btn btn-fancy btn_small" (click)="onSaveClick()" translate>{{ confirmTitle }}</button>
+  </div>
+</div>

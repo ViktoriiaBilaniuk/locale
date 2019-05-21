@@ -1,0 +1,18 @@
+<div class="full-height">
+  <!-- <button (click)="switchLanguage('en')">en</button>
+  <button (click)="switchLanguage('fr')">fr</button> -->
+  <router-outlet></router-outlet>
+  <!-- Error modal -->
+  <sl-modal *ngIf="utils.errorModalConfig.isVisible" (close)="closeErrorModal()">
+    <p class="modal-title">Error</p>
+    <p class="modal-text" translate [innerHTML]="utils.errorModalConfig.text"></p>
+  </sl-modal>
+  <sl-modal *ngIf="utils.infoModalConfig.isVisible" (close)="closeInfoModal()">
+    <p class="modal-title" translate>{{utils.infoModalConfig.title}}</p>
+    <p class="modal-text" translate>{{utils.infoModalConfig.text}}</p>
+    <button class="btn btn-tangerine" (click)="closeInfoModal()">OK</button>
+  </sl-modal>
+
+  <sl-cookies-panel class="cookies"></sl-cookies-panel>
+
+</div>

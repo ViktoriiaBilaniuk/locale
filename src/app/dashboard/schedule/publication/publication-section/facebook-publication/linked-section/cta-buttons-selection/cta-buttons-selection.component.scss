@@ -1,0 +1,102 @@
+@import '~scss/_variables.scss';
+
+.select {
+  margin-top: 10px;
+  align-items: center;
+  position: relative;
+
+  &__title {
+    font-size: 10px;
+    color: $black;
+    margin: 0 10px;
+  }
+}
+
+:host-context(.content_open) .select {
+  position: absolute;
+}
+
+ng-select {
+  width: 120px;
+}
+
+.ng-select.custom {
+  border: solid 1px $greyish;
+  outline: none;
+  border-radius: 4px;
+}
+
+:host ::ng-deep .ng-select-container {
+  border: none !important;
+}
+
+:host ::ng-deep .ng-option-selected {
+  background-color: $white-two !important;
+  color: $black !important;
+  font-weight: 400 !important;
+}
+
+:host ::ng-deep .ng-option-marked {
+  background-color: $greyish !important;
+  color: white !important;
+}
+
+:host ::ng-deep .ng-dropdown-panel {
+  border-color: $greyish !important;
+}
+
+:host ::ng-deep .ng-dropdown-panel {
+  width: 120px !important;
+  left: 0 !important;
+  margin-left: -1px !important;
+  font-size: 14px !important;
+  background-color: white;
+}
+
+:host ::ng-deep .ng-option {
+  border: 1px solid $greyish !important;
+  font-size: 11px !important;
+  line-height: 2.18 !important;
+  font-weight: 800 !important;
+  color: $black !important;
+  background-color: white !important;
+}
+
+:host ::ng-deep .ng-value-label{
+  text-align: center !important;
+  margin: 0 auto !important;
+  font-size: 11px !important;
+  line-height: 2.18 !important;
+  font-weight: 800 !important;
+  color: $black !important;
+}
+:host ::ng-deep .ng-input {
+  height: 0 !important;
+}
+
+/*:host ::ng-deep .ng-input {
+  top: 8px !important;
+  font-size: 14px !important;
+  input {
+    font-weight: 400 !important;
+    font-family: 'Muli', sans-serif !important;
+    color: $black !important;
+  }
+}*/
+
+:host ::ng-deep .ng-value {
+  font-size: 11px !important;
+  width: 120px !important;
+}
+
+:host ::ng-deep .ng-dropdown-panel-items {
+  margin-bottom: 0 !important;
+}
+
+:host ::ng-deep .ng-select-container  {
+  box-shadow: none !important;
+}
+
+.hidden {
+  display: none;
+}

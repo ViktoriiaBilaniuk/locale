@@ -1,0 +1,172 @@
+@import '~scss/_variables.scss';
+
+.wrap {
+  background-color: $white;
+  padding-bottom: 20px;
+}
+
+.content {
+  width: 500px;
+  margin: 0 auto;
+  background-color: white;
+  border: 1px solid #dddfe2;
+}
+
+.header {
+  justify-content: flex-start;
+  padding: 10px;
+  &__icon {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    background-color: $tangerine;
+    border-radius: 50%;
+    margin-right: 8px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__info {
+    width: calc(100% - 40px);
+    justify-content: space-between;
+    align-items: center;
+    .info {
+      text-align: left;
+      &__state {
+        display: flex;
+        align-items: center;
+      }
+      &__time {
+        color: #616770;
+        font-family: Roboto;
+        display: block;
+        line-height: 18px;
+        &_error {
+          color: $scarlet;
+        }
+      }
+
+      &__status {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
+        color: $insta-black;
+
+      }
+      .icon-options {
+        font-size: 14px;
+        color: $insta-black;
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+.name {
+  font-size: 14px;
+  color: $insta-black;
+  font-weight: 600;
+  font-family: Roboto;
+  margin-right: 2px;
+  &:hover {
+    text-decoration: none !important;
+  }
+  &__disabled {
+    &:hover {
+      pointer-events: none !important;
+    }
+  }
+  .red {
+    color: $scarlet !important;
+  }
+}
+
+.middle {
+  font-family: Roboto;
+
+  &__img {
+    width: 100%;
+    height: auto;
+    img, video {
+      margin-top: 10px;
+      width: 100%;
+    }
+  }
+}
+
+.bottom {
+  padding: 0 10px;
+  margin-bottom: 20px;
+  &__list {
+    display: flex;
+    width: 100%;
+    padding: 0;
+    align-items: flex-start;
+  }
+  &__item {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-right: 11px;
+  }
+  &__icon {
+    width: 25px;
+  }
+  .tag {
+    margin: 0;
+    width: 25px;
+  }
+  &__text {
+    font-size: 14px;
+    color: rgb(29, 33, 41);
+    font-weight: 400;
+    text-align: left;
+  }
+  &__desc {
+    word-break: break-word;
+    white-space: pre-wrap;
+    line-height: 18px;
+  }
+  &__more {
+    color: #999;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: lowercase;
+    margin-left: 2px;
+  }
+  &__time {
+    font-size: 10px;
+    letter-spacing: .2px;
+    color: #999;
+    margin-top: 10px;
+    display: block;
+  }
+}
+
+.mobile {
+  width: 375px;
+
+  .header {
+    &__info {
+      .name {
+        color: rgb(29, 33, 41);
+      }
+    }
+  }
+  .bottom {
+    &__icon {
+      width: 25px;
+    }
+  }
+}
+
+:host ::ng-deep .insta-tag {
+  color: #003569 !important;
+}
+
+.warning {
+  text-align: left;
+  font-size: 10px;
+  margin-top: 3px;
+}

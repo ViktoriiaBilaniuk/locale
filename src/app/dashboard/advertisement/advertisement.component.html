@@ -1,0 +1,41 @@
+<sl-ads-date-tabs (activateTab)="activateTab($event)"></sl-ads-date-tabs>
+<div class="container">
+  <header class="header flex flex_justify-content-space-between" #header>
+    <p translate>Ads.accountsOverview</p>
+    <button (click)="openModal()" class="btn btn_small btn-fancy" translate>Ads.addAdsAccount</button>
+  </header>
+  <section *ngIf="!loading; else spinner">
+    <div *ngIf="adsAccounts.length; else noData">
+      <sl-ads-item
+        *ngFor="let item of adsAccounts"
+        (onDelete)="onDeleteAccount($event)"
+        [item]="item">
+      </sl-ads-item>
+    </div>
+    <ng-template #noData>
+      <div class="empty">
+        <img src="../../../../assets/images/dashboard/no-channels.png"
+             alt="no channels">
+        <p class="empty__title" translate>Ads.noAds</p>
+        <div>
+          <p class="empty__text" translate>Ads.noAdsText</p>
+          <button (click)="openModal()" class="btn btn_small btn-fancy" translate>Ads.addAdsAccount</button>
+        </div>
+      </div>
+    </ng-template>
+  </section>
+  <ng-template #spinner>
+    <div class="loading">
+      <sl-loading></sl-loading>
+    </div>
+  </ng-template>
+</div>
+
+<sl-connection-modal
+  *ngIf="visibleAddModal"
+  [networks]="networks"
+  [venueId]="venueId"
+  [connectionType]="adsConnection"
+  (close)="closeModal()"
+  (onConnect)="onConnectAdsAccounts()">
+</sl-connection-modal>

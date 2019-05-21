@@ -1,0 +1,10 @@
+<div class="chat-toast" [ngStyle]="{top: getPosition()}">
+  <span *ngIf="contentPoolPage">
+    <span class="chat-toast__name">{{ text }}</span>
+  </span>
+  <span *ngIf="!contentPoolPage">
+    <span *ngIf="!expand" class="chat-toast__name">{{ text | trim: 20: 19 }}</span>
+    <span *ngIf="expand" class="chat-toast__name">{{ text | trim: 40: 39 }}</span>
+  </span>
+  <span class="chat-toast__close-icon" (click)="cancel.emit()">&times;</span>
+</div>

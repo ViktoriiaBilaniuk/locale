@@ -1,0 +1,87 @@
+<div class="menus details-content">
+  <!-- START: Menus header and edit button -->
+  <div class="flex">
+    <div class="section-title" translate>Rightbar.menus</div>
+    <i  (click)="onToggleEditMode()" *ngIf="canEdit" class="font-icon icon-pencil hoverable"></i>
+  </div>
+  <!-- END: Menus header and edit button -->
+
+  <div class="highlighted-text" [hidden]="menus.length !== 0 || editMode">
+    {{ ('Rightbar.nothingHereYet' | translate ) + ' ' + ((canEdit ? 'Rightbar.clickPencilToEdit' : '') | translate) }}
+  </div>
+
+  <!-- START: Menus list -->
+  <div *ngIf="!editMode">
+    <div *ngFor="let menu of menus" class="menus__item">
+      <!-- START: Link to view image -->
+      <a target="_blank"
+        [href]="menu.source"
+        (click)="menu.source || $event.preventDefault()"
+        class="menus__image"
+        [style.backgroundImage]="getMenuStyle(menu)">
+
+        <!-- START: Image and title -->
+        <div [ngClass]="{'overlay': menu.source && !isPdf(menu), 'empty': !menu.source}">
+          <img *ngIf="menu.source" src="/assets/images/dashboard/{{ isPdf(menu) ? 'pdf' : 'img'}}.svg">
+          <span>{{ menu.name }}</span>
+        </div>
+        <!-- END: Image and title -->
+      </a>
+      <!-- END: Link to view image -->
+    </div>
+  </div>
+  <!-- END: Menus list -->
+
+  <!-- START: Edit menus -->
+  <div *ngIf="editMode" class="content">
+    <span
+      *ngIf="editorMenus.length < 5"
+      (click)="onAddNewMenuClick()"
+      class="icon-plus hoverable">
+    </span>
+    <div class="content__items">
+      <div *ngFor="let editableMenu of editorMenus; let i = index;" class="flex menus__item_edit highlighted-text">
+
+        <!-- START: Edit menu item left image -->
+        <input (change)="onEditMenuAttachment($event, editableMenu)"
+               type="file"
+               name="menu-file-{{i}}"
+               id="menu-file-{{i}}"
+               accept=".gif, .png, .jpg, .jpeg, .bmp, .pdf"
+        >
+        <label for="menu-file-{{i}}">
+          <img *ngIf="editableMenu.source && !isPdf(editableMenu)" [src]="editableMenu.source">
+          <img *ngIf="editableMenu.source && isPdf(editableMenu)" class="menus__item_edit_file" src="/assets/images/dashboard/pdf.svg">
+          <img *ngIf="!editableMenu.source" src="/assets/images/dashboard/{{ isPdf(editableMenu) ? 'pdf' : 'img'}}.svg">
+
+        </label>
+        <!-- END: Edit menu item left image -->
+
+        <!-- START: Input text and remove button -->
+        <div class="flex flex_col flex_align-items-start menus__item_edit__inputs">
+          <input
+            type="text"
+            class="section-text"
+            [(ngModel)]="editableMenu.name"
+            maxlength="100"
+            [placeholder]="'Rightbar.addLabel' | translate">
+
+          <div
+            *ngIf="error && (editableMenu.name.trim().length > 50 || editableMenu.name.trim().length < 3 )"
+            class="sl-error-msg"
+            translate
+          >Rightbar.menuTitleValidation</div>
+
+          <button class="hoverable" (click)="onRemoveMenuClick(editableMenu)" translate>Rightbar.remove</button>
+        </div>
+        <!-- END: Input text and remove button -->
+      </div>
+      <!--<button *ngIf="editorMenus.length < 5" class="btn btn-fancy menus__item_edit__add" (click)="onAddNewMenuClick()" translate>Rightbar.addNew</button>-->
+    </div>
+    <div class="flex btns">
+      <button class="btn btn-white btn_small" (click)="onCancelClick()" translate>Rightbar.cancel</button>
+      <button class="btn btn-fancy btn_small" (click)="onSaveClick()" translate>Rightbar.save</button>
+    </div>
+  </div>
+  <!-- END: Edit menus -->
+</div>

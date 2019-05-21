@@ -1,0 +1,45 @@
+@import '~scss/_variables.scss';
+
+.settings {
+  &__left {
+    width: 300px;
+    background-color: $black;
+    float: left;
+    display: flex;
+    flex-direction: column;
+
+    &__body{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .child{
+        width: 150px;
+      }
+    }
+  }
+  &__right {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    overflow: auto;
+    padding-bottom: 200px;
+    &__child {
+      padding: 0 126px;
+    }
+
+    header{
+      background-color: $white-two;
+      box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+      font-weight: 600;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      font-size: 18px;
+    }
+  }
+  &__home{
+    color: $tangerine;
+  }
+  &__settings {
+    color: $greyish-brown;
+  }
+}

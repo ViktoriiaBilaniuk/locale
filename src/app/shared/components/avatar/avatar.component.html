@@ -1,0 +1,6 @@
+<div class="avatar">
+  <img *ngIf="!showPlaceholder" class="avatar" (error)="onError()" [src]="avatar" />
+  <div class="placeholder" *ngIf="showPlaceholder">
+    <i  *ngIf="showPlaceholder" class="icon-camera font-icon"></i>
+  </div>
+</div>

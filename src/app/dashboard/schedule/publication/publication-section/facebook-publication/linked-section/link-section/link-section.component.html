@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="top">
+    <div class="flex flex_align-items-center">
+      <i class="font-icon icon-link"></i>
+      <input
+        type="url"
+        class="input_default"
+        [(ngModel)]="item.link"
+        [placeholder]="'LinkedPost.typeToAddLinkToCarousel' | translate"
+        #linkInput>
+      <i class="icon-plus icon__remove" (click)="onRemoveItem.emit()"></i>
+    </div>
+    <hr>
+  </div>
+  <div class="flex">
+    <div class="left">
+      <div class="upload flex" *ngIf="!isFile()" [@fadeInAnimation]="true">
+        <div class="upload__icon">
+          <i class="icon-cloud-download"></i>
+          <input
+            (change)="fileChange($event)"
+            #fileInput
+            type="file"
+            name="file"
+            class="inputfile"
+            [accept]="fileTypes()"/>
+        </div>
+        <div class="upload__icon" (click)="onOpenContentPool.emit()">
+          <i class="icon-folder-alt"></i>
+        </div>
+      </div>
+
+      <div class="source" *ngIf="isFile()" [@fadeInAnimation]="true">
+        <div class="flex">
+          <div class="wrap__img">
+            <div class="cover">
+              <i class="icon-plus" (click)="removeCurrentFile()"></i>
+            </div>
+            <div *ngIf="isVideo()" class="video__local-cover img__local-cover">
+              <img src="../../../../../../../../assets/images/dashboard/video.svg" alt="">
+            </div>
+            <div class="img__local-cover" *ngIf="isImage()" [ngStyle]="localImageStyle()"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="right__title-wrap">
+        <input
+          maxlength="40"
+          type="text"
+          [(ngModel)]="item.name"
+          class="input_default right__title"
+          [placeholder]="'LinkedPost.title' | translate">
+        <span>{{getNumberOfAvailablleSymbols()}}</span>
+      </div>
+
+      <textarea
+        type="text"
+        [(ngModel)]="item.description"
+        class="input_default right__desc"
+        [placeholder]="'LinkedPost.description' | translate">
+    </textarea>
+    </div>
+  </div>
+
+</div>

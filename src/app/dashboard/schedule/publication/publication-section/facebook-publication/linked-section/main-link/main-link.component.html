@@ -1,0 +1,9 @@
+<div class="container flex">
+  <input
+    [value]="value"
+    #mainLinkInput
+    type="text"
+    class="input_default section-text"
+    [placeholder]="'LinkedPost.typeToAddLinkToYourPost' | translate"
+    (input)="inputChange(mainLinkInput.value)">
+</div>

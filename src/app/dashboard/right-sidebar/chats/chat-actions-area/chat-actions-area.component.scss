@@ -1,0 +1,56 @@
+@import '~scss/_variables.scss';
+
+:host {
+  background-color: $white;
+}
+
+.actions-area {
+  position: relative;
+  &__form {
+    display: block;
+    height: 100%;
+  }
+  &__text {
+    flex-grow: 1;
+  }
+  &__textarea {
+    color: $warm-grey;
+    font-size: 14px;
+    border: none;
+    border-top: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+    outline: none;
+    background: $white-four;
+    width: 100%;
+    min-height: 56px;
+    overflow: hidden;
+    padding: 10px 30px;
+    max-height: 40vh;
+    overflow-y: auto;
+    &::-webkit-input-placeholder {
+      color: $greyish;
+    }
+  }
+  &__controls {
+    display: flex;
+    justify-content: flex-end;
+    margin: 24px 30px 40px 30px;
+  }
+  &__file {
+    margin-right: 8px;
+  }
+  &__attach {
+    display: inline-block;
+    padding: 5px;
+    border: solid 1px $tangerine;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  &__attach-icon {
+    width: 18px;
+  }
+
+  @media (max-width: 1400px) {
+    padding-left: 0;
+  }
+}

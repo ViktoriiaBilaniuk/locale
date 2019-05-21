@@ -1,0 +1,41 @@
+<div class="reset">
+  <form [formGroup]="resetForm" (ngSubmit)="reset()" *ngIf="!resetSuccessfully; else resetSuccess" class="reset__form" autocomplete="off">
+    <div class="form-group">
+      <sl-show-hide-password>
+        <input id="password" type="password" class="floated" [ngClass]="{'not-empty': resetForm.value.password}" formControlName="password">
+        <label for="password" class="control-label" translate>Auth.newPassword</label>
+      </sl-show-hide-password>
+
+      <div class="sl-error-msg"
+           *ngIf="password.invalid && (password.touched || formIsSubmitted)">
+        <div *ngIf="password.errors.required" translate>Validation.password.required</div>
+        <div *ngIf="password.errors.minlength || password.errors.maxlength" translate>
+          Validation.password.length
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <sl-show-hide-password>
+        <input id="password_confirmation" type="password" class="floated" [ngClass]="{'not-empty': resetForm.value.password_confirmation}" formControlName="password_confirmation">
+        <label for="password_confirmation" class="control-label" translate>Auth.reNewPassword</label>
+      </sl-show-hide-password>
+
+      <div class="sl-error-msg"
+           *ngIf="password_confirmation.invalid && (password_confirmation.touched || formIsSubmitted)">
+        <div *ngIf="password_confirmation.errors.required" translate>Validation.password.required</div>
+        <div *ngIf="password_confirmation.errors.minlength || password_confirmation.errors.maxlength" translate>
+          Validation.password.length
+        </div>
+      </div>
+    </div>
+
+    <button class="btn btn-fancy reset__submit" translate>Auth.save</button>
+  </form>
+
+  <ng-template #resetSuccess>
+     <div class="reset__success-msg" translate>Auth.resetPassSuccess</div>
+     <a  [routerLink]="['./../login']" class="forgot-pass__login-link" translate>Auth.backToLogin</a>
+  </ng-template>
+</div>
+
+<sl-contact-us-link></sl-contact-us-link>

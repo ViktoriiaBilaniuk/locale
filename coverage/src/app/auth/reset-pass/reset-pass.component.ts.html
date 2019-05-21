@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/app/auth/reset-pass/reset-pass.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">All files</a> / <a href="index.html">src/app/auth/reset-pass</a> reset-pass.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">40.91% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>18/44</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">8.33% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">40% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>16/40</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+&nbsp;
+import { Observable } from 'rxjs/Observable';
+import { AuthService } from './../../core/services/auth/auth.service';
+import { ValidationService } from './../../core/services/validation/validation.service';
+import { TrackingSerivce } from './../../core/services/tracking/tracking.service';
+&nbsp;
+@Component({
+  selector: 'sl-reset-pass',
+  templateUrl: './reset-pass.component.html',
+  styleUrls: ['./reset-pass.component.scss']
+})
+export class ResetPassComponent implements OnInit {
+  resetForm: FormGroup;
+  formIsSubmitted: boolean;
+  resetSuccessfully: boolean;
+  type: string;
+  private resetToken: string;
+  private initial: boolean;
+&nbsp;
+<span class="fstat-no" title="function not covered" >  constructor(</span>
+    private <span class="cstat-no" title="statement not covered" >fb: FormBuilder,</span>
+    private <span class="cstat-no" title="statement not covered" >validation: ValidationService,</span>
+    private <span class="cstat-no" title="statement not covered" >auth: AuthService,</span>
+    private <span class="cstat-no" title="statement not covered" >route: ActivatedRoute,</span>
+    private <span class="cstat-no" title="statement not covered" >router: Router,</span>
+    private <span class="cstat-no" title="statement not covered" >track: TrackingSerivce</span>
+  ) { }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ngOnInit() {</span>
+<span class="cstat-no" title="statement not covered" >    this.createForm();</span>
+<span class="cstat-no" title="statement not covered" >    this.getQueryParams();</span>
+  }
+&nbsp;
+  // Getters
+<span class="fstat-no" title="function not covered" >  get password() {</span>
+<span class="cstat-no" title="statement not covered" >    return this.resetForm.get('password');</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  get password_confirmation() {</span>
+<span class="cstat-no" title="statement not covered" >    return this.resetForm.get('password_confirmation');</span>
+  }
+&nbsp;
+  /**
+  * @description
+  * Create reactive form
+  *
+  * @memberof LoginComponent
+  */
+<span class="fstat-no" title="function not covered" >  createForm() {</span>
+<span class="cstat-no" title="statement not covered" >    this.resetForm = this.fb.group({</span>
+      password: ['', this.validation.getValidator().password],
+      password_confirmation: ['', this.validation.getValidator().password]
+    });
+  }
+&nbsp;
+  /**
+   * @description
+   * Get query params from url
+   * =&gt; In case no params - redirect to login page
+   *
+   * @memberof ResetPassComponent
+   */
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  getQueryParams() {</span></span>
+<span class="cstat-no" title="statement not covered" >    this.route.queryParams.subscribe(<span class="fstat-no" title="function not covered" >(</span>params) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      this.initial = JSON.parse(params.initial);</span>
+<span class="cstat-no" title="statement not covered" >      if (params.type &amp;&amp; params.token) {</span>
+<span class="cstat-no" title="statement not covered" >        this.type = params.type;</span>
+<span class="cstat-no" title="statement not covered" >        this.resetToken = params.token;</span>
+      } else {
+<span class="cstat-no" title="statement not covered" >        this.router.navigate(['auth/login']);</span>
+      }
+    });
+  }
+&nbsp;
+  /**
+   * @description
+   * Reset pass for user/employee
+   *
+   * @memberof ResetPassComponent
+   */
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  reset() {</span></span>
+<span class="cstat-no" title="statement not covered" >    if (this.resetForm.valid) {</span>
+<span class="cstat-no" title="statement not covered" >      this.authCall</span>
+        .subscribe(<span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >          this.resetSuccessfully = true;</span>
+<span class="cstat-no" title="statement not covered" >          this.track.userResetPassword('Success');</span>
+        }, <span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" ></span>this.track.userResetPassword('Error'))</span>;
+    } else {
+<span class="cstat-no" title="statement not covered" >      this.formIsSubmitted = true;</span>
+    }
+  }
+<span class="fstat-no" title="function not covered" >  get authCall (): Observable&lt;any&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return this.initial ?</span>
+      this.auth.initPass(this.resetForm.value, this.type, this.resetToken) :
+      this.auth.resetPass(this.resetForm.value, this.type, this.resetToken);
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Oct 26 2018 12:25:15 GMT+0300 (EEST)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

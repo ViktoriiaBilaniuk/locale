@@ -1,0 +1,28 @@
+<div
+  class="chat-body right-sidebar__wrapper"
+  #chat
+  [scrollTop]="scrollToNewMessages ? chat.scrollHeight: 0"
+  (scroll)="onScroll($event)">
+  <div class="loading" *ngIf="!messages">
+    <sl-loading></sl-loading>
+  </div>
+  <div *ngIf="messages && messages.length" [@fadeInAnimation]="true">
+    <div *ngIf="!hasMessages" translate class="start">Chat.start</div>
+    <sl-message
+      class="chat-body__msg"
+      *ngFor="let message of messages; let i = index"
+      [currentUserId]="userId"
+      [expand]="expand"
+      [message]="message"
+      [searchResult]="searchResult"
+      [previousMessage]="i? messages[i-1] : null"
+      [participants]="participants"></sl-message>
+  </div>
+  <div class="chat-body__empty" *ngIf="messages && messages.length === 0" [@fadeInAnimation]="true">
+    <figure>
+      <img src="assets/images/dashboard/empty-chat.svg">
+    </figure>
+    <h3 translate>Chat.noMessages</h3>
+  </div>
+</div>
+

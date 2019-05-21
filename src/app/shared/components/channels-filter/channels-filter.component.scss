@@ -1,0 +1,104 @@
+@import '~scss/_variables.scss';
+
+.channels-filter {
+  width: 240px;
+  max-height: 385px;
+  background-color: $white-two;
+  padding: 20px 0 20px 20px;
+  display: flex;
+  flex-direction: column;
+  hr {
+    background-color: $pinkish-grey;
+    width: 194px;
+  }
+
+  &__all {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 12px;
+    &--label {
+      font-size: 14px;
+      color: $black;
+    }
+  }
+
+  .box {
+    width: 18px;
+    height: 18px;
+    border-radius: 2px;
+    border: 2px solid #777777;
+    flex-shrink: 0;
+    flex-grow: 0;
+    position: relative;
+    margin-right: 26px;
+      i.icon{
+        display: none;
+        position: absolute;
+        top: 2px;
+        left: 3px;
+        width: 12px;
+      }
+      &.checked {
+        border: none;
+        background-color: $tangerine;
+          i.icon {
+            display: inline-block;
+          }
+      }
+  }
+
+  .channels-filter__list {
+    margin: 8px 0 0;
+    padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+      &--item {
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+      }
+      &--item:last-child {
+        margin-bottom: 0;
+      }
+  }
+
+  .channels-filter__list--channel {
+    display: flex;
+    align-items: center;
+    .icon {
+      min-width: 24px;
+      min-height: 24px;
+      margin-right: 8px;
+    }
+    span {
+      width: 140px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: left;
+      font-size: 14px;
+      margin-right: 4px;
+      color: $black;
+    }
+  }
+}
+
+@media (max-width: 1780px) {
+  .channels-filter {
+    width: 190px;
+    hr {
+      width: 144px;
+    }
+  }
+
+  .channels-filter .channels-filter__list--channel {
+    span {
+      width: 90px;
+      font-size: 13.5px;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+<div class="personal-details">
+  <h3 translate>Settings.personalDetails</h3>
+  <form class="personal-details__form" [formGroup]="form" (ngSubmit)="save()" autocomplete="off">
+   <div class="form-group">
+     <input id="display_name" type="text" class="floated" [ngClass]="{'not-empty': form.value.display_name}" formControlName="display_name">
+     <label for="display_name" class="control-label" translate>Settings.displayName</label>
+
+     <div class="sl-error-msg"
+          *ngIf="display_nameCtrl.invalid && (display_nameCtrl.touched || formIsSubmitted)">
+       <div *ngIf="display_nameCtrl.errors.required" translate>Validation.displayName.required</div>
+       <div *ngIf="display_nameCtrl.errors.maxlength" translate>Validation.displayName.length</div>
+     </div>
+   </div>
+
+    <div class="form-group">
+      <input id="email" type="email" class="floated" [ngClass]="{'not-empty': form.value.email}" formControlName="email">
+      <label for="email" class="control-label" translate>Settings.emailAddress</label>
+
+      <div class="sl-error-msg"
+           *ngIf="emailCtrl.invalid && (emailCtrl.touched || formIsSubmitted)">
+        <div *ngIf="emailCtrl.errors.required" translate>Validation.email.required</div>
+        <div *ngIf="emailCtrl.errors.pattern" translate>Validation.email.format</div>
+      </div>
+      <div class="sl-error-msg" *ngIf="emailInUse && !emailCtrl.invalid">
+        <div translate>Settings.emailInUse</div>
+      </div>
+    </div>
+
+    <button class="btn btn-fancy" translate>Settings.save</button>
+  </form>
+</div>

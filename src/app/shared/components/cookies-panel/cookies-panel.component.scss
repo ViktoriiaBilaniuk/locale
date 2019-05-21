@@ -1,0 +1,32 @@
+@import "~scss/_variables.scss";
+
+.cookies-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px 0px 40px;
+  background-color: $black;
+  height: 72px;
+  width: 100vw;
+  color: $white-two;
+  font-size: 14px;
+  &__more-info {
+    text-decoration: none;
+    color: $tangerine;
+  }
+
+  button {
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: $tangerine;
+    padding: 8px 15px;
+    font-size: 12px;
+    font-family: Nunito;
+    color: $white-two;
+    font-weight: 800;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+  }
+}
+

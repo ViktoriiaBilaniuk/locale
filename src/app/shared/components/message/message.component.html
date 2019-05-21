@@ -1,0 +1,61 @@
+<div class="message" [ngClass]="{'group': !showHeader}">
+  <div *ngIf="isNotification"  class="message__notification">
+    {{ message.content.text }}
+    <span>{{((isTodaysMessage ? 'Chat.at' : 'Chat.on') | translate) + formattedDate}}</span>
+  </div>
+  <div
+    *ngIf="!isNotification"
+    class="message__content"
+    [ngClass]="{'message__content_current': isCurrentUserMessage}">
+    <figure
+      [class.message__avatar]="!searchResult"
+      [class.message__avatar-small]="searchResult"
+      *ngIf="showHeader && !isCurrentUserMessage">
+      <div
+        [style.backgroundImage]="'url(' + user?.image +')'"
+        *ngIf="user && user?.image; else defaultAvatar"
+        alt="avatar">
+      </div>
+      <ng-template #defaultAvatar>
+        <img src="assets/images/avatar-placeholder.svg" alt="avatar">
+      </ng-template>
+    </figure>
+
+    <div class="message__data" [ngClass]="{'message__data_expand': expand}">
+      <div [class.message__info]="!searchResult" [class.message__info-small]="searchResult" *ngIf="showHeader">
+        <span
+          *ngIf="!isCurrentUserMessage"
+          [class.message__author]="!searchResult"
+          [class.message__author-small]="searchResult">
+          {{userName}}
+        </span>
+        <span
+          [class.message__time]="!searchResult"
+          [class.message__time-small]="searchResult">
+          {{formattedDate}}
+        </span>
+      </div>
+      <sl-shared-post [expand]="expand" [post]="message.content" *ngIf="isPost"></sl-shared-post>
+      <div
+        [ngClass]="{'message__text_current': isCurrentUserMessage}"
+        [class.message__text]="!searchResult"
+        [class.message__text-small]="searchResult"
+        *ngIf="isText">
+        <a
+          *ngIf="isUrl"
+          target="_blank"
+          [href]="message.content.text"
+          innerHTML="{{message.content.text}}">
+        </a>
+        <span *ngIf="!isUrl" innerHTML="{{message.content.text}}"></span>
+      </div>
+      <sl-attachment
+        *ngIf="!isPost && !isText;"
+        [message]="message"
+        [expand]="expand"
+        [searchResult]="searchResult"
+        (click)="track.viewChatAttachment()">
+      </sl-attachment>
+    </div>
+  </div>
+</div>

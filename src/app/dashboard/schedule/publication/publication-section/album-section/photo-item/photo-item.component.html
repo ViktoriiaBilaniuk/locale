@@ -1,0 +1,13 @@
+<div class="wrap">
+  <hr>
+  <div class="content flex">
+    <div class="img" [ngStyle]="{'background-image': 'url(' + file.url + ')'}"></div>
+    <textarea
+      class="desc"
+      #mainInput
+      [placeholder]="'Channels.photoDesc' | translate"
+      [(ngModel)]="file.desc">
+    </textarea>
+    <i class="icon-plus icon-remove" (click)="removeFile()"></i>
+  </div>
+</div>

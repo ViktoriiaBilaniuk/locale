@@ -1,0 +1,147 @@
+@import '~scss/_variables.scss';
+
+.wrap {
+  background-color: $white;
+  padding-bottom: 20px;
+}
+
+.content {
+  width: 500px;
+  margin: 0 auto;
+  background-color: white;
+  border: 1px solid #dddfe2;
+  padding: 1rem 10px;
+  display: flex;
+  font-family: Roboto;
+}
+
+.left {
+  margin-right: 5px;
+  width: 43px;
+  .icon {
+    width: 43px;
+    height: 43px;
+    background-color: $tangerine;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.right {
+  margin-left: 5px;
+  width: calc(100% - 55px);
+  .header {
+    justify-content: flex-start;
+    align-items: center;
+    .name {
+      font-size: 15px;
+      line-height: 20px;
+      color: rgb(20, 23, 26);
+      font-weight: 700;
+      font-family: sans-serif;
+      &:hover {
+        text-decoration: none !important;
+      }
+      &__disabled {
+        &:hover {
+          pointer-events: none !important;
+        }
+      }
+      .red {
+        color: $scarlet !important;
+      }
+    }
+    .dot {
+      margin: 0 5px;
+    }
+    .time {
+      color: rgb(101, 119, 134);
+      font-size: 15px;
+      line-height: 20px;
+      font-weight: 400;
+    }
+
+  }
+}
+
+.middle {
+  line-height: 20px;
+  &__desc {
+    font-size: 14px;
+    color: rgb(29, 33, 41);
+    font-weight: 400;
+    text-align: left;
+    word-break: break-word;
+    white-space: pre-wrap;
+    font-family: Roboto;
+  }
+  &__img {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    text-align: left;
+    .img {
+      width: 100%;
+      height: 235px;
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 15px;
+    }
+    img {
+      width: auto;
+      height: auto;
+      border-radius: 12px;
+    }
+    .video {
+      border-radius: 15px;
+      overflow: hidden;
+      line-height: 0;
+      -webkit-mask-image: -webkit-radial-gradient(white, white);
+      video {
+        width: 100%;
+      }
+    }
+  }
+}
+
+:host ::ng-deep .insta-tag, :host ::ng-deep .fb-link  {
+  color: rgb(29, 161, 242) !important;
+}
+
+.bottom {
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    width: 79%;
+    padding: 0;
+    max-width: 260px;
+  }
+  &__item {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+  &__icon {
+    width: 22px;
+  }
+}
+
+.mobile {
+  width: 375px;
+  .img {
+    height: 167px;
+  }
+}
+
+.red {
+  color: $scarlet !important;
+}
+
+.warning {
+  text-align: left;
+  margin-bottom: 10px;
+  font-size: 10px;
+}

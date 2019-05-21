@@ -1,0 +1,74 @@
+@import '~scss/_variables.scss';
+
+.wrapper {
+  margin-bottom: 10px;
+}
+.content {
+  &__more {
+    color: $tangerine;
+    cursor: pointer;
+  }
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px;
+  }
+  &__tag {
+    display: inline-block;
+    background-color: #eeeeee;
+    border-radius: 4px;
+    margin: 2px;
+    padding: 0 8px;
+    margin-bottom: -5px;
+    max-width: 100%;
+  }
+  &__checkbox {
+    margin-left: 15px;
+  }
+}
+
+.other {
+  margin-bottom: 25px;
+  &__item {
+    display: flex;
+  }
+  button {
+    padding: 0;
+    border: none;
+    background: none;
+    outline: none;
+    width: 21px;
+    margin-right: 5px;
+  }
+  i {
+    font-size: 16px;
+    color: $black;
+  }
+  input {
+    border-bottom: 1px solid #aaa;
+    margin: 0 2px;
+    font-size: 16px;
+    width: 100%;
+  }
+  .icon {
+    &_plus {
+      color: $black;
+      font-size: 16px;
+    }
+    &_delete {
+      color: $scarlet;
+      font-size: 16px;
+    }
+  }
+}
+
+.edit-section {
+  padding: 20px;
+  background-color: $white;
+}
+
+.content:hover .icon-pencil {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.2s ease-out;
+}

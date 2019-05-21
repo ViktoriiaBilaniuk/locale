@@ -1,0 +1,74 @@
+@import '~scss/_variables.scss';
+
+.channels {
+  margin: 8px 0 0;
+  padding: 20px;
+  padding-bottom: 30px;
+  width: 300px;
+  background-color: $white;
+  &__channel {
+    display: flex;
+    align-items: center;
+    width: 83%;
+    .icon {
+      width: 24px;
+    }
+    span {
+      color: $greyish-brown-two;
+      font-size: 14px;
+      margin-left: 8px;
+      width: 85%;
+      text-align: left;
+      pointer-events: none;
+    }
+  }
+  &__item {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background-color: $white;
+    &_dissabled {
+      opacity: 0.5;
+      cursor: default;
+    }
+    &_wrap {
+      margin-bottom: 16px;
+      position: relative;
+      list-style: none;
+    }
+  }
+  &__item:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.box {
+  width: 18px;
+  height: 18px;
+  border-radius: 2px;
+  border: 2px solid #777777;
+  flex-shrink: 0;
+  flex-grow: 0;
+  position: relative;
+  i.icon{
+    display: none;
+    position: absolute;
+    top: 2px;
+    left: 3px;
+    width: 12px;
+  }
+  &.checked {
+    border: none;
+    background-color: $tangerine;
+    i.icon {
+      display: inline-block;
+    }
+  }
+}
+
+.disable {
+  pointer-events: none;
+  opacity: 0.5;
+}

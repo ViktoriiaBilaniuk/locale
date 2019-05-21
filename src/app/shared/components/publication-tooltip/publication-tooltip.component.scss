@@ -1,0 +1,57 @@
+@import '~scss/_variables.scss';
+
+.tooltip {
+  color: #ffffff;
+  background-color: #aaaaaa;
+  border-radius: 5px;
+  position: absolute;
+  padding: 0px 5px;
+  height: 35px;
+  align-items: center;
+  display: flex;
+  font-size: 12px;
+  font-family: Nunito;
+  justify-content: center;
+  max-width: 109px;
+  line-height: 15px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 10;
+
+  &:before {
+    content: ' ';
+    border-top: 10px solid #aaaaaa;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    top: -24%;
+    transform: rotate(-180deg);
+    position: absolute;
+  }
+}
+
+.visible {
+  opacity: 1;
+  transition: opacity 0.3s linear;
+  transition-delay: 1s;
+  visibility: visible;
+}
+
+.animation {
+  &_fadeIn {
+      animation: fadeIn 1s;
+  }
+  &_fadeOut {
+    animation: fadeOut 1s;
+  }
+
+}
+
+@keyframes fadeIn {
+  0%   { opacity:0; }
+  100% { opacity:1; }
+}
+
+@keyframes fadeOut {
+  0%   { opacity:1; }
+  100% { opacity:0; }
+}

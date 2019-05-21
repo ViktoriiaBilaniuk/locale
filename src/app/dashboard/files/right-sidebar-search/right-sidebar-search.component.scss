@@ -1,0 +1,65 @@
+@import '~scss/_variables.scss';
+
+.sidebar-search {
+  padding: 0 50px;
+  height: 48px;
+  background-color: $white;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  &__input-wrapper {
+    position: relative;
+
+    i{
+      &::before{
+        color: $greyish;
+        width: 18px;
+        height: 18px;
+        bottom: 10px;
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+  &__input {
+    color: $black;
+    width: 359px;
+    font-size: 14px;
+    &.padded{
+      padding-left: 20px;
+    }
+  }
+}
+
+.upload {
+  color: $greyish-brown-two;
+  font-size: 14px;
+  line-height: 1.71;
+  height: 48px;
+  align-items: center;
+  margin-right: 50px;
+  cursor: pointer;
+  width: 100%;
+  justify-content: flex-end;
+  &__file {
+    display: flex;
+    align-items: center;
+  }
+  &__icon {
+    font-size: 20px;
+    color: $tangerine;
+    margin-right: 4px;
+  }
+
+  .inputfile {
+    z-index: 1;
+    width: 140px;
+    height: 48px;
+    cursor: pointer;
+  }
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}

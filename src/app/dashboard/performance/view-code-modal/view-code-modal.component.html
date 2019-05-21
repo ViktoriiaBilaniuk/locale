@@ -1,0 +1,10 @@
+<div class="view-code-modal">
+  <div class="view-code-modal__overlay" (click)="hideModal()"></div>
+    <div class="view-code-modal__content" >
+      <sl-code-title (closeCodeModal)="hideModal()"></sl-code-title>
+      <sl-code-body
+        [type]="type"
+        [codeSnippet]="codeSnippet">
+      </sl-code-body>
+  </div>
+</div>

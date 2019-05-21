@@ -1,0 +1,84 @@
+<sl-performance-filters (onDateChange)="onDateChange($event)"></sl-performance-filters>
+
+<div>
+  <div class="container" [ngClass]="{'hide': showSpinner}">
+    <div class="channels-performance">
+      <span class='header__title' translate>Performance.channelsPerformance</span>
+      <div class="channels-performance__data">
+        <sl-main-chart
+          [startDate]="startDate"
+          [endDate]="endDate"
+          [tableSource]="tableSource"
+          [booking]="booking"
+          [webTraffic]="landing"
+          [pastMetrics]="pastMetricsArray"
+          [currentMetrics]="currentMetricsArray"
+          ></sl-main-chart>
+        <sl-performance-table
+          (tableData)="onSetTableSource($event)"
+          (metricsGroupedByDateArray)="setMetricsGroupedByDate($event)"
+          [booking]="booking"
+          [landing]="landing"
+          [metricsGroupedByDate]="metricsGroupedByDate"
+          [metricsGroupedByDateInPast]="metricsGroupedByDateInPast"
+          [lastDayOfPastPeriodAfterPastPeriod]="lastDayOfPastPeriodAfterPastPeriod"
+        ></sl-performance-table>
+      </div>
+    </div>
+
+    <div class="small-draphics flex" >
+      <div class="small-draphic first">
+        <sl-performance-title [title]="'Performance.bookings/orders'"></sl-performance-title>
+        <sl-small-chart
+          *ngIf="hasBookings; else noBookings"
+          [data]="booking">
+        </sl-small-chart>
+      </div>
+      <div class="small-draphic">
+        <sl-performance-title [title]="'Performance.websiteTraffic'"></sl-performance-title>
+        <sl-small-chart
+          *ngIf="hasLandings; else noLanding"
+          [data]="landing">
+        </sl-small-chart>
+      </div>
+      <ng-template #noBookings>
+        <sl-no-data [type]="'booking'" [dataNotExists]="noBookingData" (showViewCodeModal)="showViewCodeModal($event)"></sl-no-data>
+      </ng-template>
+      <ng-template #noLanding>
+        <sl-no-data [type]="'landing'" [dataNotExists]="noLandingData" (showViewCodeModal)="showViewCodeModal($event)"></sl-no-data>
+      </ng-template>
+    </div>
+    <div class="social-media">
+      <sl-performance-title [title]="'Performance.socialMedia'"></sl-performance-title>
+      <sl-social-media [data]="fbMetrics" [mediaType]="'fb'" (selectChannel)="onViewPostClick($event)" ></sl-social-media>
+      <sl-social-media [data]="instagramMetrics" [mediaType]="'instagram'"></sl-social-media>
+      <sl-social-media [data]="twitterMetrics" [mediaType]="'twitter'"></sl-social-media>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="showSpinner">
+  <div class="loading loading__media"><sl-loading></sl-loading></div>
+</div>
+
+<sl-performance-modal *ngIf="postsIsOpen" (close)="closePerformanceModal()">
+  <sl-performance-modal-header [selectedChannel]="selectedChannel" (close)="closePerformanceModal()"></sl-performance-modal-header>
+  <sl-performance-modal-filter [currentPostFilter]="currentPostFilter" (applyFilter)="onApplyFilter($event)" ></sl-performance-modal-filter>
+  <div class="performance-modal-posts" *ngIf="!postsLoading" [@fadeInAnimation]="true">
+      <sl-performance-post
+        *ngFor="let post of posts"
+        [post]="post">
+      </sl-performance-post>
+  </div>
+  <div *ngIf="postsLoading">
+    <div class="loading"><sl-loading></sl-loading></div>
+  </div>
+</sl-performance-modal>
+
+<sl-view-code-modal
+  [type]="type"
+  [venuePublicId]="venuePublicId"
+  (close)="closeViewCodeModal()"
+  *ngIf="isViewCodeModal">
+</sl-view-code-modal>

@@ -1,0 +1,100 @@
+@import '~scss/_variables.scss';
+
+.content {
+  i {
+    font-size: 48px;
+    color: $pinkish-grey;
+  }
+}
+
+section{
+  text-align: center;
+  position: relative;
+  padding-bottom: 120px;
+  padding-top: 32px;
+  width: 200px;
+  background-color: $white;
+}
+
+p {
+  font-family: Nunito;
+  font-size: 16px;
+  font-weight: 600;
+  color: $black;
+  display: inline-block;
+}
+
+button {
+  margin-top: 10px;
+  position: relative;
+}
+
+button[disabled] {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.action {
+  width: 200px;
+  position: absolute;
+  bottom: 20px;
+}
+
+sl-dark-modal {
+  overflow: auto;
+}
+.modal-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.modal-text {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.modal-buttons {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.tooltip {
+  color: $white-two;
+  background-color: black;
+  position: absolute;
+  border-radius: 2px;
+  padding: 0px 13px;
+  height: 48px;
+  align-items: center;
+  display: flex;
+  font-size: 12px;
+  font-family: Nunito;
+  left: 80px;
+  top: -15px;
+
+  &:before {
+    content: ' ';
+    border-top: 22px solid black;
+    border-left: 24px solid transparent;
+    border-right: 24px solid transparent;
+    left: -34px;
+    transform: rotate(90deg);
+    bottom: 13px;
+    position: absolute;
+  }
+}
+
+@media (max-width: 1600px) {
+  :host ::ng-deep .sl-dark-modal__content {
+    width: 80% !important;
+  }
+}
+
+@media (max-width: 1300px) {
+  :host ::ng-deep .sl-dark-modal__content {
+    width: 95% !important;
+    max-width: 95% !important;
+  }
+}

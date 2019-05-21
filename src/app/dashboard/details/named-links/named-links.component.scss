@@ -1,0 +1,51 @@
+@import '~scss/_variables.scss';
+
+.named-links{
+  span {
+    color: $greyish-brown;
+    font-size: 14px;
+    margin-left: 6px;
+  }
+  &__item{
+    border-radius: 4px;
+    background-color: $white-two;
+    border: solid 1px $white-four;
+    padding: 6px 10px;
+    margin: 8px 0;
+    font-size: 14px;
+    max-width: 550px;
+    a{
+      text-decoration: none;
+      display: flex;
+    }
+
+    span{
+      color: $greyish-brown;
+      margin-top: 2px;
+      width: 90%;
+    }
+
+    .edit{
+      border-radius: 4px;
+      padding: 3px;
+      margin-top: -2px;
+    }
+    &_active {
+      background-color: $white;
+
+    }
+  }
+  &__form{
+    margin-top: 10px;
+  }
+}
+
+.named-links:hover .icon-pencil {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.2s ease-out;
+}
+
+.add-new-link {
+  margin: 10px 0;
+}

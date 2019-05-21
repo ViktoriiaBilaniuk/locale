@@ -1,0 +1,94 @@
+<div class="filters" [@fadeInAnimation]="true" [style.marginRight]="getRightMarginForFilters()">
+  <sl-view-tabs
+    #viewTabs
+    [venueId]="venueId"
+    (onActivateViewTab)="onActivateViewTab($event)">
+  </sl-view-tabs>
+  <div class="filters__dropdown">
+    <sl-channels-search
+    class="filters__channels"
+    [channels]="venueChannels"
+    (onChangeChannels)="onChangeChannels($event)">
+    </sl-channels-search>
+    <sl-status-search
+      [statuses]="postStatuses"
+      class="filters__channels"
+      (onChangeStatus)="onChangeStatus($event)">
+    </sl-status-search>
+  </div>
+</div>
+<section class="date flex">
+
+  <button class="date__today btn btn-gray" translate (click)="navigateToToday()">Rightbar.today</button>
+
+  <div class="date__slider">
+    <sl-date-slider
+      *ngIf="activeTab === tab.MONTHLY"
+      type="month"
+      [baseFrom]="from"
+      [baseTo]="to"
+      (onChange)="setDateFilter($event)"
+      [max]="maxDate"
+      [min]="minDate">
+    </sl-date-slider>
+    <sl-date-slider
+      *ngIf="activeTab === tab.WEEKLY"
+      type="week"
+      [baseFrom]="from"
+      [baseTo]="to"
+      (onChange)="setDateFilter($event)"
+      [max]="maxDate"
+      [min]="minDate">
+    </sl-date-slider>
+  </div>
+</section>
+<div class="schedule">
+  <div [@fadeInAnimation]="true" class="posts_wrap" *ngIf="!loading && !channelLoading">
+    <div class="container">
+      <sl-weekly-view
+        *ngIf="activeTab === tab.WEEKLY"
+        (onEdit)="onEditPost($event)"
+        (onCopy)="onCopyPost($event)"
+        (onDelete)="onDeletePost($event)"
+        (onCreatePost)="onCreatePostClick($event)"
+        [navigateToTodayOnWeekly]="navigateToTodayOnWeekly.getValue()"
+        [navigateToDay]="navigateToDay.getValue()"
+        [allChannelsAreDissconnected]="allChannelsAreDissconnected()"
+        [channelsExists]="publicationChannels.length"
+        [postManagementPermission]="postManagementPermission"
+        [posts]="posts"
+        [from]="fromFilter">
+      </sl-weekly-view>
+      <sl-monthly-view
+        *ngIf="activeTab === tab.MONTHLY"
+        (onDateClick)="onMonthDateClick($event)"
+        (createClicked)="onCreatePostClick($event)"
+        [allChannelsAreDissconnected]="allChannelsAreDissconnected()"
+        [channelsExists]="publicationChannels.length"
+        [postManagementPermission]="postManagementPermission"
+        [posts]="posts"
+        [from]="fromFilter">
+      </sl-monthly-view>
+    </div>
+  </div>
+  <div class="loading" *ngIf="loading">
+    <sl-loading></sl-loading>
+  </div>
+</div>
+
+<div class="loading-cover" *ngIf="loadingOnDeletePost">
+  <div>
+    <sl-loading></sl-loading>
+  </div>
+</div>
+
+<sl-functional-item
+  class="post-wrapp"
+  *ngIf="postManagementPermission"
+  [channels]="publicationChannels"
+  [dissableBtn]="allChannelsAreDissconnected()"
+  [type]="'create'"
+  (onPostCreateAndCopy)="onPostCreateAndCopy()"
+  (onPostCreate)="onPostCreate()">
+</sl-functional-item>
+<!--<sl-functional-item class="post-wrapp" [channels]="channels" [type]="'open'"></sl-functional-item>-->

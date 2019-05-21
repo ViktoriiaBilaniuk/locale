@@ -1,0 +1,45 @@
+<div class="container" (clickOutside)="onClickedOutside()">
+  <div class="user-block user right-sidebar__wrapper">
+    <div class="user__icon" [ngStyle]="{'background-image': 'url(' + user?.image + ')'}">
+      <span *ngIf="!user?.image">{{user?.display_name.charAt(0).toUpperCase()}}</span>
+    </div>
+    <div class="user__info">
+      <div class="info flex flex_justify-content-space-between">
+        <span class="name truncated-text">{{user?.display_name}}</span>
+        <i class="icon-options hoverable" (click)="toggleMenu()"></i>
+      </div>
+      <div class="info__state">
+        <span class="info__dot" [ngClass]="chatStatus"></span>
+        <span class="info__status">{{user?.chat_status}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="reach-out" (click)="bellClick()">
+    <div class="reach-out__icon">
+      <i class="icon-bell hover hover_grey"></i>
+      <i *ngIf="isReachOut()" class="reach-out__icon_circle">{{reachOutReasons.length}}</i>
+    </div>
+    <div *ngIf="isReachOut()" class="reasons" [ngClass]="{'reasons_visible': showReachOutDropdown}">
+      <ul>
+        <li *ngFor="let reason of reachOutReasons">{{reason}}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="user__menu"
+       [ngClass]="{'user__menu-visible': menuIsActive}">
+    <p  *ngFor="let status of chatStatuses" class="user__option" (click)="changeChatStatus(status.value)">
+      <i class="font-icon" [ngClass] ="getStatusClass(status.value)"></i>
+      <span class="user__option-text" translate> {{ 'Leftbar.setTo' + status.name }}</span>
+    </p>
+    <p class="user__option" [routerLink]="['/settings']">
+      <i class="icon-settings font-icon"></i>
+      <span class="user__option-text" translate>Leftbar.editProfile</span>
+    </p>
+    <p class="user__option" (click)="logout()">
+      <i class="icon-logout font-icon"></i>
+      <span class="user__option-text" translate>Leftbar.logout</span>
+    </p>
+  </div>
+</div>

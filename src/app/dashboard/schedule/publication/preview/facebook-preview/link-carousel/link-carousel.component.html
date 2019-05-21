@@ -1,0 +1,40 @@
+<div class="slider-container">
+  <div class="controls" *ngIf="data.length > 1">
+    <figure (click)="back()">
+      <i class="icon-arrow-left"></i>
+    </figure>
+    <figure (click)="next()">
+      <i class="icon-arrow-right"></i>
+    </figure>
+  </div>
+  <div class="slides" #slides>
+    <div
+      class="slide"
+      slSliderItem
+      *ngFor="let slide of data; index as i">
+      <a [href]="getLink(slide)" [ngClass]="{disabled: !getLink(slide)}" target="_blank">
+        <div
+          class="slide__source"
+          [style.backgroundImage]="'url(' + getSourceUrl(slide) + ')'">
+          <div *ngIf="slide.file.type === 'video'">
+            <video
+              width="300"
+              height="300"
+              controls
+              [src]="getSourceUrl(slide)">
+              Your browser does not support HTML5 video.
+            </video>
+          </div>
+        </div>
+        <div class="slide__info flex">
+          <div class="slide__left" [ngClass]="{'whole-width': !isCtaButton(slide)}">
+            <p class="slide__title">{{slide.name}}</p>
+            <p class="slide__desc truncated-text">{{slide.description}}</p>
+          </div>
+          <button *ngIf="isCtaButton(slide)" class="btn-cta">{{ctaButtonText(slide)}}</button>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</div>

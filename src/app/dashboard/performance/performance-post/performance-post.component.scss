@@ -1,0 +1,104 @@
+@import '~scss/_variables.scss';
+
+.performance-modal-posts__post {
+  border-radius: 4px;
+  overflow: hidden;
+  width: 200px;
+  margin: 0 39px 39px 0;
+
+  img {
+    width: 100%;
+  }
+
+  &--date {
+    margin-bottom: 2px;
+    background-color: #eeeeee;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-size: 12px;
+    color: $greyish-brown-two;
+    .icon-clock {
+      margin-right: 10px;
+    }
+    label{
+      font-weight: 700;
+      margin: 0;
+      padding: 0;
+    }
+    span{
+      margin: 0 3px;
+    }
+  }
+
+  &--description {
+    padding: 10px;
+    background-color: $white;
+
+    p {
+      font-size: 12px;
+      color: $black;
+      line-height: 1.5;
+    }
+  }
+
+  &--stats {
+    font-size: 12px;
+    color: $greyish-brown-two;
+
+    &--metric {
+      background-color: $white-four;
+      padding: 10px;
+      margin-bottom: 2px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      p {
+        text-transform: capitalize;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.total {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.paid, .organic {
+  padding: 5px;
+  color: $white-two;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.paid {
+  background-color: $tangerine;
+}
+
+.organic {
+  background-color: #3366cc;
+}
+
+.likes, .comments, .shares {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.likes {
+  color: #468ee5;
+}
+
+.comments {
+  color: #e3004a;
+}
+
+.shares {
+  color: #f7a700;
+}

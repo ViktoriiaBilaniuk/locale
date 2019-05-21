@@ -1,0 +1,21 @@
+@import '~scss/_variables.scss';
+
+.reset {
+  &__form {
+    margin-bottom: 39px;
+  }
+  &__submit {
+    width: 100%;
+    text-transform: uppercase;
+  }
+  &__mobile-link {
+    font-size: 24px;
+    color: #f7a700;
+  }
+  &__success-msg {
+    font-size: 18px;
+    color: $white-two;
+    line-height: 1.33;
+    margin: 25px 0 61px;
+  }
+}

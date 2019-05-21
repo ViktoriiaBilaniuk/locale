@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/app/dashboard/files/files.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">All files</a> / <a href="index.html">src/app/dashboard/files</a> files.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">28.13% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>27/96</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">3.7% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/27</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">28.74% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>25/87</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, OnDestroy, OnInit } from '@angular/core';
+import { VenueService } from '../../core/services/venue/venue.service';
+import { Subscription } from 'rxjs/Subscription';
+import { TrackingSerivce } from '../../core/services/tracking/tracking.service';
+import { UtilsService } from '../../core/services/utils/utils.service';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import {Store} from '../../core/store/store';
+import {fadeInAnimation} from '../../shared/animations/fade-in.animation';
+&nbsp;
+@Component({
+  selector: 'sl-files',
+  templateUrl: './files.component.html',
+  styleUrls: ['./files.component.scss'],
+  animations: [fadeInAnimation],
+})
+export class FilesComponent implements OnInit, OnDestroy {
+  venueId: any;
+  files;
+  venueFilesSubscriptions: Array&lt;Subscription&gt;;
+  searchValue;
+<span class="cstat-no" title="statement not covered" >  searchByTag = false;</span>
+  updatedFile;
+  scrollToNewFiles: boolean;
+<span class="cstat-no" title="statement not covered" >  numberItemsToLoad = 20;</span>
+<span class="cstat-no" title="statement not covered" >  skipNumber = 0;</span>
+  visibleConfirmWindow;
+  fileIdForRemove;
+  filter: BehaviorSubject&lt;any&gt;;
+  filesLoading;
+  filterSubscription;
+&nbsp;
+<span class="fstat-no" title="function not covered" >  constructor(</span>
+    private <span class="cstat-no" title="statement not covered" >venueService: VenueService,</span>
+    private <span class="cstat-no" title="statement not covered" >store: Store,</span>
+    private <span class="cstat-no" title="statement not covered" >track: TrackingSerivce,</span>
+    public <span class="cstat-no" title="statement not covered" >utils: UtilsService,</span>
+  ) { }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ngOnInit() {</span>
+<span class="cstat-no" title="statement not covered" >    this.venueFilesSubscriptions = [];</span>
+<span class="cstat-no" title="statement not covered" >    this.files = [];</span>
+<span class="cstat-no" title="statement not covered" >    this.getVenueId();</span>
+<span class="cstat-no" title="statement not covered" >    this.track.contentPoolOpened();</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  private getVenueId () {</span></span>
+<span class="cstat-no" title="statement not covered" >    this.filesLoading = true;</span>
+<span class="cstat-no" title="statement not covered" >    this.venueFilesSubscriptions.push(this.store.select('venue-details')</span>
+      .filter(<span class="fstat-no" title="function not covered" >(</span>details: any) =&gt; <span class="cstat-no" title="statement not covered" >details)</span>
+      .subscribe(<span class="fstat-no" title="function not covered" >(</span>venue: any) =&gt; {
+<span class="cstat-no" title="statement not covered" >        this.venueId = venue.id;</span>
+<span class="cstat-no" title="statement not covered" >        this.setupFilter();</span>
+      }));
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  fetchFiles(</span>venueId, search?) {</span>
+<span class="cstat-no" title="statement not covered" >    this.venueFilesSubscriptions.push(this.venueService.fetchFiles(venueId, this.skipNumber, this.numberItemsToLoad, search)</span>
+      .subscribe(<span class="fstat-no" title="function not covered" >data =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >          this.getFiles.bind(this)(data['files']);</span>
+        }
+      ));
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  getFiles(</span>files) {
+<span class="cstat-no" title="statement not covered" >    if (this.skipNumber) {</span>
+<span class="cstat-no" title="statement not covered" >      this.files = [...this.files, ...files];</span>
+    } else {
+<span class="cstat-no" title="statement not covered" >      this.files = files;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    this.scrollToNewFiles = !this.hasFiles(files.length);</span>
+<span class="cstat-no" title="statement not covered" >    this.filesLoading = false;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  hasFiles(</span>length) {
+<span class="cstat-no" title="statement not covered" >    return length &lt; this.numberItemsToLoad;</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  setupFilter () {</span></span>
+<span class="cstat-no" title="statement not covered" >    if (this.filterSubscription) {</span>
+<span class="cstat-no" title="statement not covered" >      this.filterSubscription.unsubscribe();</span>
+    }
+<span class="cstat-no" title="statement not covered" >    this.filter = new BehaviorSubject&lt;any&gt;('');</span>
+<span class="cstat-no" title="statement not covered" >    this.filterSubscription = this.filter.debounceTime(300)</span>
+      .distinctUntilChanged()
+      .subscribe(<span class="fstat-no" title="function not covered" >(</span>value) =&gt; {
+<span class="cstat-no" title="statement not covered" >        this.skipNumber = 0;</span>
+<span class="cstat-no" title="statement not covered" >        this.filesLoading = true;</span>
+<span class="cstat-no" title="statement not covered" >        this.fetchFiles(this.venueId, value);</span>
+      });
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  updateFile(</span>e) {</span>
+    const fileBody = <span class="cstat-no" title="statement not covered" >{</span>
+      name: e.name,
+      tags: e.tags
+    };
+    // this.track.updateFile();
+    const index = <span class="cstat-no" title="statement not covered" >e['index'];</span>
+<span class="cstat-no" title="statement not covered" >    this.venueFilesSubscriptions.push(this.venueService.updateFile(e['id'], fileBody)</span>
+      .subscribe( <span class="fstat-no" title="function not covered" >data =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        this.updatedFile = data['file'];</span>
+<span class="cstat-no" title="statement not covered" >        this.files[index] = this.updatedFile;</span>
+      })
+    );
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ngOnDestroy () {</span>
+<span class="cstat-no" title="statement not covered" >    if (this.venueFilesSubscriptions) {</span>
+<span class="cstat-no" title="statement not covered" >      this.venueFilesSubscriptions.forEach(<span class="fstat-no" title="function not covered" >(</span>subscription) =&gt; <span class="cstat-no" title="statement not covered" >subscription.unsubscribe())</span>;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    this.filter.unsubscribe();</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  onTagClick(</span>tag) {
+<span class="cstat-no" title="statement not covered" >    this.searchValue = tag.name;</span>
+<span class="cstat-no" title="statement not covered" >    this.searchByTag = true;</span>
+<span class="cstat-no" title="statement not covered" >    this.getFilesWithCurrentTag(tag);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  onTagFilterRemove () {</span>
+<span class="cstat-no" title="statement not covered" >    this.searchValue = '';</span>
+<span class="cstat-no" title="statement not covered" >    this.searchByTag = false;</span>
+<span class="cstat-no" title="statement not covered" >    this.skipNumber = 0;</span>
+<span class="cstat-no" title="statement not covered" >    this.filesLoading = true;</span>
+<span class="cstat-no" title="statement not covered" >    this.fetchFiles(this.venueId, '');</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  getFilesWithCurrentTag(</span>tag) {</span>
+<span class="cstat-no" title="statement not covered" >    this.venueFilesSubscriptions.push(this.venueService.fetchFilesByTag(this.venueId, tag.id)</span>
+      .subscribe(<span class="fstat-no" title="function not covered" >data =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        this.files = data['files'];</span>
+      }));
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  onSearch(</span>searchText) {
+<span class="cstat-no" title="statement not covered" >    this.filter.next(searchText);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  onScroll() {</span>
+<span class="cstat-no" title="statement not covered" >    if (this.scrollToNewFiles) {</span>
+<span class="cstat-no" title="statement not covered" >      this.skipNumber += this.numberItemsToLoad;</span>
+<span class="cstat-no" title="statement not covered" >      this.fetchFiles(this.venueId, this.filter.value);</span>
+    }
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  openConfirmModal(</span>fileId) {
+<span class="cstat-no" title="statement not covered" >    this.visibleConfirmWindow = true;</span>
+<span class="cstat-no" title="statement not covered" >    this.fileIdForRemove = fileId;</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  deleteFile() {</span></span>
+<span class="cstat-no" title="statement not covered" >    this.venueService.deleteFile(this.fileIdForRemove)</span>
+      .subscribe(<span class="fstat-no" title="function not covered" >data =&gt; {</span>
+        const removedFileId = <span class="cstat-no" title="statement not covered" >data['file'].id;</span>
+<span class="cstat-no" title="statement not covered" >        this.files.forEach(<span class="fstat-no" title="function not covered" >file =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >          if (file.id === removedFileId) {</span>
+<span class="cstat-no" title="statement not covered" >            this.files.splice(this.files.indexOf(file), 1);</span>
+<span class="cstat-no" title="statement not covered" >            this.closeConfirmModal();</span>
+          }
+        });
+      });
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  closeConfirmModal() {</span>
+<span class="cstat-no" title="statement not covered" >    this.visibleConfirmWindow = false;</span>
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Oct 26 2018 12:25:15 GMT+0300 (EEST)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

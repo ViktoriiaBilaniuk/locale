@@ -1,0 +1,30 @@
+@import '~scss/_variables.scss';
+
+.wrapper {
+  background-color: $white;
+  padding: 20px;
+
+  &__formats {
+    b, i, span {
+      font-size: 12px;
+      color: $warm-grey;
+    }
+  }
+
+}
+.textarea {
+  &_default {
+    height: auto;
+    width: 100%;
+    min-height: 100px;
+    border: none;
+    outline: none;
+    background: transparent;
+    border-bottom: 1px solid $tangerine;
+    margin-bottom: 10px;
+    overflow: hidden;
+    &::-webkit-input-placeholder {
+      color: $greyish;
+    }
+  }
+}

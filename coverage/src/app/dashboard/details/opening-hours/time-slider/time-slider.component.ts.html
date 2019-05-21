@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/app/dashboard/details/opening-hours/time-slider/time-slider.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../index.html">All files</a> / <a href="index.html">src/app/dashboard/details/opening-hours/time-slider</a> time-slider.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">43.48% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>20/46</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">9.09% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">41.86% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>18/43</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, OnInit, ViewChild, Input, Output, OnChanges, EventEmitter} from '@angular/core';
+import * as noUiSlider from 'nouislider';
+&nbsp;
+@Component({
+  selector: 'sl-time-slider',
+  templateUrl: './time-slider.component.html',
+  styleUrls: ['./time-slider.component.scss']
+})
+export class TimeSliderComponent implements OnInit, OnChanges {
+  from: any;
+  to: any;
+  values: any;
+  @ViewChild('slider') slider;
+  @Input() hours: any;
+  @Input() item: boolean;
+  @Input() sliderMode: boolean;
+  @Input() top: number;
+  @Output() change = new EventEmitter();
+  element: any;
+<span class="fstat-no" title="function not covered" >  constructor() { }</span>
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ngOnInit() {</span>
+<span class="cstat-no" title="statement not covered" >    this.setValues(this.hours &amp;&amp; this.hours.length ? this.hours : [ 540, 1080 ]);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ngOnChanges (</span>changes) {
+<span class="cstat-no" title="statement not covered" >    if (changes.hours &amp;&amp; this.element) {</span>
+<span class="cstat-no" title="statement not covered" >      this.element.noUiSlider.set(this.hours);</span>
+    }
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  setValues (</span>values) {
+<span class="cstat-no" title="statement not covered" >    this.values = values;</span>
+<span class="cstat-no" title="statement not covered" >    this.slide();</span>
+<span class="cstat-no" title="statement not covered" >    this.createSlider();</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  createSlider() {</span></span>
+<span class="cstat-no" title="statement not covered" >    this.element = this.slider.nativeElement.getElementsByClassName('slider')[0];</span>
+<span class="cstat-no" title="statement not covered" >    noUiSlider.create(this.element, {</span>
+      start: this.values,
+      step: 15,
+      range: {
+        'min': 0,
+        'max': 1440
+      },
+      connect: true
+    });
+    // @ts-ignore
+<span class="cstat-no" title="statement not covered" >    this.element.noUiSlider.on('update', <span class="fstat-no" title="function not covered" >(</span>values) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      this.values = values;</span>
+<span class="cstat-no" title="statement not covered" >      this.slide();</span>
+<span class="cstat-no" title="statement not covered" >      this.change.emit({values: this.values});</span>
+    });
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private slide () {</span>
+    const fromHours = <span class="cstat-no" title="statement not covered" >Math.floor(this.values[0] / 60);</span>
+    const fromMinutes = <span class="cstat-no" title="statement not covered" >this.values[0] - (fromHours * 60);</span>
+    const toHours = <span class="cstat-no" title="statement not covered" >Math.floor(this.values[1] / 60);</span>
+    const toMinutes = <span class="cstat-no" title="statement not covered" >this.values[1] - (toHours * 60);</span>
+<span class="cstat-no" title="statement not covered" >    this.updateFrom(fromHours, fromMinutes);</span>
+<span class="cstat-no" title="statement not covered" >    this.updateTo(toHours, toMinutes);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private updateFrom (</span>hours, minutes) {
+    const fromHours = <span class="cstat-no" title="statement not covered" >this.formatValue(hours);</span>
+    const fromMinutes = <span class="cstat-no" title="statement not covered" >this.formatValue(minutes);</span>
+<span class="cstat-no" title="statement not covered" >    this.from = `${fromHours} : ${fromMinutes}`;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private formatValue (</span>value) {
+<span class="cstat-no" title="statement not covered" >    return value &lt; 10 ? `0${value}` : value;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private updateTo (</span>hours, minutes) {
+    const toHours = <span class="cstat-no" title="statement not covered" >this.formatValue(hours);</span>
+    const toMinutes = <span class="cstat-no" title="statement not covered" >this.formatValue(minutes);</span>
+<span class="cstat-no" title="statement not covered" >    this.to = `${toHours} : ${toMinutes}`;</span>
+  }
+&nbsp;
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Oct 26 2018 12:25:15 GMT+0300 (EEST)
+</div>
+</div>
+<script src="../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<div class="named-links details-content">
+  <!-- START: Menus header and edit button -->
+  <div class="flex">
+    <div class="section-title" translate>Rightbar.namedLinks</div>
+    <i  (click)="onToggleEditMode()" *ngIf="canEdit" class="font-icon icon-pencil hoverable scaleable"></i>
+  </div>
+  <!-- END: Menus header and edit button -->
+
+  <div class="highlighted-text" [hidden]="links.length !== 0 || editMode">
+    {{ ('Rightbar.nothingHereYet' | translate ) + ' ' + ((canEdit ? 'Rightbar.clickPencilToEdit' : '') | translate) }}
+  </div>
+
+
+  <div (click)="showAddForm()" class="hoverable" *ngIf="editMode">
+    <i class="icon-plus icon_plus" ></i>
+    <span class="add-new-link" translate>Rightbar.addNewLink</span>
+  </div>
+
+
+  <div class="named-links__form" *ngIf="showAdd">
+    <sl-link-form (save)="hideAddForm($event.item)" [item]="editItem" (cancel)="cancelAdd()"></sl-link-form>
+  </div>
+
+
+  <!-- START: Menus list -->
+  <div *ngIf="!addNew">
+    <div *ngFor="let link of links">
+      <div class="named-links__item" [ngClass]="{'named-links__item_active': showEdit && editItem === link}">
+        <!-- START: Link to view image -->
+        <a target="_blank"
+           [href]="getLink(link.url)">
+          <i (click)="onToggleEditMode()" *ngIf="canEdit" class="font-icon icon-link hoverable scaleable"></i>
+          <span
+            [innerHTML]="(link.name || link.url) | italic | bold | strike"
+            class="ellipsis">
+          </span>
+          <!-- END: Image and title -->
+          <i class="font-icon icon-pencil hoverable edit" *ngIf="editMode && !(showEdit && editItem === link)" (click)="showEditForm(link, $event)"></i>
+        </a>
+        <!-- END: Link to view image -->
+        <div class="named-links__form" *ngIf="showEdit && editItem === link">
+          <sl-link-form (save)="hideEditForm()" [item]="editItem" (remove)="remove($event.item)" (cancel)="cancelEdit()"></sl-link-form>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>

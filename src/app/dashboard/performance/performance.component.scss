@@ -1,0 +1,81 @@
+@import '~scss/_variables.scss';
+
+.performance-modal-posts {
+  height: 75vh;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: hidden;
+  padding: 50px 0 50px 50px;
+}
+
+.container {
+  padding: 0 50px;
+  opacity: 1;
+}
+
+.small-draphics {
+  margin-top: 46px;
+}
+
+.small-draphic {
+  width: 40%;
+}
+
+.social-media {
+  margin-top: 40px;
+  margin-bottom: 300px;
+}
+
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -12px;
+}
+
+.hide {
+  opacity: 0;
+}
+
+
+.channels-performance {
+  margin-top: 40px;
+
+  .header__title {
+    font-family: Nunito;
+    font-size: 20px;
+    font-weight: 600;
+    color: $black;
+  }
+
+  &__data {
+    margin-top: 18px;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+    background-color: $white-two;
+  }
+
+}
+
+@media only screen and (max-width: 1800px) {
+  .small-draphic {
+    width: 48%;
+  }
+}
+
+@media only screen and (max-width: 1450px) {
+  .small-draphics {
+    display: block;
+  }
+  .small-draphic {
+    width: 90%;
+    max-width: 600px;
+  }
+  .first {
+    margin-bottom: 50px;
+  }
+}
+
+.first {
+  margin-right: 40px;
+}

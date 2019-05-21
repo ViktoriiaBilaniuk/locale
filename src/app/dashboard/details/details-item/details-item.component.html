@@ -1,0 +1,34 @@
+<div class="description">
+  <!-- START: Venue details header and edit button -->
+  <div class="flex">
+    <div class="section-title description__title" translate>{{getTitle()}}</div>
+    <i  (click)="editMode = !editMode;" *ngIf="canEdit" class="font-icon icon-pencil hoverable"></i>
+  </div>
+  <!-- END: Venue details header and edit button -->
+
+  <div class="highlighted-text" [hidden]="data.length !== 0 || editMode">
+    {{ ('Rightbar.nothingHereYet' | translate ) + ' ' + ((canEdit ? 'Rightbar.clickPencilToEdit' : '') | translate) }}
+  </div>
+
+  <!-- START: Text content of venue details -->
+  <div class="section-text description__text" *ngIf="!editMode">
+    <pre [innerHTML]="data | italic | bold | strike | slice: 0 : descriptionLimit"></pre>
+  </div>
+
+  <ng-container *ngIf="descriptionLimit < data.length && !editMode">
+    <span class="description__dots">...</span>
+    <span class="description__more" (click)="showMore()" translate>Rightbar.more</span>
+  </ng-container>
+  <!-- END: Text content of venue details -->
+
+  <sl-textarea
+    *ngIf="editMode"
+    placeholder="{{ ('Rightbar.' + 'enter' + title) | translate}}"
+    [value]="data"
+    [required]="getRequiredStatus()"
+    [confirmTitle]="'Rightbar.save' | translate"
+    [cancelTitle]="'Rightbar.cancel' | translate"
+    (onSave)="editVenueDetails($event)"
+    (onCancel)="editMode = false;"
+  ></sl-textarea>
+</div>

@@ -1,0 +1,104 @@
+@import '~scss/_variables.scss';
+
+.schedule {
+  &__empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: -25px;
+    &_place {
+      margin-top: 180px;
+    }
+    p {
+      margin-top: 15px;
+      font-weight: 600;
+      font-size: 20px;
+      color: $black;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  margin-top: 180px;
+}
+
+.filters {
+  padding: 0px 50px;
+  display: flex;
+  justify-content: space-between;
+  background-color: $white;
+  height: 48px;
+  &__dropdown {
+    display: flex;
+  }
+  &__channels {
+    z-index: 4;
+  }
+}
+
+.posts_wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.post-wrapp {
+  border-radius: 4px;
+  margin: 0 35px 35px 0;
+  transition: 500ms;
+}
+
+.loading-cover {
+  background-color: rgba(0, 0, 0, 0.27058823529411763);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  padding-top: 45vh;
+  pointer-events: none;
+  z-index: 100;
+  left: 0;
+  div {
+    text-align: center;
+  }
+}
+
+.date {
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  &__today {
+    width: 72px;
+    min-width: 72px;
+    height: 32px;
+    position: absolute;
+    line-height: 32px;
+    padding: 0;
+    font-size: 12px;
+    left: 0;
+    margin-left: 50px;
+  }
+  &__slider {
+
+  }
+}
+
+:host ::ng-deep .date-slider span {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  margin: 0 20px !important;
+}
+
+:host ::ng-deep .date-slider i {
+  color: $tangerine !important;
+  &:hover {
+    color: $yellow-orange !important;
+  }
+}

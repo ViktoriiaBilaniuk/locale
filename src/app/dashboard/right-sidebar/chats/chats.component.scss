@@ -1,0 +1,41 @@
+@import '~scss/_variables.scss';
+
+.wrapper {
+  background-color: $white-two;
+  height: calc(100vh - 48px - 80px);
+  font-size: 14px;
+}
+
+.top {
+  width: 100%;
+}
+
+.loading {
+  width: 100%;
+  text-align: center;
+  padding-top: 100px;
+}
+
+sl-chat-body {
+  display: block;
+  overflow: auto;
+}
+
+.chat-header {
+  &__icon {
+    color: $tangerine;
+    margin-right: 20px;
+    font-size: 21px;
+  }
+  &__title {
+    font-family: Nunito;
+    font-size: 16px;
+    color: $black;
+  }
+}
+
+.chat-list {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: calc(100vh - 80px - 48px - 48px);
+}

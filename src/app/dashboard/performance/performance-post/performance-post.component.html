@@ -1,0 +1,50 @@
+<div class="performance-modal-posts__post">
+  <img *ngIf="post.post.pictures && post.post.pictures.length" [src]="post.post.pictures[0]">
+  <div class="performance-modal-posts__post--description">
+      <p>{{post.post.message}}</p>
+  </div>
+  <div class="performance-modal-posts__post--date">
+    <i class="icon-clock font-icon"></i>
+    <label>{{ moment(post.date).format('Do') + ' ' + moment(post.date).format('MMM').toUpperCase()}}</label>
+    <span translate>Schedule.at</span>
+    <label>{{ moment(post.date).format('HH:mm') }}</label>
+  </div>
+  <div class="performance-modal-posts__post--stats">
+    <div class="performance-modal-posts__post--stats--metric">
+      <p translate>Performance.totalReach</p>
+      <label class="total">
+        <span>{{totalReach || 0  | prettyNumber}}</span>
+      </label>
+    </div>
+    <div class="performance-modal-posts__post--stats--metric">
+      <p translate>Performance.paid</p>
+      <label [style.width.px]="paidPercentage <=35 ? 35 : paidPercentage" class="paid">
+        <span>{{((paidPercentage || 0 ) / 100) | percent}}</span>
+      </label>
+    </div>
+    <div class="performance-modal-posts__post--stats--metric">
+      <p translate>Performance.organic</p>
+      <label [style.width.px]="organicPercentage <=35 ? 35 : organicPercentage"  class="organic">
+        <span>{{((organicPercentage || 0 ) / 100) | percent}}</span>
+      </label>
+    </div>
+    <div  class="performance-modal-posts__post--stats--metric">
+      <p translate>Performance.likes</p>
+      <label class="likes">
+        <span>{{likes || 0  | prettyNumber}}</span>
+      </label>
+    </div>
+    <div  class="performance-modal-posts__post--stats--metric">
+      <p translate>Performance.comments</p>
+      <label class="comments">
+        <span>{{comments || 0  | prettyNumber}}</span>
+      </label>
+    </div>
+    <div  class="performance-modal-posts__post--stats--metric">
+      <p translate>Performance.shares</p>
+      <label class="shares">
+        <span>{{shares || 0  | prettyNumber}}</span>
+      </label>
+    </div>
+  </div>
+</div>

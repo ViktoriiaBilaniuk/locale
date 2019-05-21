@@ -1,0 +1,29 @@
+@import '~scss/_variables.scss';
+
+.card {
+  padding: 40px;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.no-data {
+  &__img {
+    width: 64px;
+    height: 50px;
+    margin-bottom: 20px;
+  }
+  &__title {
+    font-size: 16px;
+    font-weight: 600;
+    color: $black;
+    margin-bottom: 10px;
+  }
+  &__mess {
+    font-size: 12px;
+    line-height: 1.5;
+    color: $black;
+    margin-bottom: 30px;
+  }
+}

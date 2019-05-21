@@ -1,0 +1,59 @@
+@import '~scss/_variables.scss';
+
+.wrap {
+  padding: 0px 10px;
+  margin-bottom: 10px;
+  background-color: white;
+  hr{
+    background-color: $pinkish-grey;
+    height: 1px;
+    margin-bottom: 10px;
+  }
+  .content {
+    justify-content: space-between;
+
+    .img {
+      position: relative;
+      width: 120px;
+      height: 90px;
+      background-position: center;
+      background-size: cover;
+    }
+    .desc {
+      font-family: Nunito;
+      font-size: 12px;
+      line-height: 1.33;
+      margin-left: 10px;
+      text-align: left;
+      color: $black;
+      height: auto;
+      width: calc(100% - 160px);
+      max-height: 90px;
+      max-width: 400px;
+      border: none;
+      outline: none;
+      background: $white;
+      overflow: auto;
+      padding: 20px 10px;
+      &::-webkit-input-placeholder {
+        color: $greyish;
+      }
+    }
+
+    .icon-remove {
+      color: $scarlet;
+      transform: rotate(-45deg);
+      font-size: 18px;
+      transition: color 0.3s ease-out;
+      margin-right: 5px;
+      height: 18px;
+      cursor: pointer;
+      &:hover {
+        color: $black;
+        transition: color 0.3s ease-in;
+      }
+    }
+  }
+}
+
+

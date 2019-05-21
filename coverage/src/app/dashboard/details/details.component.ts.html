@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/app/dashboard/details/details.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">All files</a> / <a href="index.html">src/app/dashboard/details</a> details.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">32.08% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>17/53</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">5.88% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/17</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">35.71% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>15/42</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {Component, OnDestroy, OnInit} from '@angular/core';
+import {VenueDetails} from '../../models/right-sidebar/venue-details/venue-details';
+import {Subscription} from 'rxjs/Subscription';
+import {VenueService} from '../../core/services/venue/venue.service';
+import {Store} from '../../core/store/store';
+import {TrackingSerivce} from '../../core/services/tracking/tracking.service';
+import {Permissions} from '../../core/services/permissions/permissions.constant';
+import {OpeningHoursEditor} from '../../models/right-sidebar/venue-details/opening-hours-editor';
+import {OpeningHours} from '../../models/right-sidebar/venue-details/opening-hours';
+import {TimeEntryEditor} from '../../models/right-sidebar/venue-details/time-entry-editor';
+import {TimeEntry} from '../../models/right-sidebar/venue-details/time-enrty';
+import {TargetMarketEditor} from '../../models/right-sidebar/venue-details/target-market-editor';
+import {fadeInAnimation} from '../../shared/animations/fade-in.animation';
+&nbsp;
+@Component({
+  selector: 'sl-details',
+  templateUrl: './details.component.html',
+  styleUrls: ['./details.component.scss'],
+  animations: [fadeInAnimation],
+})
+export class DetailsComponent implements OnInit, OnDestroy {
+&nbsp;
+  venueDetails: VenueDetails;
+  private <span class="cstat-no" title="statement not covered" >subscriptions = [];</span>
+  private permissions: Array&lt;string&gt;;
+&nbsp;
+<span class="fstat-no" title="function not covered" >  constructor(</span>
+    private <span class="cstat-no" title="statement not covered" >venueService: VenueService,</span>
+    private <span class="cstat-no" title="statement not covered" >store: Store,</span>
+    private <span class="cstat-no" title="statement not covered" >track: TrackingSerivce</span>
+  ) { }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  ngOnInit() {</span></span>
+<span class="cstat-no" title="statement not covered" >    this.getPermissions();</span>
+<span class="cstat-no" title="statement not covered" >    this.track.detailsTabOpened();</span>
+<span class="cstat-no" title="statement not covered" >    this.subscriptions.push(this.store</span>
+      .select('venue-details')
+      .subscribe(<span class="fstat-no" title="function not covered" >(</span>venue: VenueDetails) =&gt; {
+<span class="cstat-no" title="statement not covered" >        this.venueDetails = venue;</span>
+      })
+    );
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ngOnDestroy() {</span>
+<span class="cstat-no" title="statement not covered" >    this.subscriptions.forEach(<span class="fstat-no" title="function not covered" >(</span>s) =&gt; <span class="cstat-no" title="statement not covered" >s.unsubscribe())</span>;</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  private getPermissions () {</span></span>
+<span class="cstat-no" title="statement not covered" >    this.subscriptions.push(this.store.select('permissions')</span>
+      .filter(<span class="fstat-no" title="function not covered" >(</span>res: any) =&gt; <span class="cstat-no" title="statement not covered" >res)</span>
+      .subscribe(<span class="fstat-no" title="function not covered" >(</span>permissions) =&gt; {
+<span class="cstat-no" title="statement not covered" >        this.permissions = permissions;</span>
+      })
+    );
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  get canEditDetails () {</span>
+<span class="cstat-no" title="statement not covered" >    return this.permissions &amp;&amp; this.permissions.indexOf(Permissions.PROFILE) !== -1;</span>
+  }
+&nbsp;
+  /**
+   * @description
+   * copy venueDetails, edit it property and send request to update venue
+   *
+   * @memberof DetailsComponent
+   *
+   * @param fieldToEdit property that was edited
+   * @param eventValue value of edited property
+   */
+<span class="fstat-no" title="function not covered" >  updateVenueDetails(</span>fieldToEdit: string, eventValue: any) {
+    const newVenue = <span class="cstat-no" title="statement not covered" >{};</span>
+<span class="cstat-no" title="statement not covered" >    switch (fieldToEdit) {</span>
+      case 'opening_hours': <span class="cstat-no" title="statement not covered" >newVenue[fieldToEdit] = this.convertOpeningHours(eventValue); <span class="cstat-no" title="statement not covered" ></span>break;</span>
+      default: <span class="cstat-no" title="statement not covered" >newVenue[fieldToEdit] = eventValue; <span class="cstat-no" title="statement not covered" ></span>break;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    this.subscriptions.push(this.venueService.updateDetails(this.venueDetails.id, newVenue).subscribe());</span>
+<span class="cstat-no" title="statement not covered" >    this.track.venueDetailsChanged(fieldToEdit);</span>
+  }
+&nbsp;
+  /**
+   * @description
+   * Takes array of OpeningHoursEditor entities and convert it to type OpeningHours
+   *
+   * @memberof DetailsComponent
+   *
+   * @param openingHours array that should be converted
+   * @returns converted array
+   */
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  private convertOpeningHours(</span>openingHours: OpeningHoursEditor[]): OpeningHours[] {</span>
+<span class="cstat-no" title="statement not covered" >    openingHours = openingHours.map(</span>
+<span class="fstat-no" title="function not covered" >      (</span>day: OpeningHoursEditor) =&gt; <span class="cstat-no" title="statement not covered" >Object.assign({}, day, {</span>
+        items: day.is_open ? day.items.map(
+<span class="fstat-no" title="function not covered" >          (</span>opening: TimeEntryEditor) =&gt; <span class="cstat-no" title="statement not covered" >this.pick(&lt;TimeEntryEditor&gt;opening, 'label', 'order', 'from', 'to') as TimeEntry</span>
+        ) : []
+      })
+    );
+<span class="cstat-no" title="statement not covered" >    return openingHours.map(</span>
+<span class="fstat-no" title="function not covered" >      (</span>day) =&gt; <span class="cstat-no" title="statement not covered" >this.pick(&lt;OpeningHoursEditor&gt;day, 'weekday', 'is_open', 'order', 'items') as OpeningHours</span>
+    );
+  }
+&nbsp;
+  /**
+   * @description
+   * Pick a set of properties from object with type &lt;T&gt; and copy it to object with type &lt;K&gt;
+   *
+   * @memberof DetailsComponent
+   *
+   * @param obj the object of one interface that need to be copied
+   * @param keys the keys that should be copied from 'obj'
+   * @returns object of type &lt;K&gt; with copied set of props
+   */
+<span class="fstat-no" title="function not covered" >  private pick&lt;T, K extends keyof T&gt;(</span>obj: T, <span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" >...keys: K[]</span>)</span>: Pick&lt;T, K&gt; {
+    const copy = <span class="cstat-no" title="statement not covered" >{} as Pick&lt;T, K&gt;;</span>
+<span class="cstat-no" title="statement not covered" >    keys.forEach(<span class="fstat-no" title="function not covered" >(</span>key) =&gt; <span class="cstat-no" title="statement not covered" >copy[key] = obj[key])</span>;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return copy;</span>
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Oct 26 2018 12:25:15 GMT+0300 (EEST)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

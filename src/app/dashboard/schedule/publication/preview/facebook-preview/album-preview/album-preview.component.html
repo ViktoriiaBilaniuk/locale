@@ -1,0 +1,71 @@
+<div class="content" [@fadeInAnimation]="true" [ngClass]="{'mobile-album': !desktopMode}">
+  <div class="cover" *ngIf="desktopMode">
+    <h4 class="title">{{getAlbumTitle()}}</h4>
+    <div class="count-wrap">
+      <span class="count">{{numberOfPhotos()}}</span>
+      <span translate>Channels.photos</span>
+    </div>
+  </div>
+  <ng-container [ngSwitch]="numberOfPhotos()">
+    <ng-container *ngSwitchCase="2">
+      <div class="album album__2 flex" [ngClass]="getImagesClass(2)" [@fadeInAnimation]="true">
+        <div
+          class="image"
+          *ngFor="let item of publicationProxyService.albumFiles"
+          [ngStyle]="{'background-image': 'url(' + item.url + ')'}">
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="3">
+      <div class="album album__3" [ngClass]="getImagesClass(3)" [@fadeInAnimation]="true">
+        <div class="first">
+          <div class="image" [ngStyle]="{'background-image': 'url(' + publicationProxyService.albumFiles[0].url + ')'}"></div>
+        </div>
+        <div class="second">
+          <div class="image-wrap" *ngFor="let item of publicationProxyService.albumFiles; let i = index">
+            <div class="image" *ngIf="i !== 0" [ngStyle]="{'background-image': 'url(' + item.url + ')'}"></div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngSwitchDefault>
+      <div *ngIf="!getSquareImage(getFirstImage()); else square" [@fadeInAnimation]="true">
+        <div class="album album__4" [ngClass]="getImagesClass(4)">
+          <div class="first">
+            <div class="image" [ngStyle]="{'background-image': 'url(' + publicationProxyService.albumFiles[0].url + ')'}"></div>
+          </div>
+          <div class="second">
+            <div class="image-wrap" *ngFor="let item of publicationProxyService.albumFiles; let i = index">
+              <div *ngIf="numberOfPhotos() < 5; else photosWithCover">
+                <div
+                  class="image"
+                  *ngIf="i !== 0 && i < 4"
+                  [ngStyle]="{'background-image': 'url(' + item.url + ')'}">
+                </div>
+              </div>
+              <ng-template #photosWithCover>
+                <div
+                  class="image"
+                  *ngIf="i !== 0 && i !== 3 && i < 4"
+                  [ngStyle]="{'background-image': 'url(' + item.url + ')'}">
+                </div>
+                <div class="image" *ngIf="i !== 0 && i === 3" [ngStyle]="{'background-image': 'url(' + item.url + ')'}">
+                  <div class="mobile-cover" *ngIf="!desktopMode">
+                    <span class="mobile-cover__count">+ {{numberOfPhotos() - 3}}</span>
+                  </div>
+                </div>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ng-template #square>
+        <div class="album album__4_square" [@fadeInAnimation]="true">
+          <div class="image-wrap" *ngFor="let item of publicationProxyService.albumFiles.slice(0, 4);">
+            <div class="image" [ngStyle]="{'background-image': 'url(' + item.url + ')'}"></div>
+          </div>
+        </div>
+      </ng-template>
+    </ng-container>
+  </ng-container>
+</div>

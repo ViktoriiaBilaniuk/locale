@@ -1,0 +1,14 @@
+<div class="radius-range">
+  <div class="radius-range__container">
+    <span class="radius-range__container--label" translate>Events.eventRadius</span>
+    <span class="radius-range__container--distance" translate>{{calendarService.sliderValue}} km</span>
+  </div>
+  <input
+    type="range"
+    class="slider"
+    [max]="max"
+    [min]="min"
+    (change)="onChangeSlider()"
+    [(ngModel)]="calendarService.sliderValue"
+  >
+</div>

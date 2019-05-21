@@ -1,0 +1,30 @@
+<div
+  class="statuses-filter"
+  (clickOutside)="onClickedOutside()">
+    <div
+      (click)="allFilterChecked = !allFilterChecked"
+      class="statuses-filter__all">
+        <div class="statuses-filter__all--label" translate>StatusFilter.statuses</div>
+        <div class="box" [ngClass]="{'checked': allFilterChecked}">
+          <i class="icon checkmark"></i>
+        </div>
+    </div>
+    <ul class="statuses-filter__list">
+      <li
+        class="statuses-filter__list--item"
+        *ngFor="let item of statuses"
+        (click)="select(item)">
+        <div class="statuses-filter__list--status">
+          <span
+            translate
+            [title]="item.status"
+            class="status {{item.status}}">
+            {{'StatusFilter.'+ item.status}}
+          </span>
+        </div>
+        <div class="box" [ngClass]="{'checked': item.selected}">
+          <i class="icon checkmark"></i>
+        </div>
+      </li>
+    </ul>
+</div>

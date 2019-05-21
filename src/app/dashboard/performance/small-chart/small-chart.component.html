@@ -1,0 +1,19 @@
+<div class="wrapper">
+  <div class="card">
+    <div *ngIf="chart">
+      <div id="canvas-wrap">
+        <canvas #canvas id="canvas"></canvas>
+      </div>
+      <div class="legend flex">
+        <div class="legend__item flex">
+          <span class="legend__icon current">&#8212;&#8212;</span>
+          <span class="legend__name" translate>Performance.current</span>
+        </div>
+        <div class="legend__item flex">
+          <span class="legend__icon previous">&#8212;&#8212;</span>
+          <span class="legend__name" translate>Performance.previous</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

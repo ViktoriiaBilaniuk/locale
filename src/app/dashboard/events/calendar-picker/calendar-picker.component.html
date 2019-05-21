@@ -1,0 +1,57 @@
+<div class="calendar">
+
+  <!-- START: Date slider-->
+  <sl-date-slider
+    type="month"
+    [baseFrom]="from"
+    [baseTo]="to"
+    (onChange)="setDateFilter($event)"
+    [max]="maxDate"
+    [min]="minDate">
+  </sl-date-slider>
+  <!-- END: Date slider-->
+
+  <!-- START: calendar-picker-->
+  <div class="month-grid">
+    <div class="day-names flex flex_justify-content-space-between">
+      <div translate *ngFor="let name of dayNames" class="day-name flex p9">
+          Events.dayNames.{{name}}
+      </div>
+    </div>
+    <div class="weeks flex" [ngClass]="{'hidden': loading}">
+      <div *ngFor="let week of weeks" class="week flex flex_justify-content-space-between">
+        <ng-container *ngFor="let day of week">
+          <div
+            class="week-date disabled"
+            *ngIf="!isSelectedMonth(day.mDate)"
+            [ngClass]="{
+              'disablePrevDays': disablePrevDays && !isPreviousDaysOnSelectedMonth(day.mDate),
+              'enabledNextDays': isPreviousDaysOnSelectedMonth(day.mDate) && !disableNextDays,
+              'enabledPrevDays': !isPreviousDaysOnSelectedMonth(day.mDate),
+              'disableNextDays': disableNextDays
+            }"
+            (click)="selectDateForPrevOrNextMonth(day)">
+            <span class="date-text">
+              {{ day.mDate.date() }}
+            </span>
+          </div>
+          <div class="week-date enabled week-date__dot"
+               #calendarDay
+               *ngIf="isSelectedMonth(day.mDate)"
+               (click)="selectDate(day)"
+               id="{{'day-' + day.mDate.format('DD')}}"
+               [ngClass]="getClass(day, selectedDay)">
+            <span class="date-text">{{ day.mDate.date() }}</span>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+    <div class="loading" *ngIf="loading">
+      <sl-loading></sl-loading>
+    </div>
+
+  </div>
+  <!-- END: calendar-picker-->
+
+</div>

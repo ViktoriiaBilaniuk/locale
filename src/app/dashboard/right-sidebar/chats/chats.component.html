@@ -1,0 +1,39 @@
+<div class="wrapper chats-wrapper">
+  <div class="loading" *ngIf="loading">
+    <sl-loading></sl-loading>
+  </div>
+  <div *ngIf="!loading">
+    <div *ngIf="!openedChatId" [@fadeInAnimation]="true">
+      <div class="body-header chat-header right-sidebar__wrapper flex">
+        <div class="top flex align-items__center">
+          <i class="icon-speech chat-header__icon"></i>
+          <span translate class="chat-header__title">Chat.chats</span>
+        </div>
+        <div>
+          <i></i>
+        </div>
+      </div>
+      <div class="chat-list">
+        <sl-chat-item *ngFor="let chat of SortedChats" [chat]="chat" [userId]="userId"></sl-chat-item>
+      </div>
+    </div>
+    <div *ngIf="openedChatId" [@fadeInAnimation]="true">
+      <div class="body-header chat-header right-sidebar__wrapper flex">
+        <div class="top flex align-items__center">
+          <i class="icon-arrow-left chat-header__icon hoverable" (click)="goToChatList()"></i>
+          <span translate class="chat-header__title truncated-text">{{currentChatName}}</span>
+        </div>
+      </div>
+      <sl-chat-body
+        [ngStyle]="{'height': chatBodyHeight}"
+        [venueId]="venueId"
+        [expand]="expand"
+        [refresh]="refreshBody">
+      </sl-chat-body>
+      <div #actionArea>
+        <sl-chat-actions-area [chat]="openedChat"></sl-chat-actions-area>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,21 @@
+@import '~scss/_variables.scss';
+
+.wrap {
+  padding: 20px;
+  position: static;
+  padding-bottom: 50px;
+}
+
+.content-pool-icon {
+  font-size: 20px;
+  color: $greyish;
+  cursor: pointer;
+  transition: color 0.3s;
+  margin-top: -41px;
+  right: 31px;
+  position: absolute;
+  &:hover {
+    color: $tangerine;
+    transition: color 0.3s;
+  }
+}

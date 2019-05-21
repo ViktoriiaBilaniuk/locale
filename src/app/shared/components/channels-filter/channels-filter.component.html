@@ -1,0 +1,30 @@
+<div
+  class="channels-filter"
+  (clickOutside)="onClickedOutside()">
+    <div
+      (click)="allFilterChecked = !allFilterChecked"
+      class="channels-filter__all">
+        <div class="channels-filter__all--label" translate>
+          <label *ngIf="channelsPage" translate>Channels.allNetworks</label>
+          <label *ngIf="!channelsPage" translate>ChannelsFilter.allChannels</label>
+        </div>
+        <div class="box" [ngClass]="{'checked': allFilterChecked}">
+          <i class="icon checkmark"></i>
+        </div>
+    </div>
+    <hr>
+    <ul class="channels-filter__list">
+      <li
+        class="channels-filter__list--item"
+        *ngFor="let item of channels"
+        (click)="select(item)">
+        <div class="channels-filter__list--channel">
+          <i class="icon {{item.network}}"></i>
+          <span [title]="item.name">{{item.name}}</span>
+        </div>
+        <div class="box" [ngClass]="{'checked': item.selected}">
+          <i class="icon checkmark"></i>
+        </div>
+      </li>
+    </ul>
+</div>

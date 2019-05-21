@@ -1,0 +1,22 @@
+<div class="wrap" (window:resize)="checkResponsive()">
+  <div class="container shadow_box" [ngClass]="this.status">
+    <div class="content flex">
+      <div class="content__left flex" (click)="expandChatClick()">
+        <div>
+          <div class="chat__icon" *ngIf="isClosedState()">
+            <i class="icon-speech"></i>
+            <i *ngIf="unreadMessCount" class="chat__icon_circle">{{unreadMessCount}}</i>
+          </div>
+
+          <div class="arrow-btn" *ngIf="!isClosedState()">
+            <i class="icon" [ngClass]="{icon_rotate: isExpandedState()}">&larr;</i>
+          </div>
+        </div>
+
+        <span class="arrow-btn__title" translate>{{getTitle()}}</span>
+      </div>
+      <div *ngIf="!isClosedState()" class="icon-plus icon__remove" (click)="closeChat()"></div>
+    </div>
+  </div>
+</div>
+

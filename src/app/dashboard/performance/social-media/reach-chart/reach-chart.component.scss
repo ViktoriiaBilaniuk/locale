@@ -1,0 +1,41 @@
+@import '~scss/_variables.scss';
+
+.container {
+  width: 100%;
+}
+
+.chart {
+  font-size: 12px;
+  color: $white-two;
+  display: flex;
+}
+
+.paid {
+  display: inline-block;
+  width: 48%;
+  background-color: $tangerine;
+  text-align: center;
+  padding: 9px 0px;
+  border-radius: 5px 0px 0px 5px;
+  margin-right: 1px;
+}
+
+.organic {
+  display: inline-block;
+  width: 48%;
+  background-color: #3366cc;
+  text-align: center;
+  padding: 9px 0px;
+  border-radius: 0px 5px 5px 0px;
+  margin-left: 1px;
+}
+
+
+@media only screen and (max-width: 1200px) {
+  .chart {
+    font-size: 10px;
+  }
+  .paid, .organic {
+    min-width: 20px;
+  }
+}

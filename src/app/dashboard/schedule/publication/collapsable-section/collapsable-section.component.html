@@ -1,0 +1,10 @@
+<div class="wrap">
+  <div class="header flex" (click)="headerClick()">
+    <span class="header__title"> {{title | translate}}</span>
+    <i class="icon-arrow-up header__icon hoverable" [ngClass]="{'header__icon_open': openSection}"></i>
+  </div>
+  <hr>
+  <div #content class="content" [ngClass]="{'content_open': openSection}" id="collapsable-content">
+    <ng-content></ng-content>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+@import '~scss/_variables.scss';
+
+:host{
+  width:  100%;
+}
+.date-slider{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .rotate {
+    transform: rotate(180deg);
+  }
+
+  span {
+    font-family: Nunito;
+    font-size: 18px;
+    font-weight: 600;
+    color: $black;
+  }
+
+  .disabled{
+    cursor: not-allowed;
+    opacity: .5;
+  }
+}
+
+.icon-arrow-right {
+  z-index: 3;
+}

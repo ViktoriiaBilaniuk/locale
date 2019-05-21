@@ -1,0 +1,130 @@
+@import '~scss/_variables.scss';
+
+.message {
+  &__content{
+    display: flex;
+    &_current {
+      justify-content: flex-end;
+      .message__info {
+        text-align: right;
+      }
+    }
+  }
+  &.group{
+    margin-top: 0px;
+
+    .message__data{
+      margin-left: 38px;
+    }
+  }
+  &__avatar {
+    min-width: 30px;
+    margin-right: 8px;
+    margin-top: 15px;
+    div {
+      width: 30px;
+      height: 30px;
+      background-position: center;
+      background-size: cover;
+      position: relative;
+      border-radius: 50%;
+    }
+    img {
+      width: 30px;
+    }
+  }
+  &__avatar-small {
+    min-width: 24px;
+    margin-right: 10px;
+    div {
+      width: 24px;
+      height: 24px;
+      background-position: center;
+      background-size: cover;
+      position: relative;
+      border-radius: 50%;
+    }
+    img {
+      min-width: 24px;
+      min-height: 24px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+    }
+  }
+  &__data{
+    margin-bottom: 5px;
+    max-width: 240px;
+    &_expand {
+      max-width: 370px;
+    }
+  }
+  &__info {
+    margin-bottom: 2px;
+    margin-top: 15px;
+    font-family: Nunito;
+  &-small {
+    margin-bottom: 0;
+    font-family: Nunito;
+    line-height: 1;
+  }
+  }
+  &__author{
+    font-size: 11px;
+    font-weight: 600;
+    color: $greyish;
+    font-weight: 600;
+    &-small{
+      font-size: 11px;
+      font-weight: 600;
+      color: $greyish;
+    }
+  }
+  &__time {
+    font-size: 11px;
+    font-weight: 300;
+    color: $greyish;
+  &-small {
+    font-size: 12px;
+    font-weight: 300;
+    color: $greyish;
+  }
+  }
+  &__text {
+    font-size: 12px;
+    line-height: 1.57;
+    word-break: break-word;
+    background-color: $greyish-brown;
+    color: $white-two;
+    padding: 12px;
+    border-radius: 0px 4px 4px 4px;
+    &_current {
+      background-color: $white-four;
+      color: $black;
+      border-radius: 4px 0px 4px 4px;
+    }
+  }
+  &__text-small {
+    font-size: 14px;
+    line-height: 1.14;
+    color: $greyish-brown;
+    word-break: break-word;
+  }
+  &__attached-image {
+    border-radius: 4px;
+  }
+  &__notification{
+    margin: 20px 0;
+    color: inherit;
+    font-style: italic;
+    font-size: 12px;
+    width: 100%;
+    display: block;
+    text-align: center;
+    span{
+      color: $greyish;
+      padding-top: 5px;
+      display: block;
+    }
+  }
+}

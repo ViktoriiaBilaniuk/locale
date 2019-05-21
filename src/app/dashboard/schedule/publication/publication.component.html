@@ -1,0 +1,81 @@
+<div [ngClass]="{'disable': loading}">
+  <sl-publication-header
+    (onTabClick)="onTabClick($event)"
+    (onSetTabClick)="onSetTab($event)"
+    (onSave)="onSave()"
+    (onSaveAndCopy)="onSaveAndCopy()"
+    [channels]="channels"
+    [action]="action"
+    [postNetwork]="postToEdit?.network"
+    [validStatus]="validStatus()">
+  </sl-publication-header>
+  <div class="content flex">
+    <section class="left">
+      <sl-collapsable-section [title]="'Channels.publication'" [openSection]="true">
+        <sl-publication-section></sl-publication-section>
+      </sl-collapsable-section>
+      <sl-collapsable-section [title]="'Channels.channels'" [openSection]="true" [ngClass]="{'hidden': action?.actionName === ACTION_TYPE.EDIT}">
+        <sl-channels-section
+          [channels]="channels"
+          [selectedChannel]="postToEdit?.channel">
+        </sl-channels-section>
+      </sl-collapsable-section>
+      <sl-collapsable-section [title]="'Channels.schedule'" [openSection]="true">
+        <sl-schedule-section></sl-schedule-section>
+      </sl-collapsable-section>
+    </section>
+
+    <section class="right preview">
+      <div class="preview__header flex">
+        <span class="preview__title" translate>Schedule.preview</span>
+        <div class="flex">
+          <i
+            class="preview__icon icon-screen-desktop"
+            (click)="iconClick(true)"
+            [ngClass]="{'preview__icon_active' : desktopMode}">
+          </i>
+          <i
+            class="preview__icon icon-screen-smartphone"
+            (click)="iconClick(false)"
+            [ngClass]="{'preview__icon_active' : !desktopMode}">
+          </i>
+        </div>
+      </div>
+      <hr>
+      <sl-facebook-preview
+        *ngIf="isFacebook()"
+        [description]="description()?.value"
+        [mentions]="mentions()"
+        [desktopMode]="desktopMode">
+      </sl-facebook-preview>
+      <sl-instagram-preview
+        *ngIf="isInstagram()"
+        [description]="description()?.value"
+        [mentions]="mentions()"
+        [desktopMode]="desktopMode">
+      </sl-instagram-preview>
+      <sl-twitter-preview
+        *ngIf="isTwitter()"
+        [description]="description()?.value"
+        [mentions]="mentions()"
+        [desktopMode]="desktopMode">
+      </sl-twitter-preview>
+    </section>
+  </div>
+
+  <sl-modal *ngIf="visibleConfirmWindow" (close)="closeConfirmModal()">
+    <p class="modal-title" translate> Channels.confirmChangeNetwork </p>
+    <div class="flex flex_justify-content-space-between modal-buttons">
+      <button class="btn btn-fancy textarea__btn" (click)="activateTab()" translate> Channels.change </button>
+      <button class="btn btn-gray textarea__btn" (click)="closeConfirmModal()" translate> Channels.cancel </button>
+    </div>
+  </sl-modal>
+</div>
+
+<div class="loading-cover" *ngIf="loading">
+  <div>
+    <sl-loading></sl-loading>
+  </div>
+</div>
+
+<sl-content-files [venueId]="venueId"></sl-content-files>

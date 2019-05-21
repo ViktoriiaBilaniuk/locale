@@ -1,0 +1,26 @@
+<div class="threads">
+  <ul class="threads__list">
+    <li class="threads__item" *ngIf="!thread.venues.length">
+      <span class="threads__name" translate>{{thread.emptyText}}</span>
+    </li>
+    <li
+      class="threads__item"
+      *ngFor="let venue of thread.venues">
+      <div class="item flex">
+        <div class="item__header" (click)="chooseVenue(venue, $event)">
+            <img class="venue-menu__icon" src="../../../assets/images/dashboard/venue-tangerine.png" alt="venue">
+            <span class="threads__name ellipsis truncated-text" [innerHTML]="venue.name"></span>
+        </div>
+        <i *ngIf="isReachOut" class="icon-arrow-down hoverable" (click)="expandMess($event, venue)"></i>
+        <span
+          *ngIf="!isReachOut &&venue.messages && chatPermissionForCurrentVenue"
+          class="threads__unread">
+          {{venue.messages}}
+        </span>
+      </div>
+      <ul class="item__messages" *ngIf="venue?.tooltip" #message [ngClass]="{'open': venue.open}">
+        <li>{{venue.tooltip}}</li>
+      </ul>
+    </li>
+  </ul>
+</div>

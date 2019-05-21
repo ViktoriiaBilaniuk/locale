@@ -1,0 +1,45 @@
+@import '~scss/_variables.scss';
+
+.wrap {
+  background-color: $white;
+  width: 100%;
+}
+
+.header {
+  background-color: white;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 20px;
+  &__title {
+    font-family: Nunito;
+    font-size: 16px;
+    font-weight: 600;
+    color: $black;
+  }
+  &__icon {
+    color: $tangerine;
+    font-size: 24px;
+    transform: rotate(-180deg);
+    transition: transform 0.3s ease-out;
+    &_open {
+      transform: rotate(0deg);
+      transition: transform 0.3s ease-in;
+    }
+  }
+}
+
+hr{
+  background-color: $pinkish-grey;
+  height: 1px;
+}
+
+.content {
+  max-height: 0;
+  transition: max-height 0.5s ease-out;
+  overflow: hidden;
+  &_open {
+    // max-height: 813px;
+    max-height: 1040px;
+    transition: max-height 0.5s ease-in;
+  }
+}

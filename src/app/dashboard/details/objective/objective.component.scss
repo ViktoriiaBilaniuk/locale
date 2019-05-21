@@ -1,0 +1,27 @@
+@import '~scss/_variables.scss';
+
+.objective {
+  font-family: 'Nunito', sans-serif;
+  margin-top: 32px;
+  &__label {
+    font-size: 12px;
+    color: $warm-grey;
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
+  &__value {
+    text-transform: capitalize;
+  }
+}
+
+.edit {
+  color: $tangerine;
+  transition: color 0.2s ease-in;
+}
+
+.objective:hover .icon-pencil {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.2s ease-out;
+}

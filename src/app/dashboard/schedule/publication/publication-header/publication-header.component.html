@@ -1,0 +1,38 @@
+<div class="header flex">
+  <section class="tabs flex">
+    <div class="tab-label-content flex">
+      <div *ngFor="let tab of tabs" class="flex">
+        <div *ngIf="tab.visible" class="tab" (click)="tabClick(tab)">
+          <label [ngClass]="{'active': tab.active}">{{tab.title}}</label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="buttons">
+    <button
+      class="btn btn-white btn_small"
+      (click)="onSaveAndCopyClick()"
+      [disabled]="!validStatus"
+      translate>
+      {{ getCopyButtonText() }}
+    </button>
+    <button
+      class="btn btn-fancy btn_small"
+      (click)="onSaveClick()"
+      [disabled]="!validStatus"
+      translate>
+      {{ getSaveButtonText() }}
+    </button>
+    <sl-publication-tooltip
+      *ngIf="tooltipSettings?.showTooltip"
+      [content]="tooltipSettings?.tooltipText"
+      [top]="tooltipSettings?.top"
+      [right]="getTooltipRightPositions()"
+      [visible]="tooltipSettings?.showTooltip">
+    </sl-publication-tooltip>
+  </section>
+</div>
+
+
+

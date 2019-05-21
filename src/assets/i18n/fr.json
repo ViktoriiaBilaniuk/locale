@@ -1,0 +1,13 @@
+{
+    "Auth": {
+        "afterForgotPass": "FR We will send instructions on how to reset your password. Please check your email.",
+        "backToLogin": "FR Back to Login",
+        "contactUs": "FR Contact us",
+        "forgotPassword": "FR Forgot password?",
+        "email": "FR Email",
+        "login": "FR LOGIN",
+        "password": "FR Password",
+        "reset": "FR RESET",
+        "userOrEmail": "FR Username or Email"
+    }
+}

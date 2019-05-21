@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/app/dashboard/right-sidebar/chats/chat-item/chat-item.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../index.html">All files</a> / <a href="index.html">src/app/dashboard/right-sidebar/chats/chat-item</a> chat-item.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">42.86% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>18/42</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/15</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">8.33% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">43.24% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>16/37</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {Component, Input, OnInit} from '@angular/core';
+import * as moment from 'moment';
+import {ChatService} from '../../../../core/services/chat/chat.service';
+import {TrackingSerivce} from '../../../../core/services/tracking/tracking.service';
+&nbsp;
+@Component({
+  selector: 'sl-chat-item',
+  templateUrl: './chat-item.component.html',
+  styleUrls: ['./chat-item.component.scss']
+})
+export class ChatItemComponent implements OnInit {
+&nbsp;
+  @Input() chat;
+  @Input() userId;
+&nbsp;
+<span class="fstat-no" title="function not covered" >  constructor(</span>
+    private <span class="cstat-no" title="statement not covered" >chatService: ChatService,</span>
+    private <span class="cstat-no" title="statement not covered" >track: TrackingSerivce)</span> { }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ngOnInit() {</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  getFormattedDate (</span>time) {
+    const date = <span class="cstat-no" title="statement not covered" >moment.unix(time / 1000);</span>
+<span class="cstat-no" title="statement not covered" >    if (time) {</span>
+<span class="cstat-no" title="statement not covered" >      return this.getIsTodaysMessage(date) ? date.format('HH:mm') : date.format('MM/DD/YYYY');</span>
+    } else {
+<span class="cstat-no" title="statement not covered" >      return '';</span>
+    }
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  getIsTodaysMessage (</span>time) {
+    const today = <span class="cstat-no" title="statement not covered" >moment();</span>
+    const date = <span class="cstat-no" title="statement not covered" >moment(time);</span>
+<span class="cstat-no" title="statement not covered" >    return date.diff(today, 'days') === 0 &amp;&amp; date.day() === today.day();</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  getChatName (</span>chat) {</span>
+<span class="cstat-no" title="statement not covered" >    return this.isGeneralChat(chat) ? 'Chat.general' :</span>
+      chat.venue_chat_model_id.participants.find(<span class="fstat-no" title="function not covered" >(</span>user) =&gt; <span class="cstat-no" title="statement not covered" >user.participant_id !== this.userId)</span>.display_name;
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  getUserImage(</span>chat) {</span>
+    const chatUser = <span class="cstat-no" title="statement not covered" >chat.venue_chat_model_id.participants.find(<span class="fstat-no" title="function not covered" >(</span>user) =&gt; <span class="cstat-no" title="statement not covered" >user.participant_id !== this.userId)</span>;</span>
+<span class="cstat-no" title="statement not covered" >    return chatUser.image ? chatUser.image : '';</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  isGeneralChat(</span>chat) {
+<span class="cstat-no" title="statement not covered" >    return chat.venue_chat_model_id.type === 'general';</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  chatClick() {</span>
+    const chatId = <span class="cstat-no" title="statement not covered" >this.chat.venue_chat_model_id._id;</span>
+<span class="cstat-no" title="statement not covered" >    this.track.openChat(chatId);</span>
+<span class="cstat-no" title="statement not covered" >    this.chatService.selectedChat.next(this.chat);</span>
+<span class="cstat-no" title="statement not covered" >    this.chatService.selectedChatId = chatId;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  get lastMessage () {</span>
+<span class="cstat-no" title="statement not covered" >    if (!this.chat || !this.chat.venue_chat_model_id || !this.chat.venue_chat_model_id.last_message) {</span>
+<span class="cstat-no" title="statement not covered" >      return;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return this.chat.venue_chat_model_id.last_message.content;</span>
+  }
+&nbsp;
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Oct 26 2018 12:25:15 GMT+0300 (EEST)
+</div>
+</div>
+<script src="../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../sorter.js"></script>
+</body>
+</html>

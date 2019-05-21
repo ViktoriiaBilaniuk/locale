@@ -1,0 +1,27 @@
+<div class="dashboard full-height flex flex_justify-content-space-between" [@fadeInAnimation]="true">
+  <div class="section__left">
+    <sl-left-sidebar [venueId]="venueId" [collapsed]="collapseMenu()"></sl-left-sidebar>
+  </div>
+  <div class="section__right">
+    <div class="section__right_header">
+      <sl-header
+        [venueId]="venueId"
+        [permissions]="permissions"
+        (onVenueSelect)="onVenueSelect($event)">
+      </sl-header>
+    </div>
+    <div class="section__right_body flex flex_justify-content-space-between">
+      <div class="content content_open" [ngClass]="getContentWidth()">
+        <router-outlet></router-outlet>
+      </div>
+      <sl-right-sidebar
+        *ngIf="chatPermissionForCurrentVenue"
+        [venueId]="venueId"
+        [expand]="isExpandedChat()"
+        class="right-sidebar"
+        [ngClass]="getRightSectionWidth()">
+      </sl-right-sidebar>
+    </div>
+  </div>
+</div>
+<sl-tutorial></sl-tutorial>

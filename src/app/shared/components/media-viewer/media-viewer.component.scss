@@ -1,0 +1,102 @@
+:host{
+  width: 100%;
+  height: 100%
+}
+ .media-viewer{
+  position: relative;
+   cursor: pointer;
+   width: 100%;
+   overflow: hidden;
+   &__controls{
+     z-index: 2;
+     figure{
+       margin: 0 10px;
+       position: absolute;
+       top: 0;
+       height: 100%;
+       display: flex;
+       align-items: center;
+       z-index: 2;
+       img{
+         width: 14px;
+         height: 20px;
+       }
+       &:last-of-type{
+         right: 0;
+       }
+     }
+     .rotate{
+       transform: rotate(180deg);
+     }
+   }
+   &__content{
+     height: 120px;
+     position: relative;
+     a {
+       position: absolute;
+       display: inline-block;
+       top: 0;
+       div.source {
+         opacity: 1;
+         position: absolute;
+         display: inline-block;
+         top: 0;
+         left: 0;
+         right: 0;
+         bottom: 0;
+         height: 120px;
+         width: 200px;
+         transition: 0.5s all ease-in;
+         background-size: cover;
+         background-position: center;
+
+         &.left{
+           left: -360px;
+         }
+         &.right{
+           left: 360px;
+         }
+
+         figure {
+           width: 100%;
+           height: 100%;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           img{
+             width: 24px;
+             height: 24px;
+           }
+         }
+       }
+     }
+   }
+ }
+
+ .icon {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-pack: center;
+   -ms-flex-pack: center;
+   justify-content: center;
+   -webkit-box-align: center;
+   -ms-flex-align: center;
+   align-items: center;
+ }
+
+ .counter {
+   position: absolute;
+   text-align: center;
+   width: 100%;
+   color: white;
+   bottom: 10px;
+   font-weight: 600;
+   font-size: 16px;
+   span {
+     background-color: rgba(0, 0, 0, 0.36);
+   }
+ }

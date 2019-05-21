@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/app/settings/personal-details/personal-details.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">All files</a> / <a href="index.html">src/app/settings/personal-details</a> personal-details.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">43.18% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>19/44</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">7.69% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/13</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">41.46% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>17/41</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+&nbsp;
+import { ValidationService } from '../../core/services/validation/validation.service';
+import { UserService } from '../../core/services/user/user.service';
+import { Store } from '../../core/store/store';
+import { UtilsService } from '../../core/services/utils/utils.service';
+import { TrackingSerivce } from './../../core/services/tracking/tracking.service';
+&nbsp;
+@Component({
+  selector: 'sl-personal-details',
+  templateUrl: './personal-details.component.html',
+  styleUrls: ['./personal-details.component.scss']
+})
+export class PersonalDetailsComponent implements OnInit {
+  form: FormGroup;
+  user: any;
+  formIsSubmitted: boolean;
+  emailInUse: boolean;
+&nbsp;
+<span class="fstat-no" title="function not covered" >  constructor(</span>
+    private <span class="cstat-no" title="statement not covered" >fb: FormBuilder,</span>
+    private <span class="cstat-no" title="statement not covered" >validation: ValidationService,</span>
+    private <span class="cstat-no" title="statement not covered" >userService: UserService,</span>
+    private <span class="cstat-no" title="statement not covered" >store: Store,</span>
+    private <span class="cstat-no" title="statement not covered" >utils: UtilsService,</span>
+    private <span class="cstat-no" title="statement not covered" >track: TrackingSerivce)</span> { }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ngOnInit() {</span>
+<span class="cstat-no" title="statement not covered" >    this.createForm();</span>
+<span class="cstat-no" title="statement not covered" >    this.getUser();</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  getUser () {</span>
+<span class="cstat-no" title="statement not covered" >    this.store.select('current-user')</span>
+      .filter(<span class="fstat-no" title="function not covered" >(</span>user: any) =&gt; <span class="cstat-no" title="statement not covered" >user)</span>
+      .subscribe(this.setFormValue.bind(this));
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  setFormValue (</span>user) {
+<span class="cstat-no" title="statement not covered" >    this.form.patchValue({</span>
+      email: user.email,
+      display_name: user.display_name
+    });
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  createForm () {</span>
+<span class="cstat-no" title="statement not covered" >    this.form = this.fb.group({</span>
+      email: ['', this.validation.getValidator().email],
+      display_name: ['', this.validation.getValidator().displayName]
+    });
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  save () {</span></span>
+<span class="cstat-no" title="statement not covered" >    this.formIsSubmitted = true;</span>
+<span class="cstat-no" title="statement not covered" >    if (this.form.valid) {</span>
+<span class="cstat-no" title="statement not covered" >      this.userService.updateUser(this.form.value)</span>
+        .subscribe(<span class="fstat-no" title="function not covered" >(</span>res) =&gt; {
+<span class="cstat-no" title="statement not covered" >            this.showModal();</span>
+<span class="cstat-no" title="statement not covered" >            this.track.userDataWasEdited(['name', 'email']);</span>
+          },
+<span class="fstat-no" title="function not covered" >          (</span>err) =&gt; {
+            // TODO: validate on backend and return appropriate error
+<span class="cstat-no" title="statement not covered" >            if (err.status === 500 &amp;&amp; err.error.error.indexOf('duplicate') !== -1) {</span>
+<span class="cstat-no" title="statement not covered" >              this.emailInUse = true;</span>
+<span class="cstat-no" title="statement not covered" >              return;</span>
+            }
+<span class="cstat-no" title="statement not covered" >            this.utils.showErrorModal(err.error);</span>
+          });
+    }
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  showModal () {</span>
+<span class="cstat-no" title="statement not covered" >    this.utils.showInfoModal('Settings.modalTitle', 'Settings.modalText');</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  get display_nameCtrl () {</span>
+<span class="cstat-no" title="statement not covered" >    return this.form.controls.display_name;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  get emailCtrl () {</span>
+<span class="cstat-no" title="statement not covered" >    return this.form.controls.email;</span>
+  }
+&nbsp;
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Oct 26 2018 12:25:15 GMT+0300 (EEST)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

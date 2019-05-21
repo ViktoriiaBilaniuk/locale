@@ -1,0 +1,54 @@
+<div [@fadeInAnimation]="true">
+  <div class="files__wrapper_top">
+    <sl-tag-filter *ngIf="!noFiles && !filesLoading && searchByTag" [content]="searchValue" (remove)="onTagFilterRemove()"></sl-tag-filter>
+    <sl-right-sidebar-search
+      [searchValue] = "searchValue"
+      [disable]="searchByTag"
+      [filesExist]="!noFiles && !filesLoading"
+      (onUpload)="onUploadClick($event)"
+      (onSearch)="onSearch($event)">
+    </sl-right-sidebar-search>
+  </div>
+
+  <sl-drop-files
+    [venueId]="venueId"
+    [filesUploaddedOnClick]="filesUploaddedOnClick"
+    (onDrag)="onDrag($event)"
+    (onFinishUpload)="onFinishUpload($event)">
+    <div class="content" *ngIf="files.length && !filesLoading; else noData">
+      <div
+        [@fadeInAnimation]="true"
+        class="files__wrapper_bottom"
+        (scroll) = "onScroll($event)">
+        <sl-files-item
+          *ngFor="let file of files; let i = index"
+          (onUpdate)="updateFile($event)"
+          (onDelete)="openConfirmModal($event)"
+          (onTagClick) = "onTagClick($event)"
+          [venueId]="venueId"
+          [index]="i"
+          [file]="file">
+        </sl-files-item>
+      </div>
+    </div>
+  </sl-drop-files>
+
+  <ng-template #noData>
+    <div class="files__empty" *ngIf="!files.length && !filesLoading" [@fadeInAnimation]="true">
+      <i class="icon-drawer"></i>
+      <p translate>Rightbar.nothingToDisplay</p>
+    </div>
+  </ng-template>
+
+  <div *ngIf="filesLoading">
+    <div class="loading"><sl-loading></sl-loading></div>
+  </div>
+</div>
+
+<sl-modal *ngIf="visibleConfirmWindow" (close)="closeConfirmModal()">
+  <p class="modal-title" translate> Rightbar.confirmRemoveFile </p>
+  <div class="flex space-evenly">
+    <button class="btn btn-fancy textarea__btn" (click)="deleteFile()" translate> Rightbar.delete </button>
+    <button class="btn btn-gray textarea__btn" (click)="closeConfirmModal()" translate> Rightbar.cancel </button>
+  </div>
+</sl-modal>

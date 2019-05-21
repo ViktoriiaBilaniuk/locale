@@ -1,0 +1,26 @@
+@import '~scss/_variables.scss';
+
+.forgot-pass {
+  &__form {
+    margin-bottom: 39px;
+  }
+  &__text {
+    margin: 0;
+    font-size: 14px;
+    color: $greyish;
+  }
+  &__submit {
+    width: 100%;
+    margin-top: 35px;
+  }
+  &__login-link {
+    display: block;
+    font-family: Nunito, sans-serif;
+  }
+  &__success-msg {
+    font-size: 18px;
+    color: $white-two;
+    line-height: 1.33;
+    margin: 25px 0 61px;
+  }
+}

@@ -1,0 +1,52 @@
+<div class="container">
+
+<!--
+
+//textarea for mentions
+
+  <textarea
+    slMention
+    #mainInput
+    class="textarea_default section-text"
+    [maxLength]="maxLength()"
+    [placeholder]="getPlaceholder() | translate"
+    (input)="change()"
+    (blur)="onBlur()"
+    [mention]="mentionItems"
+    [mentionListTemplate]="mentionTemplateRef"
+    [mentionConfig]="mentionConfig"
+    [(ngModel)]="value">
+  </textarea>-->
+
+  <textarea
+    #mainInput
+    class="textarea_default section-text"
+    [maxLength]="maxLength()"
+    [placeholder]="getPlaceholder() | translate"
+    (input)="change()"
+    (blur)="onBlur()"
+    [(ngModel)]="value">
+  </textarea>
+
+  <div *ngIf="type === NETWORKS.TWITTER" class="counter">
+    <span [ngClass]="{red: byteValueStringLength() > twitterLimit}">{{byteValueStringLength()}}</span>
+    <span> / </span>
+    <span>{{twitterLimit}}</span>
+  </div>
+  <i class="icon-emotsmile" (click)="emojiIconClick($event)"></i>
+</div>
+
+<emoji-mart
+  class="emoji"
+  (clickOutside)="onClickedOutsideEmojiPopup()"
+  [ngClass]="{'emoji_open': emojiOpen}"
+  title="Pick your emoji…"
+  (emojiSelect)="selectEmoji($event)"
+  [totalFrequentLines]="1"
+  emoji="point_up">
+</emoji-mart>
+
+<!--<ng-template #mentionTemplateRef let-item="item">
+  <sl-mention-template [item]="item"></sl-mention-template>
+</ng-template>-->
+

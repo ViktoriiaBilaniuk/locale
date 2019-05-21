@@ -1,0 +1,70 @@
+<div class="content">
+
+  <!-- START: Todays events if it All Events or all My Events in month -->
+  <div *ngIf="allEvents" class="day" translate>
+      Events.today
+  </div>
+  <!-- Events -->
+  <div *ngIf="hasTodaysEvents">
+    <sl-event
+      [disabledButtons]="disabledButtons"
+      (emitDisablingButtons)="onDisabledButtons($event)"
+      *ngFor="let event of events.today;"
+      (onRemovingEventAction)="onRemovingEventAction($event)"
+      (onAddEventAction)="onAddEventAction($event)"
+      [event]="event"
+      [venueId]="venueId"
+      [dataForGettingEvents]="dataForGettingEvents"
+      [myEvents]="myEvents">
+    </sl-event>
+  </div>
+  <!-- Nothing to display -->
+  <div class="empty" *ngIf="noTodaysEvents">
+    <img src="../../../../assets/images/events/logo-copy-5.svg" alt="No events">
+    <div *ngIf="!allEvents; else nothingToDisplay">
+      <p translate>Events.noEvents</p>
+      <p translate>Events.canChoose</p>
+    </div>
+    <ng-template #nothingToDisplay>
+      <div translate>Events.nothingToDisplay</div>
+    </ng-template>
+  </div>
+  <!-- END: Todays events if it All Events or all My Events in month -->
+
+  <!-- START: Tommorow events for All Events, for My Events this section is not visible -->
+  <ng-container *ngIf="allEvents" >
+    <div class="day" translate>
+        Events.tomorrow
+    </div>
+    <!-- Events -->
+    <div *ngIf="hasTomorrowsEvents">
+      <sl-event
+        [disabledButtons]="disabledButtons"
+        (emitDisablingButtons)="onDisabledButtons($event)"
+        *ngFor="let event of events.tomorrow"
+        (onRemovingEventAction)="onRemovingEventAction($event)"
+        (onAddEventAction)="onAddEventAction($event)"
+        [event]="event"
+        [venueId]="venueId"
+        [dataForGettingEvents]="dataForGettingEvents"
+        [myEvents]="myEvents">
+      </sl-event>
+    </div>
+      <!-- Nothing to display -->
+    <div class="empty" *ngIf="noTomorrowsEvents">
+      <img src="../../../../assets/images/events/logo-copy-5.svg" alt="">
+      <div *ngIf="!allEvents; else nothingToDisplay">
+        <p translate>Events.noEvents</p>
+        <p translate>Events.canChoose</p>
+      </div>
+      <ng-template #nothingToDisplay>
+        <div translate>Events.nothingToDisplay</div>
+      </ng-template>
+    </div>
+  </ng-container>
+  <!-- END: Tommorow events for All Events, for My Events this section is not visible -->
+
+</div>
+
+
+

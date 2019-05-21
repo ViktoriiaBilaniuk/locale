@@ -1,0 +1,79 @@
+@import '~scss/_variables.scss';
+
+.header {
+  justify-content: space-between;
+  padding: 0px 50px;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  background-color: $white;
+}
+
+.tabs {
+  position: relative;
+  font-family: Nunito;
+  font-style: normal;
+}
+
+label {
+  cursor: pointer;
+  color: $pinkish-grey;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+  width: 100%;
+  text-transform: uppercase;
+  position: relative;
+  &:after {
+    content: '';
+    width: 84px;
+    height: 2px;
+    background: $pinkish-grey;
+    position: absolute;
+    top: 95%;
+    left: 0;
+    transition: color 0.2s ease;
+  }
+}
+
+.active{
+  color: $tangerine;
+  transition: color 0.2s ease;
+  &:after {
+    background: $tangerine;
+    transition: color 0.2s ease;
+  }
+}
+
+.slide {
+  background: $tangerine;
+  width: 84px;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  top: calc(100% + 2px);
+  transition: left 0.3s ease-out;
+}
+
+.tab-label-content {
+  width: 100%;
+  margin-right: 16px;
+  margin-left: 2px;
+  .tab {
+    width: 84px;
+    margin-right: 8px;
+    display: flex;
+    margin-bottom: -5px;
+  }
+}
+
+.btn {
+  margin-left: 10px;
+}
+
+.buttons {
+  position: relative;
+}

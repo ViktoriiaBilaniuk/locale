@@ -1,0 +1,77 @@
+@import '~scss/_variables.scss';
+
+.content {
+  justify-content: space-between;
+  padding: 0 50px;
+  margin-bottom: 60px;
+  margin-top: 20px;
+}
+
+.left {
+  width: calc(100% - 560px);
+}
+
+.right {
+  width: 530px;
+}
+
+hr {
+  background-color: $pinkish-grey;
+  height: 1px;
+  margin-bottom: 20px;
+}
+
+.preview {
+  background-color: $white;
+  &__header {
+    justify-content: space-between;
+    margin: 11px 20px;
+  }
+  &__title {
+    font-family: Nunito;
+    font-size: 16px;
+    font-weight: 600;
+    color: $black;
+  }
+  &__icon {
+    font-size: 19px;
+    color: $greyish;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease-out;
+    &_active {
+      color: $tangerine;
+      transition: color 0.3s ease-in;
+    }
+  }
+}
+
+.modal-title {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.modal-buttons {
+  width: 60%;
+  margin: 0 auto;
+}
+:host ::ng-deep {
+  .sl-modal__content {
+    top: 45vh !important;
+  }
+}
+
+.loading-cover {
+  background-color: rgba(0, 0, 0, 0.27058823529411763);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  padding-top: 45vh;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.disable {
+  pointer-events: none;
+}

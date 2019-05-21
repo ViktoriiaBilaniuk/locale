@@ -1,0 +1,78 @@
+<div class="wrap">
+  <div class="content" [ngClass]="{'mobile': !desktopMode}">
+    <section class="left">
+      <div class="icon" [ngStyle]="{'background-image': 'url(' + getImageUrl() + ')'}"></div>
+    </section>
+    <section class="right">
+      <div class="header flex">
+        <span
+          class="name truncated-text"
+          title="{{publicationProxyService.disconnectedChannelError() ? publicationProxyService.disconnectedChannelErrorMessage: ''}}">
+          <a
+            *ngIf="getChannelLink(); else textName"
+            class="name"
+            target="_blank"
+            [href]="getChannelLink()">
+            {{getChannelName()}}
+          </a>
+          <ng-template #textName><span class="name red">{{getChannelName()}}</span></ng-template>
+        </span>
+        <span class="dot">·</span>
+        <span class="time" translate>
+          <span
+            *ngIf="isDate(); else noDate">
+            {{publicationProxyService.getScheduleDateInPostTimezone() | postDate : NETWORKS.TWITTER}}
+          </span>
+          <ng-template #noDate>
+            <span *ngIf="!publicationProxyService.schedule.error; else dateError" translate>Channels.unscheduled</span>
+            <ng-template #dateError>
+              <span class="red" translate>Channels.datetimeError</span>
+            </ng-template>
+          </ng-template>
+        </span>
+      </div>
+      <div class="middle" *ngIf="isContent(); else noContent">
+        <p
+          class="middle__desc"
+          [innerHTML]="description?.trim() | linkify"
+          [@fadeInAnimation]="true">
+        </p>
+        <div class="middle__img" [@fadeInAnimation]="true">
+          <div *ngIf="isImage()">
+            <div *ngIf="!desktopMode" class="img" [ngStyle]="{'background-image': 'url(' + localFileUrl() + ')'}"></div>
+            <img *ngIf="desktopMode" src="{{localFileUrl()}}" alt="">
+          </div>
+          <div class="video" *ngIf="isVideo()">
+            <video
+              slCheckDuration
+              width="400"
+              controls
+              class="middle__local-cover"
+              [src]="localFileUrl()">
+              Your browser does not support HTML5 video.
+            </video>
+          </div>
+        </div>
+      </div>
+      <ng-template #noContent>
+        <sl-preview-placeholder [type]=NETWORKS.TWITTER></sl-preview-placeholder>
+      </ng-template>
+      <div class="bottom">
+        <ul class="bottom__list flex">
+          <li class="bottom__item">
+            <img class="bottom__icon" src="../../../../../../assets/images/channels/networks/twitter-comment.png" alt="comment">
+          </li>
+          <li class="bottom__item">
+            <img class="bottom__icon" src="../../../../../../assets/images/channels/networks/twitter-retweet.png" alt="retweet">
+          </li>
+          <li class="bottom__item">
+            <img class="bottom__icon" src="../../../../../../assets/images/channels/networks/twitter-like.png" alt="like">
+          </li>
+          <li class="bottom__item">
+            <img class="bottom__icon" src="../../../../../../assets/images/channels/networks/twitter-mess.png" alt="mess">
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</div>

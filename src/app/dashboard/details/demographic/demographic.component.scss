@@ -1,0 +1,51 @@
+@import '~scss/_variables.scss';
+
+.content {
+  &__more {
+    color: $tangerine;
+    cursor: pointer;
+  }
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  &__tag {
+    display: inline-block;
+    background-color: $white-four;
+    border-radius: 4px;
+    margin: 2px;
+    padding: 0 8px;
+    margin-bottom: -5px;
+    max-width: 100%;
+  }
+  &__checkbox {
+    margin-left: 15px;
+  }
+}
+
+.edit {
+  background-color: $white;
+}
+
+.wrapper {
+  padding: 20px;
+}
+.items {
+  columns: 2;
+  column-gap: 130px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid $tangerine;
+}
+
+.content:hover .icon-pencil {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.2s ease-out;
+}
+
+@media only screen and (max-width: 1500px) {
+  .items {
+    columns: 1;
+  }
+}

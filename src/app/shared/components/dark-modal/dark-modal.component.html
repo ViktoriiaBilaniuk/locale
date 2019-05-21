@@ -1,0 +1,10 @@
+<div class="sl-dark-modal">
+  <div class="sl-dark-modal__overlay" (click)="hideModal()"></div>
+  <div class="sl-dark-modal__content" [ngStyle]="{'width': width}">
+    <div class="sl-dark-header flex">
+      <p class="sl-dark-header__title" translate>{{title}}</p>
+      <i class="icon-plus sl-dark-modal__close-icon" (click)="hideModal()"></i>
+    </div>
+    <ng-content></ng-content>
+  </div>
+</div>

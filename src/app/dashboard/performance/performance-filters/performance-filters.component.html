@@ -1,0 +1,45 @@
+<div class="container flex" [@fadeInAnimation]="true">
+  <div class="wrapper">
+    <div class="date-filters flex">
+      <div class="date-filters__item flex">
+        <label class="date-filters__lable" translate>Performance.from</label>
+        <mat-datepicker-toggle #fromIcon class="date-filters__icon" matSuffix [for]="fromPicker">
+          <i matDatepickerToggleIcon class="date-filters__icon icon-calendar"></i>
+        </mat-datepicker-toggle>
+        <div (click)="fromPicker.open()">
+          <input
+            name="fromPickerInput"
+            matInput
+            [value]="fromDatepickerSettings.value.toDate()"
+            [min]="fromDatepickerSettings.min.toDate()"
+            [max]="fromDatepickerSettings.max.toDate()"
+            [matDatepicker]="fromPicker"
+            (dateInput)="onDatepickerChangeDate('from', $event)"
+            disabled>
+        </div>
+
+        <mat-datepicker #fromPicker disabled="false"></mat-datepicker>
+        <span class="date-filters__date"></span>
+      </div>
+      <div class="date-filters__item flex">
+        <label class="date-filters__lable" translate>Performance.to</label>
+        <mat-datepicker-toggle #toIcon class="date-filters__icon" matSuffix [for]="toPicker">
+          <i matDatepickerToggleIcon class="date-filters__icon icon-calendar"></i>
+        </mat-datepicker-toggle>
+        <div (click)="toPicker.open()">
+          <input
+            name="toPickerInput"
+            matInput
+            [value]="toDatepickerSettings.value.toDate()"
+            [min]="toDatepickerSettings.min.toDate()"
+            [max]="toDatepickerSettings.max.toDate()"
+            [matDatepicker]="toPicker"
+            (dateInput)="onDatepickerChangeDate('to', $event)"
+            disabled>
+        </div>
+        <mat-datepicker #toPicker disabled="false"></mat-datepicker>
+        <span class="date-filters__date"></span>
+      </div>
+    </div>
+  </div>
+</div>

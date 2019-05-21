@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/app/dashboard/details/target-market/target-market.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../index.html">All files</a> / <a href="index.html">src/app/dashboard/details/target-market</a> target-market.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">40% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>22/55</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">5.26% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/19</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">40.82% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>20/49</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output} from '@angular/core';
+import {Store} from '../../../core/store/store';
+import {Subscription} from 'rxjs/Subscription';
+&nbsp;
+@Component({
+  selector: 'sl-target-market',
+  templateUrl: './target-market.component.html',
+  styleUrls: ['./target-market.component.scss']
+})
+export class TargetMarketComponent implements OnInit, OnDestroy, OnChanges {
+&nbsp;
+  @Input() canEdit: boolean;
+  @Input() data: String[];
+  @Output() onEdit = new EventEmitter&lt;any&gt;();
+  options$: Subscription;
+<span class="cstat-no" title="statement not covered" >  editMode = false;</span>
+  defaultOptions;
+  venueOptions;
+  newVenueOptions;
+&nbsp;
+<span class="fstat-no" title="function not covered" >  constructor( private <span class="cstat-no" title="statement not covered" ></span>store: Store </span>) { }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ngOnInit() {</span>
+<span class="cstat-no" title="statement not covered" >    this.resetData();</span>
+<span class="cstat-no" title="statement not covered" >    this.setDefaultOptionsList();</span>
+<span class="cstat-no" title="statement not covered" >    this.setVenueOptions();</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ngOnChanges(</span>changes) {
+<span class="cstat-no" title="statement not covered" >    this.setVenueOptions();</span>
+<span class="cstat-no" title="statement not covered" >    this.editMode = false;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  resetData() {</span>
+<span class="cstat-no" title="statement not covered" >    this.editMode = false;</span>
+<span class="cstat-no" title="statement not covered" >    this.defaultOptions = [];</span>
+<span class="cstat-no" title="statement not covered" >    this.venueOptions = [];</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  setDefaultOptionsList() {</span></span>
+<span class="cstat-no" title="statement not covered" >    this.options$ = this.store.select('target_market_options')</span>
+      .filter(<span class="fstat-no" title="function not covered" >(</span>data: any) =&gt; <span class="cstat-no" title="statement not covered" >data)</span>
+      .subscribe(<span class="fstat-no" title="function not covered" >data =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        this.defaultOptions = data;</span>
+        let defaultOptionsList;
+<span class="cstat-no" title="statement not covered" >        defaultOptionsList = data;</span>
+<span class="cstat-no" title="statement not covered" >        this.defaultOptions = defaultOptionsList.map(<span class="fstat-no" title="function not covered" >(</span>option) =&gt; <span class="cstat-no" title="statement not covered" >this.formObject(option))</span>;</span>
+      });
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  setVenueOptions() {</span></span>
+<span class="cstat-no" title="statement not covered" >    this.venueOptions = this.data.map(<span class="fstat-no" title="function not covered" >option =&gt; <span class="cstat-no" title="statement not covered" >this.formObject(option))</span>;</span></span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  pencilClick() {</span>
+<span class="cstat-no" title="statement not covered" >    this.editMode = !this.editMode;</span>
+<span class="cstat-no" title="statement not covered" >    if (!this.editMode) {</span>
+<span class="cstat-no" title="statement not covered" >      this.setVenueOptions();</span>
+    }
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  formObject(</span>item) {
+<span class="cstat-no" title="statement not covered" >    return { value: item, title: this.getTitle(item)};</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  getTitle(</span>item) {
+<span class="cstat-no" title="statement not covered" >    return item.charAt(0).toUpperCase() + item.replace('_', ' ').slice(1);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  editTargetMarket(</span>newValue) {
+<span class="cstat-no" title="statement not covered" >    if (newValue.sort().toString() !== this.data.sort().toString()) {</span>
+<span class="cstat-no" title="statement not covered" >      this.onEdit.emit(newValue);</span>
+    }
+<span class="cstat-no" title="statement not covered" >    this.editMode = false;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  onSaveClick() {</span>
+<span class="cstat-no" title="statement not covered" >    this.editTargetMarket(this.newVenueOptions);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  onCancelClick() {</span>
+<span class="cstat-no" title="statement not covered" >    this.editMode = false;</span>
+<span class="cstat-no" title="statement not covered" >    this.setVenueOptions();</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  onAddItem(</span>items) {
+<span class="cstat-no" title="statement not covered" >    this.newVenueOptions = items.slice();</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ngOnDestroy() {</span>
+<span class="cstat-no" title="statement not covered" >    this.options$.unsubscribe();</span>
+  }
+&nbsp;
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Oct 26 2018 12:25:15 GMT+0300 (EEST)
+</div>
+</div>
+<script src="../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../sorter.js"></script>
+</body>
+</html>

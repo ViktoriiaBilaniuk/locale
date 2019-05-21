@@ -1,0 +1,18 @@
+<div class="contact-us" [@fadeInAnimation]="true">
+  <div class="contact-us__option">
+    <i class="icon-phone font-icon contact-icon"></i>
+    <a>+353 1 240 2580</a>
+  </div>
+  <div class="contact-us__option">
+    <i class="icon-envelope font-icon contact-icon" (click)="email.click()"></i>
+    <a #email href="mailto:support@sociolocal.ie">support@sociolocal.ie</a>
+  </div>
+  <div class="contact-us__option">
+    <i class="icon-globe font-icon contact-icon" (click)="site.click()"></i>
+    <a #site href="http://www.sociolocal.ie" target="_blank">www.sociolocal.ie</a>
+  </div>
+
+  <div class="contact-us__back">
+    <a [routerLink]="['./../login']" translate>Auth.back</a>
+  </div>
+</div>

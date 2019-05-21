@@ -1,0 +1,17 @@
+<div class="settings full-height" [@fadeInAnimation]="true">
+  <section class="settings__left full-height">
+    <sl-left-sidebar-header></sl-left-sidebar-header>
+   <div class="settings__left__body">
+     <sl-profile-photo class="child"></sl-profile-photo>
+   </div>
+  </section>
+  <section class="settings__right full-height">
+    <header class="settings__right__child">
+      <label class="settings__home" translate>Settings.home</label>
+      &#8212;
+      <label class="settings__settings" translate>Settings.settings</label>
+    </header>
+    <sl-personal-details class="settings__right__child"></sl-personal-details>
+    <sl-change-password class="settings__right__child"></sl-change-password>
+  </section>
+</div>

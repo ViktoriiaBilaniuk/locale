@@ -1,0 +1,43 @@
+<div class="container">
+  <header class="header">
+    <div class="header__date">
+      <p [ngClass]="{'header__date_today': getToday() === getDate()}">{{getDate()}}</p>
+    </div>
+    <p class="header__info">
+      <span class="right-margin">{{data.posts.length}}</span>
+      <span class="right-margin" translate>{{getPostText()}}</span>
+      <span translate>PostsView.forThisDay</span>
+    </p>
+    <div
+      class="btn-wrapp"
+      (mouseover)="hoverOnBtn = true"
+      (mouseleave)="hoverOnBtn = false">
+      <button
+        *ngIf="postManagementPermission && !dateIsInPast()"
+        class="btn btn-border-tangerine"
+        [disabled]="allChannelsAreDissconnected || !channelsExists"
+        (click)="createPostClick()"
+        translate>
+        Channels.createPost
+      </button>
+      <sl-tooltip-light
+        *ngIf="allChannelsAreDissconnected || !channelsExists"
+        [content]="getTooltipText()"
+        [top]="'45px'"
+        [hover]="hoverOnBtn">
+      </sl-tooltip-light>
+    </div>
+
+  </header>
+  <div class="post-wrapp">
+    <sl-post
+      *ngFor="let post of data.posts; trackBy: trackByIndex"
+      [postManagementPermission]="postManagementPermission"
+      [post]="post"
+      (onEdit)="onEdit.emit($event)"
+      (onCopy)="onCopy.emit($event)"
+      (onDelete)="onDelete.emit($event)">
+    </sl-post>
+  </div>
+</div>
+

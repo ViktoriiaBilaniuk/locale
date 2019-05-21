@@ -1,0 +1,66 @@
+@import '~scss/_variables.scss';
+
+.container {
+  margin-right: 10px;
+  width: 240px;
+  background-color: $white;
+}
+
+.header {
+  text-align: center;
+  &__date {
+    background-color: $greyish-brown-two;
+    border-radius: 5px 5px 0 0;
+    p {
+      color: $white-two;
+      font-weight: 600;
+      text-align: center;
+      font-size: 12px;
+      padding: 7px 0;
+    }
+    &_today {
+      color: $tangerine !important;
+    }
+  }
+  &__info {
+    font-size: 11px;
+    line-height: 1.45;
+    color: $black;
+    text-align: center;
+    padding: 4px 0 10px 0;
+  }
+  .btn-border-tangerine {
+    margin-bottom: 10px;
+  }
+}
+
+.post-wrapp {
+  padding: 0 20px;
+  overflow: auto;
+  max-height: 67vh;
+}
+
+.right-margin {
+  margin-right: 2px;
+}
+
+.post-wrapp::-webkit-scrollbar-track
+{
+  background-color: $white-four;
+}
+
+.post-wrapp::-webkit-scrollbar
+{
+  width: 6px;
+  background-color: $white-four;
+}
+
+.post-wrapp::-webkit-scrollbar-thumb
+{
+  background-color: $warm-grey;
+  border-radius: 3px;
+}
+
+.btn-wrapp {
+  position: relative;
+}

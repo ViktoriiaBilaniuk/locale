@@ -1,0 +1,10 @@
+<ul class="tabs">
+  <li
+    class="tab"
+    *ngFor="let tab of tabs; let i = index"
+    [ngClass]="{'active': tab.active}"
+    (click)="tabClick(tab, i)">
+    <span>{{tab.name}}</span>
+    <hr>
+  </li>
+</ul>

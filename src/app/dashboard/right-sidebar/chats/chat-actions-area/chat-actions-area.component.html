@@ -1,0 +1,43 @@
+<div class="actions-area">
+  <form class="actions-area__form" (submit)="sendMessage(message.value)">
+    <div class="actions-area__text">
+      <textarea
+        (keydown.enter)="sendMessage(message.value)"
+        maxlength="3000"
+        class="actions-area__textarea"
+        #message
+        rows="3"
+        placeholder="{{'Chat.typeMessage' | translate}}">
+      </textarea>
+   </div>
+
+  <div class="actions-area__controls">
+    <div class="actions-area__file">
+      <input
+        multiple
+        (change)="fileChange($event)"
+        #fileInput
+        type="file"
+        name="file"
+        id="file"
+        class="inputfile"
+        [accept]="fileTypes()" />
+      <label for="file" class="actions-area__attach">
+        <i class="font-icon icon-docs"></i>
+      </label>
+    </div>
+    <div>
+      <button class="btn btn-fancy btn_small" translate>Chat.send</button>
+    </div>
+  </div>
+  </form>
+  <div *ngFor="let toast of toasts; index as index">
+    <sl-chat-toast
+      *ngIf="toast.show"
+      (cancel)="cancelUpload(index)"
+      [index]="index"
+      [text]="('Chat.fileUpload' | translate) + ' (' + toast.text + ') ' + ('Chat.inProgress' | translate)">
+    </sl-chat-toast>
+  </div>
+
+</div>

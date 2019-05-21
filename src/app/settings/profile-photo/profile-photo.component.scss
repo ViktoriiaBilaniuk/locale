@@ -1,0 +1,61 @@
+@import '~scss/_variables.scss';
+
+.profile-photo{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+  h3{
+    color: $white-two;
+  }
+
+  p{
+    font-size: 12px;
+    line-height: 1.5;
+    color: $white-two;
+    width: 100%;
+  }
+
+  &__avatar-container{
+    cursor: pointer;
+    position: relative;
+    margin: 36px 0;
+    width: 100%;
+
+    .avatar{
+      width: 120px;
+      height: 120px;
+    }
+    .local-cover{
+      height: 120px;
+      border-radius: 60px;
+      background-size: cover;
+      background-position: center;
+      width: 120px;
+    }
+
+    &.error {
+      margin: 36px 0 18px 0;
+    }
+  }
+
+  .sl-error-msg{
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+}
+
+.icon {
+  background-color: $tangerine;
+  border-radius: 18px;
+  height: 36px;
+  width: 36px;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 17%;
+}
+

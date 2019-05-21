@@ -1,0 +1,28 @@
+@import '~scss/_variables.scss';
+
+.tooltip {
+  color: $white-two;
+  // background-color: $black;
+  background-color: black;
+  position: absolute;
+  border-radius: 2px;
+  padding: 0px 13px;
+  height: 48px;
+  align-items: center;
+  display: flex;
+  font-size: 12px;
+  font-family: Nunito;
+  left: 80px;
+  top: -15px;
+
+  &:before {
+    content: ' ';
+    border-top: 22px solid black;
+    border-left: 24px solid transparent;
+    border-right: 24px solid transparent;
+    left: -34px;
+    transform: rotate(90deg);
+    bottom: 13px;
+    position: absolute;
+  }
+}

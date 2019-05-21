@@ -1,0 +1,75 @@
+@import '~scss/_variables.scss';
+
+.chip-input{
+  .list-wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: -4px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $pinkish-grey;
+    sl-chip{
+      margin: 5px 5px 0px 5px;
+    }
+    &.active{
+      border-bottom: 1px solid $tangerine;
+    }
+    input{
+      width: 150px;
+      margin-top: 15px;
+      padding-bottom: 12px;
+      color: $black;
+      flex: 1 0 150px;
+      border-bottom: none;
+      background-color: $white;
+    }
+
+    .suggestions{
+      position: absolute;
+      top: 103%;
+      width: 100%;
+      z-index: 100;
+      overflow-x: hidden;
+      overflow-y: auto;
+      max-height: 205px;
+      border: 1px solid #e6e6e6;
+      box-shadow: 1px 1px 10px 1px #cececebf;
+      ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        background-color: $white-two;
+        li{
+          padding: 10px 20px;
+          color: $black;
+          cursor: pointer;
+          border-bottom: 1px solid #eeeeee;
+          background-color: $white-two;
+          transition: background-color 0.3s ease-in;
+          cursor: pointer;
+          label{
+            display: flex;
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            line-height: 20px;
+            span{
+              color: $greyish;
+              margin-left: 5px;
+              text-overflow: ellipsis;
+              overflow: hidden;
+            }
+          }
+          &:hover{
+            background-color: darken($white-two, 7%);
+            transition: background-color 0.3s ease-in;
+
+          }
+        }
+      }
+    }
+  }
+}

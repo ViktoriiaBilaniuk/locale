@@ -1,0 +1,28 @@
+<table width="100%"  class="table">
+  <tr>
+    <th
+      class="table__label"
+      *ngFor="let columnLabel of columnsLabel"
+      translate>
+      {{columnLabel}}
+    </th>
+  </tr>
+  <tr *ngFor="let source of tableSource" class="table__row">
+    <td class="table__data--label">
+      <div class="box" [ngClass]="{'checked': source.selected}" (click)="selectSource(source)">
+        <i class="icon checkmark"></i>
+      </div>
+      <img width="24px" src="../../../../assets/images/social-performance/table/{{source.icon}}.png" [alt]="source.icon">
+      <span translate>{{source.label}}</span>
+    </td>
+    <td class="table__data--metric">
+      <span>{{(source.number || 0) | prettyNumber}}</span>
+    </td>
+    <td class="table__data--metric" >
+      <span [class]="source.className">{{(source.comparedPrev || 0) | prettyNumber}}</span>
+    </td>
+    <td class="table__data--metric">
+      <span [class]="source.className">{{(source.comparisonPrev || 0) | number: '1.0-0'}}%</span>
+    </td>
+  </tr>
+</table>

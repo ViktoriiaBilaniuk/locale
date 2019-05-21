@@ -1,0 +1,37 @@
+<div class="post">
+  <a class="channel" href="{{ post?.source_url }}" target="_blank" [ngClass]="{'disable': post?.status !== 'published'}">
+    <label>
+      <img src="assets/images/channels/{{post.network}}.svg">
+      <span class="name truncated-text" [title]="post?.channel?.name">{{ post?.channel?.name }}</span>
+    </label>
+  </a>
+  <sl-media-viewer *ngIf="media.length" [slides]="media"></sl-media-viewer>
+  <div class="date-wrap flex">
+    <div class="date flex">
+      <i class="icon-clock font-icon"></i>
+      <label>{{ getDate()}}</label>
+      <span translate> Schedule.at </span>
+      <label>{{ getTime() }}</label>
+      <span class="truncated-text timezone">(in {{getPostTimezoneText()}})</span>
+    </div>
+    <span title="{{getErrorMessage()}}" class="status {{post?.status}}">{{ getPostStatus(post?.status)}}</span>
+  </div>
+  <div class="description {{post?.network}}">
+    <p [innerHTML]= "post?.message | mentionLink : post?.mentions | linkify"></p>
+    <div *ngIf="isLinkedPost() || (isSiteData() && isFbPost() && !isLinkedPostCarousel())" class="site-preview">
+      <sl-site-preview [data]="siteData()" [loading]="sitePreviewLoading()"></sl-site-preview>
+    </div>
+    <div *ngIf="isLinkedPostCarousel()">
+      <sl-link-carousel [data]="carouselFiles()"></sl-link-carousel>
+    </div>
+    <div *ngIf="showWarning && canOpenChat" class="post__last">
+      <hr>
+      <p translate> Schedule.warning</p>
+    </div>
+    <div *ngIf="!canOpenChat" class="post__warning">
+      <hr>
+      <p translate> Schedule.updatesUnavailable</p>
+    </div>
+  </div>
+</div>
+

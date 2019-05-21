@@ -1,0 +1,123 @@
+@import '~scss/_variables.scss';
+
+.venue {
+  background-color: white;
+  width: calc(100% - 360px);
+  align-items: center;
+  &__content {
+    padding: 0 50px;
+    line-height: 3.8;
+    align-items: center;
+  }
+  &__icon {
+    width: 40px;
+    height: 40px;
+    background-color: $tangerine;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    position: absolute;
+  }
+  &__dropdown {
+    align-items: center;
+    display: flex;
+    width: 360px;
+    position: relative;
+    cursor: pointer;
+    border-bottom: 1px solid $greyish;
+    input {
+      color: $greyish-brown-two;
+      padding-left: 60px;
+      width: 100%;
+      margin-right: 20px;
+      font-family: Nunito;
+      font-size: 20px;
+      font-weight: 600;
+      // pointer-events: none;
+      line-height: 3.8;
+      &::first-letter {
+        text-transform: capitalize;
+      }
+    }
+    .icon-arrow-down {
+      right: 0;
+      position: absolute;
+      font-size: 11px;
+      color: black;
+      font-weight: 900;
+      padding: 30px 0px;
+      padding-left: 5px;
+    }
+  }
+}
+
+.venue-menu {
+  font-family: Nunito;
+  font-size: 14px;
+  color: #4a4a4a;
+  width: 360px;
+  position: absolute;
+  z-index: 5;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+  top: 80px;
+  left: 46px;
+  border-radius: 7px;
+  border: 1px solid #e6e6e6;
+  box-shadow: 1px 1px 10px 1px #cececebf;
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: white;
+  &_visible {
+    visibility: visible;
+    opacity: 1;
+  }
+  &__option {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-color: $white-two;
+    padding: 13px;
+    transition: background-color 0.3s ease-in;
+    border-bottom: 1px solid $white-four;
+    &:hover {
+      background-color: darken($white-two, 7%);
+      transition: background-color 0.3s ease-in;
+    }
+  }
+  &__icon {
+    margin-right: 20px;
+  }
+  &__text {
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
+}
+
+.count {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+@keyframes blink {
+  0% { box-shadow: 0px 0px 20px 3px #ef8900; }
+  10% { box-shadow: 0px 0px 20px 2px #ef8900; }
+  20% { box-shadow: 0px 0px 20px 1px #ef8900; }
+  30% { box-shadow: 0px 0px 15px #ef8900; }
+  40% { box-shadow: 0px 0px 0px #ef8900; }
+  50% { box-shadow: 0px 0px 15px #ef8900; }
+  60% { box-shadow: 0px 0px 20px #ef8900; }
+  70% { box-shadow: 0px 0px 20px 1px #ef8900; }
+  80% { box-shadow: 0px 0px 20px 2px #ef8900; }
+  90% { box-shadow: 0px 0px 20px 3px #ef8900; }
+  100% { box-shadow: 0px 0px 20px 4px #ef8900; }
+}
+
+.blink {
+  animation: blink 1.8s linear infinite;
+}

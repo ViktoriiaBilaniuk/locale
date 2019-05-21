@@ -1,0 +1,33 @@
+<ul class="channels">
+  <li
+    class="channels__item_wrap"
+    *ngFor="let item of channelsByNetwork(); let i = index"
+    (mouseover)="item.hover = true"
+    (mouseleave)="item.hover = false">
+    <div
+      class="channels__item"
+      (click)="select(item)"
+      [ngClass]="{'channels__item_dissabled': item.status === 'offline'}">
+      <div class="channels__channel">
+        <i class="icon {{item.network}}"></i>
+        <span
+          title="{{ (item.name.length > truncationLimit && item.status === 'online')? item.name : ''}}"
+          class="truncated-text">
+          {{item.name}}
+        </span>
+      </div>
+      <div class="box" [ngClass]="{'checked': item.selected}">
+        <i class="icon checkmark"></i>
+      </div>
+    </div>
+
+    <sl-tooltip-light
+      *ngIf="item.status === 'offline'"
+      [content]="'Channels.thisChannelIsDissconnected' | translate"
+      [top]="'30px'"
+      [hover]="item.hover">
+    </sl-tooltip-light>
+  </li>
+</ul>
+
+

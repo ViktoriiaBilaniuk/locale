@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/app/dashboard/performance/performance-filters/performance-filters.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../index.html">All files</a> / <a href="index.html">src/app/dashboard/performance/performance-filters</a> performance-filters.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">42.42% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>14/33</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">12.5% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">38.71% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>12/31</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
+import {Datepicker} from '../../../models/datepicker.model';
+import * as  moment from 'moment';
+import {MatDatepickerInputEvent} from '@angular/material';
+import {fadeInAnimation} from '../../../shared/animations/fade-in.animation';
+&nbsp;
+@Component({
+  selector: 'sl-performance-filters',
+  templateUrl: './performance-filters.component.html',
+  styleUrls: ['./performance-filters.component.scss'],
+  animations: [fadeInAnimation],
+})
+export class PerformanceFiltersComponent implements OnInit {
+&nbsp;
+  fromDatepickerSettings: Datepicker;
+  toDatepickerSettings: Datepicker;
+  @Output() onDateChange = new EventEmitter();
+&nbsp;
+<span class="fstat-no" title="function not covered" >  constructor() { }</span>
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ngOnInit() {</span>
+    const startOfMonth = <span class="cstat-no" title="statement not covered" >moment([moment().toDate().getFullYear(), moment().toDate().getMonth()]);</span>
+<span class="cstat-no" title="statement not covered" >    this.fromDatepickerSettings = this.initDatePicker(moment().add(-6, 'days'),</span>
+      startOfMonth.clone().add(-3, 'month'), moment().add(-6, 'days'));
+<span class="cstat-no" title="statement not covered" >    this.toDatepickerSettings = this.initDatePicker(moment(),</span>
+      startOfMonth.clone().add(-3, 'month').add(6, 'days'), moment());
+<span class="cstat-no" title="statement not covered" >    this.emitDate();</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private initDatePicker(</span>value: moment.Moment, min: moment.Moment, max: moment.Moment): Datepicker {
+<span class="cstat-no" title="statement not covered" >    return { value, min, max };</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  onDatepickerChangeDate(</span>type: string, event: MatDatepickerInputEvent&lt;Date&gt;) {
+<span class="cstat-no" title="statement not covered" >    switch (type) {</span>
+      case 'from':
+<span class="cstat-no" title="statement not covered" >        this.fromDatepickerSettings.value = moment(event.value);</span>
+<span class="cstat-no" title="statement not covered" >        if (moment(event.value).isAfter(this.toDatepickerSettings.value.clone().add(-6, 'days'))) {</span>
+<span class="cstat-no" title="statement not covered" >          this.toDatepickerSettings.value = moment(event.value).add(6, 'days');</span>
+        }
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      case 'to':
+<span class="cstat-no" title="statement not covered" >        this.toDatepickerSettings.value = moment(event.value);</span>
+<span class="cstat-no" title="statement not covered" >        if (moment(event.value).isBefore(this.fromDatepickerSettings.value.clone().add(6, 'days'))) {</span>
+<span class="cstat-no" title="statement not covered" >          this.fromDatepickerSettings.value = moment(event.value).add(-6, 'days');</span>
+        }
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      default: <span class="cstat-no" title="statement not covered" >break;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    this.emitDate();</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  emitDate() {</span>
+<span class="cstat-no" title="statement not covered" >    this.onDateChange.emit({startDate: this.startDate, endDate: this.endDate});</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private get startDate () {</span>
+<span class="cstat-no" title="statement not covered" >    return this.fromDatepickerSettings.value.clone();</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private get endDate () {</span>
+<span class="cstat-no" title="statement not covered" >    return this.toDatepickerSettings.value.clone();</span>
+  }
+&nbsp;
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Oct 26 2018 12:25:15 GMT+0300 (EEST)
+</div>
+</div>
+<script src="../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../sorter.js"></script>
+</body>
+</html>

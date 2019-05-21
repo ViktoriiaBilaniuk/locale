@@ -1,0 +1,52 @@
+<!--<div class="content">
+  <section  *ngIf="type === 'create'">
+    <i class="icon-magic-wand"></i>
+    <div class="action">
+      <p translate> Schedule.newPublication </p>
+      <div
+        (mouseover)="hoverOnBtn = true"
+        (mouseleave)="hoverOnBtn = false">
+        <button
+          class="btn btn-fancy btn_small"
+          (click)="createClick()"
+          [disabled]="dissableBtn"
+          translate> {{createButtonText()}}
+        </button>
+      </div>
+
+      <sl-tooltip-light
+        *ngIf="dissableBtn"
+        [content]="'Channels.allChannelsDissconnected'"
+        [top]="'75px'"
+        [hover]="hoverOnBtn">
+      </sl-tooltip-light>
+    </div>
+  </section>
+  <section *ngIf="type === 'open'">
+    <i class="icon-pin"></i>
+    <div class="action">
+      <p translate> Schedule.youHaveToApprove </p> <span>4</span> <p translate> Schedule.newPublication </p>
+      <button class="btn btn-fancy btn_small" (click)="openApprovalClick()" translate> Schedule.open </button>
+    </div>
+  </section>
+</div>-->
+
+<sl-dark-modal  *ngIf="visiblePostWindow" (close)="onWindowClose()" [title]="'Schedule.newPublication'">
+  <sl-publication
+    [postToEdit]="postToEdit"
+    [action]="postAction"
+    [channels]="channels"
+    [closedWindow]="closedWindow"
+    (onPostCreate)="onCreatePost()"
+    (onPostCreateAndCopy)="onCreateAndCopyPost()">
+  </sl-publication>
+</sl-dark-modal>
+
+<sl-modal *ngIf="visibleConfirmWindow" (close)="closeConfirmModal()">
+  <p class="modal-title" translate> Channels.confirmClosePostWindow </p>
+  <p class="modal-text" translate>Channels.changesWillNotBeSaved</p>
+  <div class="flex flex_justify-content-space-between modal-buttons">
+    <button class="btn btn-fancy textarea__btn" (click)="closePostModal()" translate> Channels.close </button>
+    <button class="btn btn-gray textarea__btn" (click)="closeConfirmModal()" translate> Channels.cancel </button>
+  </div>
+</sl-modal>

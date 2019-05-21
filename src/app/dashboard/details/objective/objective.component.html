@@ -1,0 +1,27 @@
+<div #objectiveRef class="objective">
+  <div class="objective__label text_small" translate>Rightbar.currentObjective</div>
+
+  <div class="flex">
+    <!-- START: Current objective title -->
+    <div class="objective__value text_big" [ngClass]="{'edit': editMode}" translate>
+      {{ 'Performance.' + objective }}
+    </div>
+    <!-- END: Current objective title -->
+
+    <!-- START: Select objective drop down -->
+    <div class="objective-dropdown">
+      <sl-dropdown
+        [options]="availableOptions"
+        [position]="dropdownPosition"
+        [show]="editMode"
+        (onChangeOption)="onChangeOption($event)">
+      </sl-dropdown>
+    </div>
+
+    <!-- END: Select objective drop down -->
+
+    <!-- START: Edit icon -->
+    <i class="font-icon icon-pencil hoverable" (click)="editMode = !editMode;" *ngIf="canEdit"></i>
+    <!-- END: Edit icon -->
+  </div>
+</div>

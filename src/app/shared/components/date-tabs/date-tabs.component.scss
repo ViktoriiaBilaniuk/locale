@@ -1,0 +1,100 @@
+@import '~scss/_variables.scss';
+
+.tabs {
+  display: flex;
+  align-items: flex-end;
+  height: 48px;
+  margin-right: 30px;
+  &__month {
+   margin-right: 2px;
+   cursor: pointer;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   span {
+     margin-bottom: 7px;
+     text-transform: uppercase;
+     font-size: 14px;
+     font-weight: 600;
+     color: $greyish;
+   }
+   hr {
+     width: 60px;
+     height: 2px;
+     background-color: $pinkish-grey;
+     margin-top: 6px;
+   }
+   &.checked {
+      span {
+        color: $tangerine;
+      }
+      hr {
+        background-color: $tangerine;
+      }
+    }
+  }
+}
+
+.disabled {
+  cursor: not-allowed;
+  opacity: .5;
+}
+
+.slider_wrapper {
+  display: none;
+  height: 48px;
+}
+
+.slider {
+  margin-top: 5px;
+  height: 48px;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  span {
+    text-transform: uppercase;
+    color: $tangerine;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .icon-arrow-left, .icon-arrow-right {
+    color: $tangerine;
+    font-size: 14px;
+  }
+}
+
+.slider__circles {
+  display: flex;
+  justify-content: space-between;
+  width: 40px;
+  &--item {
+    cursor: pointer;
+    width: 4px;
+    height: 4px;
+    border-radius: 50px;
+    background-color: $pinkish-grey;
+    &.checked {
+      background-color: $tangerine;
+    }
+  }
+}
+
+@media (max-width: 1680px) {
+  .tabs__month {
+    hr {
+      width: 50px;
+    }
+  }
+
+  .tabs {
+    display: none;
+  }
+
+  .slider_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
+  }
+}

@@ -1,0 +1,27 @@
+@import '~scss/_variables.scss';
+
+.container {
+  padding: 0 50px;
+  padding-top: 58px;
+  font-family: Nunito;
+}
+
+.header {
+  height: 32px;
+  .title {
+    margin-right: 33px;
+    margin-top: 3px;
+  }
+  &__first {
+    p {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.4;
+      color: $black;
+    }
+  }
+}
+
+sl-channels-search {
+  z-index: 3;
+}

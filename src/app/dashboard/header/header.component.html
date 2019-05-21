@@ -1,0 +1,19 @@
+<div class="container flex shadow_box">
+  <div class="search-container" [ngClass]="{'search-container_expanded': expand}">
+    <sl-venue-search
+      [venueId]="venueId"
+      (onVenueSelect)="onVenueSelectEvent($event)">
+    </sl-venue-search>
+  </div>
+
+  <div class="user-container">
+    <sl-current-user
+      [reachOutPermissionForCurrentVenue]="reachOutPermissionForCurrentVenue"
+      class="flex">
+    </sl-current-user>
+  </div>
+</div>
+<sl-expand-chat
+  *ngIf="chatPermissionForCurrentVenue"
+  (onExpand)="onExpand($event)">
+</sl-expand-chat>

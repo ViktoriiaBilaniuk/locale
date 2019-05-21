@@ -1,0 +1,78 @@
+// Open Sans //
+@font-face {
+  font-family: 'Open Sans';
+  src: url($font-path + 'OpenSans-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url($font-path + 'OpenSans-SemiBold.ttf');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url($font-path + 'OpenSans-Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+// Nunito //
+@font-face {
+  font-family: 'Nunito';
+  src: url($font-path + 'Nunito-Light.ttf');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url($font-path + 'Nunito-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url($font-path + 'Nunito-SemiBold.ttf');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url($font-path + 'Nunito-ExtraBold.ttf');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url($font-path + 'Roboto-Light.ttf');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url($font-path + 'Roboto-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url($font-path + 'Roboto-Medium.ttf');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url($font-path + 'Roboto-Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
+}

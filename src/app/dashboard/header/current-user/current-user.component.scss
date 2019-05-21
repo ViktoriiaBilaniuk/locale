@@ -1,0 +1,193 @@
+@import '~scss/_variables.scss';
+
+@mixin frame {
+  font-family: Nunito;
+  font-size: 14px;
+  color: #4a4a4a;
+  width: 200px;
+  position: absolute;
+  z-index: 5;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+  border-radius: 7px;
+  border: 1px solid #e6e6e6;
+  box-shadow: 1px 1px 10px 1px #cececebf;
+  background-color: white;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 30px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  &__icon {
+    color: white;
+    font-weight: 900;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    background-color: $tangerine;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  &__info {
+    max-width: calc(100% - 60px);
+    padding-right: 20px;
+    .name {
+      font-size: 16px;
+      line-height: 1.5;
+      color: $black;
+      margin-right: 10px;
+    }
+    .info {
+      &__state {
+        display: flex;
+        align-items: center;
+      }
+      &__dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        margin-right: 8px;
+      }
+      &__status {
+        font-size: 14px;
+        line-height: 1.43;
+        color: $warm-grey;
+
+      }
+      .icon-options {
+        color: $warm-grey;
+      }
+    }
+  }
+
+  .active {
+    background-color: $apple-green;
+  }
+
+  .away {
+    background-color: $yellow-orange;
+  }
+
+  .offline {
+    border: 2px solid #aaa;
+  }
+
+  &__menu {
+    @include frame;
+    top: 60%;
+    right: 40%;
+    &-visible {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  &__option {
+    outline: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-color: $white-two;
+    padding: 13px;
+    transition: background-color 0.3s ease-in;
+    &:first-child {
+      border-radius: 4px 4px 0 0;
+    }
+    &:last-child {
+      border-radius: 0 0 4px 4px;
+    }
+    &:hover {
+      background-color: darken($white-two, 7%);
+      transition: background-color 0.3s ease-in;
+    }
+  }
+
+  &__option-text {
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
+}
+
+.font-icon {
+  margin-right: 20px;
+}
+
+.icon-check {
+  color: #7ED321;
+}
+
+.icon-ban {
+  color: #AAA;
+}
+
+.font-icon {
+  margin-right: 20px;
+}
+
+.info {
+  align-items: center;
+}
+
+.reach-out {
+  &__icon {
+    position: relative;
+    padding-right: 12px;
+    .icon-bell {
+      font-size: 22px;
+      color: $tangerine;
+      cursor: pointer;
+    }
+    &_circle {
+      min-width: 20px;
+      height: 20px;
+      border-radius: 15px;
+      background-color: #ff8900;
+      color: #ffffff;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      float: right;
+      position: absolute;
+      font-style: normal;
+      top: -10px;
+      right: 0;
+    }
+  }
+}
+
+.reasons {
+  @include frame;
+  top: 60%;
+  right: 6%;
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      padding: 13px;
+    }
+  }
+  &_visible {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+

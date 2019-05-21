@@ -1,0 +1,15 @@
+<div class="wrapper">
+  <div class="text">
+    <div class="text_small" translate>Details.ourLocation</div>
+    <div class="text_big"> {{ location.address }} </div>
+  </div>
+  <div class="location" [ngClass]="{'location__hidden': noLocation}">
+    <div id="map"></div>
+  </div>
+  <div
+    *ngIf="noLocation"
+    class="highlighted-text"
+    translate>
+    Rightbar.nothingHereYet
+  </div>
+</div>

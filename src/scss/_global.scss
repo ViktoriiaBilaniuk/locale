@@ -1,0 +1,185 @@
+@import '~select2/dist/css/select2.min.css';
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  height: 100%;
+}
+
+div {
+  &:focus {
+    outline: none;
+  }
+}
+body {
+  height: 100vh;
+  color: #474747;
+  overflow: hidden;
+  // background-color: #FAFAFA;
+  font-family: Open Sans, sans-serif;
+  min-width: 1024px;
+  min-height: 100vh;
+  border: 1px solid transparent;
+  // &.notification
+  //   overflow: hidden
+}
+
+hr {
+  padding: 0;
+  margin: 0;
+  border: none;
+  height: 1px;
+  width: 100%;
+  background: grey;
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  // &:focus
+  //   outline: none
+  // &:active
+  //   outline: none
+  // &:visited
+  //   outline: none
+}
+
+h1, h2, h3, h4, h5, h6, p, figure {
+  margin: 0;
+}
+
+img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+
+
+
+
+.clearfix, .container {
+  zoom: 1;
+  &:before, &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.text {
+  &-left {
+    text-align: left;
+  }
+  &-center {
+    text-align: center;
+  }
+  &-right {
+    text-align: right;
+  }
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.hidden {
+  display: none
+}
+
+// .fade
+// opacity: 0
+// transition: opacity 0.15s linear
+
+// .fade.in
+// opacity: 1
+
+
+.visually-hidden {
+  border: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+}
+
+
+.pull {
+  &-left {
+    float: left;
+  }
+  &-right {
+    float: right;
+  }
+}
+
+
+// .side
+// &-box
+//   zoom: 1
+//   &:before, &:after
+//     content: ""
+//     display: table
+//   &:after
+//     clear: both
+// &_left
+//   float: left
+// &_right
+//   float: right
+
+
+.flex {
+  display: flex;
+  &_stretch {
+    align-items: stretch;
+  }
+  &_col {
+    flex-direction: column;
+  }
+  &_align-items-center {
+    align-items: center;
+  }
+  &_align-items-start {
+    align-items: flex-start;
+  }
+  &_justify-content-space-between {
+    justify-content: space-between;
+  }
+}
+
+.full-height {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.align-items {
+  &__center {
+    align-items: center;
+  }
+}
+
+i {
+  font-style: normal;
+}

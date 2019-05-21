@@ -1,0 +1,25 @@
+@import '~scss/_variables.scss';
+
+.view-code-modal-header {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  background-color: $black;
+  font-family: Nunito;
+  font-size: 20px;
+  font-weight: 600;
+  color: $white-two;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px;
+
+  &__close-icon {
+    text-align: center;
+    line-height: 1;
+    border: 2px solid #d0d0d0;
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+  }
+}

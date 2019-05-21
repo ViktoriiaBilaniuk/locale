@@ -1,0 +1,55 @@
+<div class="wrap">
+  <div class="upload">
+    <div class="upload__icon">
+      <i class="icon-cloud-download"></i>
+      <input
+        (change)="fileChange($event)"
+        #fileInput
+        type="file"
+        name="file"
+        id="file"
+        class="inputfile"
+        [accept]="fileTypes()"/>
+    </div>
+    <div class="upload__text">
+      <h4 translate>Channels.uploadFromComputer</h4>
+      <p translate>{{getInfoMessage()}}</p>
+    </div>
+  </div>
+
+  <sl-content-pool
+    (onAttach)="onAttachFileFromContentPool()"
+    [videoSizeLimit]="videoSizeLimit"
+    [imageSizeLimit]="imageSizeLimit"
+  ></sl-content-pool>
+
+  <div class="error flex" *ngIf="fileSizeError() || fileDurationError()" [@fadeInAnimation]="true">
+    <div>
+      <span translate>{{fileErrorMess()}}</span>
+      <span class="error__size">{{maxFileLimit()}}.</span>
+      <span translate>Channels.tryUploadAgain</span>
+    </div>
+    <button class="error__btn btn btn-gray btn_small" (click)="hideError()" translate> Channels.ok </button>
+  </div>
+
+  <div *ngIf="fileExists()" [@fadeInAnimation]="true">
+    <div class="flex padding">
+      <div class="wrap__img">
+        <div class="cover">
+          <i class="icon-plus" (click)="removeCurrentFile()"></i>
+        </div>
+        <div *ngIf="isVideo()" class="video__local-cover img__local-cover">
+          <img src="../../../../../../assets/images/dashboard/video.svg" alt="">
+        </div>
+        <div class="img__local-cover" *ngIf="isImage()" [ngStyle]="localImageStyle()"></div>
+      </div>
+      <p class="img__desc truncated-text">{{getFileName()}}</p>
+    </div>
+  </div>
+</div>
+
+<div class="loading-cover" *ngIf="loading">
+  <div>
+    <sl-loading></sl-loading>
+  </div>
+</div>

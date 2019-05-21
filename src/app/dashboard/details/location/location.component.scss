@@ -1,0 +1,30 @@
+.wrapper {
+  margin-top: 32px;
+}
+.location {
+  &__hidden {
+    display: none;
+  }
+}
+
+#map {
+  width: 100%;
+  height: 130px;
+  margin-top: 5px;
+}
+
+// hide control elements on map
+
+:host ::ng-deep {
+  a[href^="http://maps.google.com/maps"]{display:none !important}
+  a[href^="https://maps.google.com/maps"]{display:none !important}
+
+  .gmnoprint a, .gmnoprint span, .gm-style-cc {
+    display:none;
+  }
+}
+
+.text {
+  margin-top: 16px;
+  margin-bottom: 10px;
+}

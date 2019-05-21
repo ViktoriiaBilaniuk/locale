@@ -1,0 +1,34 @@
+.carousel-wrap {
+  overflow: auto;
+  max-height: 332px;
+  margin-top: 35px;
+}
+
+.top {
+  justify-content: space-between;
+}
+
+sl-main-link {
+  width: calc(100% - 130px);
+}
+
+sl-cta-buttons-selection {
+  width: 120px;
+  margin-top: 2px;
+}
+
+.carousel-btn {
+  button {
+    font-size: 12px;
+    padding: 5px 10px;
+    height: 30px;
+    line-height: 21px;
+    margin-top: 10px;
+    font-weight: 400;
+    background-color: #eeeeee;
+    text-transform: capitalize;
+    &:hover {
+      background-color: #dedede;
+    }
+  }
+}

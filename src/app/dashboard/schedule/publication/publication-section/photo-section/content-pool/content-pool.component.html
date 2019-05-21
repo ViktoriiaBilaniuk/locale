@@ -1,0 +1,80 @@
+<div>
+  <div class="upload wrap" (click)="uploadClick()" *ngIf="showTitle">
+    <div class="upload__icon">
+      <i class="icon-folder-alt"></i>
+    </div>
+    <h4 class="upload__text" translate>Channels.chooseFromContentPool</h4>
+    <i
+      class="icon-arrow-up upload__arrow-icon hoverable"
+      [ngClass]="{'upload__arrow-icon_open': open}">
+    </i>
+  </div>
+  <div>
+    <div class="container" [ngClass]="{'container_open': open}">
+      <div class="container__main">
+        <div class="content" (scroll) = "onScroll($event)">
+          <div class="content__search" *ngIf="files().length || getSearchText()">
+            <i class="icon-magnifier"></i>
+            <input
+              #searchInput
+              id="searchInput"
+              class="floated"
+              type="text"
+              [value]="getSearchText()"
+              (keyup)="search(searchInput.value)"
+              [ngClass]="{'not-empty': searchInput.value}">
+          </div>
+
+          <div *ngIf="filesLoading()" class="loading">
+            <sl-loading></sl-loading>
+          </div>
+
+          <div *ngIf="files().length && !filesLoading(); else noData" class="files" [@fadeInAnimation]="true">
+            <div
+              class="file"
+              *ngFor="let file of files()"
+              translate
+              [ngClass]="{'disabled-file': checkFileSize(file)}"
+              title="{{checkFileSize(file) ? ('Channels.contentPoolErrorTitle' | translate) : file.name}}"
+              (click)="fileClick(file)">
+              <div
+                class="file__video hoverable scaleable"
+                [ngClass]="{'file_selected': file.selected}"
+                *ngIf="file.type !== 'image'">
+                <i class="font-icon font-icon-white" [ngClass]="getClass(file)"></i>
+              </div>
+              <div
+                class="file__image hoverable scaleable"
+                *ngIf="file.type === 'image'"
+                [ngClass]="{'white-back': isPngImage(file), 'file_selected': file.selected}"
+                [ngStyle]="{'background-image': getImage(file)}">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <ng-template #noData>
+          <div class="empty" *ngIf="!files.length && !filesLoading()" [@fadeInAnimation]="true">
+            <i class="icon-drawer"></i>
+            <p translate>Rightbar.nothingToDisplay</p>
+          </div>
+        </ng-template>
+      </div>
+      <div class="container__bottom flex">
+        <span>
+          <span>{{getSelectedCount()}}</span>
+          <span translate>{{getTextForSelectedFiles()}}</span>
+        </span>
+        <button
+          [disabled]="!getSelectedCount()"
+          class="btn btn-fancy btn_small"
+          (click)="attachFiles()"
+          translate>
+          Channels.attach
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>
+

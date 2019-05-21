@@ -1,0 +1,19 @@
+<div class="container flex" [ngClass]="{'expanded': expandStatus === 'closed', 'collapsed': expandStatus === 'expanded'}">
+  <mwl-calendar-month-view
+    [weekStartsOn]="1"
+    [cellTemplate]="cellTemplateRef"
+    [viewDate]="viewDate()">
+  </mwl-calendar-month-view>
+</div>
+<ng-template #cellTemplateRef let-day="day">
+  <sl-cell-template
+    (dayClicked)="onDateClick.emit($event)"
+    (createClicked)="createClicked.emit($event)"
+    [allChannelsAreDissconnected]="allChannelsAreDissconnected"
+    [channelsExists]="channelsExists"
+    [postManagementPermission]="postManagementPermission"
+    [day]="day"
+    [counts]="getPostsForCurrentDay(day.date)">
+  </sl-cell-template>
+</ng-template>
+

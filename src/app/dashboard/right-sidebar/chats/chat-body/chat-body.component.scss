@@ -1,0 +1,22 @@
+.chat-body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: block;
+  height: 100%;
+  &__empty {
+    padding-top: 200px;
+    text-align: center;
+  }
+}
+
+.start {
+  padding-top: 10px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.loading {
+  width: 100%;
+  text-align: center;
+  padding-top: 150px;
+}

@@ -1,0 +1,31 @@
+<div class="right-sidebar__wrapper" *ngIf="chat" (click)="chatClick()">
+  <div class="chat flex">
+    <div class="chat__icon" *ngIf="this.isGeneralChat(chat)">G</div>
+    <div
+      class="chat__icon"
+      *ngIf="!this.isGeneralChat(chat)"
+      [ngStyle]="{'background-image': 'url(' + getUserImage(chat) + ')'}">
+      <span *ngIf="!getUserImage(chat)">{{getChatName(chat).charAt(0).toUpperCase()}}</span>
+
+    </div>
+    <div class="chat__content">
+      <p class="chat__content_name ellipsis" translate>{{getChatName(chat)}}</p>
+      <p class="chat__content_desc ellipsis">{{lastMessage?.text}}</p>
+      <p
+        class="chat__content_desc ellipsis"
+        *ngIf="lastMessage?.url" translate>
+        Chat.fileSent
+      </p>
+      <p
+        class="chat__content_desc ellipsis"
+        *ngIf="!lastMessage?.url && !lastMessage?.text" translate>
+        Chat.noMessages
+      </p>
+    </div>
+    <div class="chat__details">
+      <span class="chat__details_time">{{getFormattedDate(chat.venue_chat_model_id['last_message']?.time)}}</span>
+      <div *ngIf="chat['unread_count']" class="chat__details_count">{{chat['unread_count']}}</div>
+    </div>
+  </div>
+</div>
+<hr>

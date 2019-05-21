@@ -1,0 +1,26 @@
+@import '~scss/_variables.scss';
+
+.contact-us {
+  &__option{
+    display: flex;
+    flex-direction: row;
+    margin:  0 0 18px 40px;
+    a{
+      font-size: 18px;
+      font-weight: 600;
+      color: $white-two;
+      text-decoration: none;
+    }
+  }
+  &__back {
+    margin-top: 118px;
+    a{
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+}
+
+.contact-icon {
+  margin-right: 20px;
+}

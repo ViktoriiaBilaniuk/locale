@@ -1,0 +1,7 @@
+<ul class="performance-modal__dropdown">
+  <li
+    *ngFor="let option of options"
+    (click)="optionClick(option.value)" translate>
+    {{ option.title }}
+  </li>
+</ul>

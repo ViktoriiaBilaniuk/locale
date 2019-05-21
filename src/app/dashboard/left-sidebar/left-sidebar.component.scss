@@ -1,0 +1,131 @@
+@import '~scss/_variables.scss';
+
+:host {
+  box-sizing: border-box;
+  padding-bottom: 80px;
+}
+.left-sidebar {
+  width: 300px;
+  background-color: $black;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  overflow: inherit;
+  &__header {
+    height: 80px;
+  }
+}
+
+.menu-wrapper {
+  .menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    hr {
+      background: $greyish-brown;
+      margin-top: -1px;
+    }
+  }
+
+  .item {
+    cursor: pointer;
+    padding: 15px 0;
+    padding-left: 30px;
+    outline: none;
+    position: relative;
+    &_collapsed {
+       padding-left: 0px;
+      text-align: center;
+    }
+    &__icon{
+      color: $tangerine;
+      transition: 0.3s ease-out;
+      padding: 12px;
+    }
+    &__title {
+      color: $greyish;
+      transition: 0.3s ease-out;
+      margin-left: 8px;
+      font-family: Nunito;
+      font-size: 16px;
+    }
+    &__line {
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+
+  .active {
+    background-color: rgba(255, 137, 0, 0.5);
+    .item {
+      &__title {
+        color: white;
+      }
+      &__icon {
+        color: white;
+      }
+    }
+
+  }
+
+  .item:hover .item__icon, .item:hover .item__title {
+    color: white;
+    transition: 0.3s ease-in;
+  }
+}
+
+.left-sidebar_collapsed {
+  width: 80px;
+}
+
+.tooltip {
+  left: -11em;
+  position: relative;
+  opacity: 0;
+  z-index: 999;
+}
+.show {
+  transform: translateX(10.9em);
+  opacity: 1;
+  transition: opacity, transform 0.3s ease-in 1s;
+}
+
+.icon-channels{
+  background:url('https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSj3XfIpf-OOJRCcWz4iN2CU3qMKVVbj0p0bRvKNGVo1U9pk_8ZIlyR8pWreA');
+
+}
+
+.help-btn {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 38px;
+  bottom: 40px;
+  cursor: pointer;
+  @media (max-width: 1400px) {
+    left: 24px
+  }
+  &__icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    margin-right: 10px;
+    background: $greyish-brown-two;
+  }
+  &__icon{
+    color: #fff;
+  }
+  &__text {
+    font-family: Nunito, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $greyish;
+    @media (max-width: 1400px) {
+      display: none;
+    }
+  }
+}

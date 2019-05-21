@@ -1,0 +1,16 @@
+<div class="view-code-modal-body">
+  <div
+    class="view-code-modal-body__title"
+    translate>
+      Performance.{{type}}Title
+  </div>
+  <div class="view-code-modal-body__block">
+    <pre>
+      <code>
+          {{codeSnippet}}
+      </code>
+    </pre>
+  </div>
+  <button (click)="copyCode()" (mouseup)="resetAnimationOnTooltip()" class="btn-position btn btn-fancy btn_small" translate>Performance.copy</button>
+  <sl-tooltip class="view-code-modal-body__tooltip" [ngClass]="{animation: isAnimation}" [content]="'Copied'"></sl-tooltip>
+</div>

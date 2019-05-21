@@ -1,0 +1,95 @@
+@import '~scss/_variables.scss';
+
+.threads {
+  &__title {
+    font-family: Nunito;
+    font-size: 12px;
+    line-height: 2;
+    color: $greyish;
+    margin-left: 10px;
+  }
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  &__item {
+    color: $greyish-brown-two;
+    display: block;
+    align-items: center;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.1s ease-in;
+    &:hover {
+      background-color: #f3f3f3b0;;
+      transition: background-color 0.1s ease-in;
+    }
+    &.active {
+      color: $white-two;
+      background-color: $tangerine;
+    }
+  }
+  &__name{
+    line-height: 23px;
+    margin-left: 8px;
+    max-width: 260px;
+    display: inline-block;
+  }
+  &__unread {
+    background-color: $tangerine;
+    min-width: 24px;
+    height: 24px;
+    border-radius: 15px;
+    color: $white-two;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+  }
+}
+
+.item {
+  width: 100%;
+  align-items: center;
+  padding: 0 12px;
+  &__header {
+    width: 100%;
+    align-items: center;
+    padding: 12px 0;
+    display: flex;
+  }
+  &__messages {
+    background-color: $white;
+    font-size: 11px;
+    color: $greyish-brown-two;
+    margin: 0;
+    line-height: 1.2;
+    font-family: Nunito;
+    box-shadow: inset 0 0 8px 0 rgba(0, 0, 0, 0.1);
+    max-height: 0;
+    overflow: hidden;
+    padding: 0px;
+    transition: max-height 0.2s ease-out;
+    li {
+      padding: 10px 37px;
+      position: relative;
+      &:before {
+        content: "•";
+        position: absolute;
+        left: 22px;
+        color: $greyish;
+      }
+    }
+  }
+  .icon-arrow-down {
+    font-size: 18px;
+    color: $tangerine;
+    padding: 12px 0px;
+  }
+}
+
+.open {
+  max-height: 100px;
+  transition: max-height 0.3s ease-in;
+}

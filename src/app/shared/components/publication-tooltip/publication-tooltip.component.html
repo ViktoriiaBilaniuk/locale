@@ -1,0 +1,9 @@
+<div
+  class="tooltip"
+  [ngClass]="{'visible': visible, animation_fadeIn: visible, animation_fadeOut: !visible}"
+  [style.top]="top"
+  [style.right]="right">
+  <p translate>{{ content }}</p>
+</div>
+
+

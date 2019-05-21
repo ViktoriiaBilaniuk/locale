@@ -1,0 +1,94 @@
+@import '~scss/_variables.scss';
+
+$grey: #b7b7b7;
+
+.radius-range {
+  padding: 25px 20px;
+  border-bottom: 1px solid $pinkish-grey;
+  &__container {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &--label {
+      font-weight: 600;
+      font-size: 14px;
+      color: $greyish-brown-two;
+    }
+    &--distance {
+      font-size: 14px;
+    }
+  }
+}
+
+
+.slider {
+  width: 107%;
+  left: -10px;
+
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 10.95px 0;
+  &:focus {
+    outline: none;
+  }
+  &::-webkit-slider-runnable-track {
+    height: 3px;
+    cursor: pointer;
+    background: $grey;
+    border-radius: 25px;
+  }
+  &::-webkit-slider-thumb {
+    height: 23px;
+    width: 23px;
+    border-radius: 12px;
+    background: $tangerine;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -9.5px;
+  }
+  &::-moz-range-track {
+    height: 3px;
+    cursor: pointer;
+    background: $grey;
+    border-radius: 25px;
+  }
+  &::-moz-range-thumb {
+    height: 23px;
+    width: 23px;
+    border-radius: 12px;
+    background: $tangerine;
+    cursor: pointer;
+  }
+  &::-ms-track {
+    width: 100%;
+    height: 3px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+  &::-ms-thumb {
+    height: 23px;
+    width: 23px;
+    border-radius: 12px;
+    background: $tangerine;
+    cursor: pointer;
+  }
+
+}
+
+@media (max-width: 1985px) {
+  .radius-range {
+    padding: 25px 0px;
+  }
+}
+
+@media (max-width: 1435px) {
+  .radius-range {
+    padding: 25px 20px;
+  }
+}

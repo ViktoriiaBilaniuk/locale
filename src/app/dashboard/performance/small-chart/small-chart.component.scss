@@ -1,0 +1,67 @@
+@import '~scss/_variables.scss';
+
+.wrapper{
+
+}
+
+.card {
+  padding: 20px 12px;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  width: 100%;
+  position: relative;
+}
+
+.legend {
+  font-family: 'Open Sans';
+  margin-top: 20px;
+  &__item {
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+  }
+  &__icon {
+    margin-right: 8px;
+    font-weight: bold;
+    position: relative;
+  }
+  &__name {
+    font-size: 14px;
+    color: $greyish-brown-two;
+  }
+}
+
+.current {
+  color: $chart-yellow;
+  &:after{
+    content: '';
+    display: block;
+    border-radius: 50%;
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    border: solid 2px $chart-yellow;
+    position: absolute;
+    top: 6px;
+    left: 11px;
+  }
+}
+
+.previous {
+  color: $chart-purple;
+  &:after{
+    content: '';
+    display: block;
+    border-radius: 50%;
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    border: solid 2px $chart-purple;
+    position: absolute;
+    top: 6px;
+    left: 11px;
+  }
+}
+
+canvas {
+  width: 100%;
+}

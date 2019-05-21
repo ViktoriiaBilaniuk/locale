@@ -1,0 +1,39 @@
+@import '~scss/_variables.scss';
+
+:host {
+    height: 100%;
+    display: block;
+    background: url('/assets/images/login-bg.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.auth {
+    background: rgba(0,0,0, 0.7);
+    &__wrapper {
+        top: 50%;
+        left: 50%;
+        width: 300px;
+        position: absolute;
+        transform: translateX(-50%) translateY(-50%);
+    }
+    &__logo {
+        width: 200px;
+        margin: 0 auto 44px;
+        cursor: pointer;
+        outline:none;
+    }
+    &__page-link {
+        display: block;
+        margin-bottom: 147px;
+        font-family: Nunito, sans-serif;
+    }
+    &__contact-link {
+        color: $white-two;
+        font-size: 14px;
+        margin-top: 135px;
+        display: inline-block;
+    }
+}
+
+

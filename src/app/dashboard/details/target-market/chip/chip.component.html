@@ -1,0 +1,7 @@
+<div class="sl-chip">
+  <div class="sl-chip__wrapper">
+   <i *ngIf="icon" class="icon {{icon}}"></i>
+    <span class="sl-chip__value">{{ value }}</span>
+    <span class="sl-chip__remove" (click)="removeItem()">&times;</span>
+  </div>
+</div>

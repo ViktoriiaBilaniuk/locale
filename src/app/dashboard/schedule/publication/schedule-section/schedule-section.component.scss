@@ -1,0 +1,175 @@
+@import '~scss/_variables.scss';
+
+.content {
+  text-align: left;
+  position: relative;
+  background-color: $white;
+}
+.schedule {
+  padding: 20px;
+  padding-bottom: 30px;
+  width: 390px;
+  align-items: center;
+}
+
+.info {
+  color: #afafaf;
+  cursor: pointer;
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.icon-close {
+  font-size: 20px;
+  color: rgba(128, 128, 128, 0.6392156862745098);
+  cursor: pointer;
+  margin-left: 15px;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  &:hover {
+    color: $black;
+    transition: color 0.3s;
+  }
+}
+
+.datetime {
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+
+.date {
+  align-items: center;
+  cursor: pointer;
+  input {
+    background-color: $white;
+    font-size: 18px;
+    margin-top: 2px;
+    font-family: 'Open Sans';
+    color: $greyish-brown-two;
+    width: 166px;
+    margin-left: 5px;
+  }
+  &__icon {
+    font-size: 18px;
+    color: $tangerine;
+    cursor: pointer;
+    margin-left: -6px;
+    margin-right: -6px;
+  }
+}
+
+.time {
+  position: relative;
+  margin-right: 6px;
+  .icon-clock {
+    position: absolute;
+    top: 11px;
+    left: 3px;
+  }
+  input {
+    font-size: 18px;
+    margin-top: 5px;
+    font-family: 'Open Sans';
+    color: $greyish-brown-two;
+    padding-top: 5px;
+    padding-left: 27px;
+    background-color: $white;
+    border-bottom: 1px solid $pinkish-grey;
+    width: 88px;
+  }
+}
+
+
+.timezone {
+  position: relative;
+  &__title {
+    position: absolute;
+    left: 0px;
+    font-size: 14px;
+    color: $black;
+    font-weight: 600;
+    line-height: 2;
+    z-index: 1;
+  }
+}
+
+:host ::ng-deep .select2-container--default .select2-selection--single {
+  outline: none !important;
+  border: none !important;
+  border-bottom: 1px solid $pinkish-grey !important;
+  border-radius: 0px !important;
+  background-color: $white !important;
+}
+
+::ng-deep .select2-results__options {
+  font-size: 12px !important;
+}
+::ng-deep .select2-container--default .select2-results__option--highlighted {
+  font-size: 12px !important;
+  background-color: $tangerine !important;
+}
+
+::ng-deep .select2-container--default .select2-search--dropdown .select2-search__field {
+  border: none !important;
+  border-bottom: 1px solid $pinkish-grey !important;
+  font-size: 14px !important;
+}
+
+::ng-deep .select2-dropdown {
+  border: 1px solid #e2dede !important;
+  box-shadow: 2px 3px 6px 0px #c1c1c1 !important;
+}
+
+::ng-deep .select2-container--default .select2-selection--single .select2-selection__rendered {
+  text-align: left !important;
+  padding-left: 75px !important;
+  font-size: 14px !important;
+}
+
+::ng-deep .select2-container--default .select2-selection--single .select2-selection__clear {
+  color: $pinkish-grey !important;
+}
+
+input[type="time"]::-webkit-clear-button {
+  display: none;
+}
+
+.date-placeholder {
+  position: absolute;
+  font-size: 16px;
+  color: grey;
+  line-height: 27px;
+  margin-left: 10px;
+}
+
+.error {
+  margin-top: 20px;
+  text-align: left;
+  color: $scarlet;
+}
+
+.clear-icon {
+  color: #d2d1d1;
+  font-size: 15px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: color 0.3s;
+  &:hover {
+    color: rgb(132, 132, 132);
+    transition: color 0.3s;
+  }
+}
+
+.utc {
+  color: $pinkish-grey;
+}
+
+@media (max-width: 1100px) {
+  .datetime {
+    display: block;
+  }
+  .schedule {
+    width: auto;
+  }
+}

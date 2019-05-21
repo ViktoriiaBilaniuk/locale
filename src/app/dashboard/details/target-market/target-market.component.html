@@ -1,0 +1,33 @@
+<div class="content details-content">
+  <!-- START: Venue details header and edit button -->
+  <div class="flex">
+    <div class="section-title description__title" translate>Rightbar.targetMarket</div>
+    <i (click)="pencilClick()" *ngIf="canEdit" class="font-icon icon-pencil hoverable scaleable"></i>
+  </div>
+  <!-- END: Venue details header and edit button -->
+
+  <div class="highlighted-text" [hidden]="data.length !== 0 || editMode">
+    {{ ('Rightbar.nothingHereYet' | translate ) + ' ' + ((canEdit ? 'Rightbar.clickPencilToEdit' : '') | translate) }}
+  </div>
+
+  <div class="section-text description__text" *ngIf="!editMode">
+    <div class="content__tag truncated-text" *ngFor="let item of venueOptions">
+      {{ item.title }}
+    </div>
+  </div>
+
+  <div class="section-text description__text edit-section" *ngIf="editMode">
+    <div class="wrapper">
+      <sl-chip-input
+        [venueOptions]="venueOptions"
+        (onAdd)="onAddItem($event)"
+        [defaultOptions]="defaultOptions">
+      </sl-chip-input>
+    </div>
+
+    <div class="flex btns">
+      <button class="btn btn-white btn_small" (click)="onCancelClick()" translate>Rightbar.cancel</button>
+      <button class="btn btn-fancy btn_small" (click)="onSaveClick()" translate>Rightbar.save</button>
+    </div>
+  </div>
+</div>

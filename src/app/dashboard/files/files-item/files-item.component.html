@@ -1,0 +1,101 @@
+<div class="container" >
+  <div class="files-item__wrapper" [ngClass]="{'files-item__wrapper_edit': editMode}">
+    <div class="files-item__content">
+      <div class="files-item__file-type hoverable scaleable" *ngIf="file.type !== 'image'">
+        <a
+          href="{{file.url}}" target="_blank" download="{{file.name}}">
+          <i class="font-icon font-icon-white" [ngClass]="getClass()"></i>
+        </a>
+      </div>
+      <div class="files-item__file-type files-item__file-type_image hoverable scaleable"
+           *ngIf="file.type === 'image'"
+           (click)="openImage(file)"
+           [ngClass]="{'white-back': isPngImage(file)}"
+           [ngStyle]="{'background-image': getImage(file)}">
+      </div>
+      <div class="files-item__text-content">
+
+        <!-- START: view mode -->
+        <div *ngIf="!editMode">
+          <div class="files-item__name"> {{file.name}} </div>
+          <div class="files-item__tags" >
+          <span
+            class="files-item__tag hoverable truncated-text"
+            (click)="tagClick(tag)"
+            *ngFor="let tag of file.tags">
+            {{tag.name}}
+          </span>
+          </div>
+        </div>
+        <!-- END: view mode -->
+
+        <!-- START: edit mode -->
+        <div  *ngIf="editMode">
+          <div class="edit-content">
+            <mat-form-field class="example-full-width edit-content__field">
+              <input
+                #nameInput
+                class="edit-content__input edit-content__name-input"
+                matInput
+                trim="blur"
+                [value]="file.name"
+                placeholder="{{ 'Rightbar.name' | translate }}">
+            </mat-form-field>
+            <mat-form-field class="edit-content__field">
+              <mat-chip-list #tagsList>
+                <mat-chip
+                  class="chip truncated-text"
+                  *ngFor="let tag of tags"
+                  [selectable]="selectable"
+                  [removable]="true"
+                  (removed)="remove(tag)">
+                  {{tag.name}}
+                  <i matChipRemove class="chip__close-icon">x</i>
+                </mat-chip>
+                <input
+                  #tagInput
+                  placeholder="{{ 'Rightbar.tags' | translate }}"
+                  class="edit-content__input"
+                  [matChipInputFor]="tagsList"
+                  [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                  [matChipInputAddOnBlur]="addOnBlur"
+                  (matChipInputTokenEnd)="add($event)" />
+              </mat-chip-list>
+            </mat-form-field>
+
+            <!-- START: Save and Cancel buttons -->
+            <div class="flex buttons">
+              <button
+                class="btn btn textarea__btn edit-content__btn edit-content__btn_cancel"
+                (click)="cancel()"
+                translate>
+                Rightbar.cancel
+              </button>
+              <button
+                class="btn btn-fancy textarea__btn edit-content__btn"
+                (click)="onSaveClick()" translate>
+                Rightbar.save
+              </button>
+            </div>
+            <!-- END: Save and Cancel buttons -->
+
+          </div>
+        </div>
+        <!-- END: edit mode -->
+
+      </div>
+      <div class="files-item__icons" *ngIf="!editMode">
+        <i
+          (click)="changeEditState()"
+          class="files-item__wrapper-edit-icon icon-pencil hoverable scaleable files-item__wrapper-edit-icon_edit">
+        </i>
+        <i
+          (click)="removeFile(file.id)"
+          class="files-item__wrapper-edit-icon hoverable scaleable files-item__wrapper-edit-icon_remove">
+          &times;
+        </i>
+      </div>
+    </div>
+    <hr class="files-item__line">
+  </div>
+</div>

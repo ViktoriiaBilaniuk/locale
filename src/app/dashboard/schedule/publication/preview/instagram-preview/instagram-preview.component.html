@@ -1,0 +1,94 @@
+<div class="wrap">
+  <div class="content" [ngClass]="{'mobile': !desktopMode}">
+    <div class="header flex">
+      <div class="header__icon" [ngStyle]="{'background-image': 'url(' + getImageUrl() + ')'}"></div>
+      <div class="header__info flex">
+        <div class="info">
+          <span
+            class="name"
+            title="{{publicationProxyService.disconnectedChannelError() ? publicationProxyService.disconnectedChannelErrorMessage: ''}}">
+            <a
+              *ngIf="getChannelLink(); else textName"
+              class="name"
+              target="_blank"
+              [href]="getChannelLink()">
+              {{getChannelName()}}
+            </a>
+            <ng-template #textName><span class="name red">{{getChannelName()}}</span></ng-template>
+          </span>
+          <span class="info__time" translate>
+            <span
+              *ngIf="isDate(); else noDate"
+              class="info__time">
+              {{publicationProxyService.getScheduleDateInPostTimezone() | postDate : NETWORKS.INSTAGRAM}}
+            </span>
+            <ng-template #noDate>
+              <span *ngIf="!publicationProxyService.schedule.error; else dateError" class="info__time" translate>Channels.unscheduled</span>
+              <ng-template #dateError>
+                <span class="info__time info__time_error" translate>Channels.datetimeError</span>
+              </ng-template>
+            </ng-template>
+          </span>
+        </div>
+        <i class="icon-options"></i>
+      </div>
+    </div>
+
+    <div class="middle" *ngIf="isContent(); else noContent">
+      <div class="middle__img" [@fadeInAnimation]="true">
+        <img *ngIf="isImage()" src="{{localFileUrl()}}" alt="" [ngClass]="{'mobile_img': !desktopMode}">
+        <video
+          *ngIf="isVideo()"
+          width="400"
+          controls
+          class="img__local-cover"
+          [src]="localFileUrl()">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+    </div>
+
+    <ng-template #noContent>
+      <sl-preview-placeholder [type]=NETWORKS.INSTAGRAM></sl-preview-placeholder>
+    </ng-template>
+
+    <div class="bottom">
+      <div class="flex flex_justify-content-space-between">
+        <ul class="bottom__list">
+          <li class="bottom__item">
+            <img class="bottom__icon" src="../../../../../../assets/images/channels/networks/insta-like.png" alt="like">
+          <li class="bottom__item">
+            <img class="bottom__icon" src="../../../../../../assets/images/channels/networks/insta-comment.png" alt="comment">
+          </li>
+          <li class="bottom__item">
+            <img class="bottom__icon" src="../../../../../../assets/images/channels/networks/insta-share.png" alt="share">
+          </li>
+        </ul>
+        <ul>
+          <li class="bottom__item tag">
+            <img class="bottom__icon tag" src="../../../../../../assets/images/channels/networks/insta-tag.png" alt="tag">
+          </li>
+        </ul>
+      </div>
+      <div class="bottom__text" [@fadeInAnimation]="true">
+        <span class="name truncated-text">
+          <a
+            *ngIf="getChannelLink(); else textName"
+            class="name"
+            target="_blank"
+            [href]="getChannelLink()">
+            {{getChannelName()}}
+          </a>
+          <ng-template #textName><span class="name red">{{getChannelName()}}</span></ng-template>
+        </span>
+        <span
+          class="bottom__desc"
+          [innerHTML]= "description | limit: descriptionLimit : descriptionLimitRows | tag"></span>
+        <ng-container *ngIf="getSeeMoreCondition()">
+          <span class="bottom__more" (click)="showMore()" translate>Channels.more</span>
+        </ng-container>
+        <span class="bottom__time">Unscheduled</span>
+      </div>
+    </div>
+  </div>
+</div>

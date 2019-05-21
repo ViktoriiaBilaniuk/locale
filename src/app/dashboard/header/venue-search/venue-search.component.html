@@ -1,0 +1,46 @@
+<div class="venue flex" *ngIf="selectedVenue">
+  <div class="venue__content flex" (clickOutside)="onClickedOutside()">
+    <div class="venue__dropdown flex">
+      <div class="venue__icon" [ngClass]="{'blink': unansweredCount && chatPermissionForCurrentVenue}">
+        <span
+          class="count"
+          *ngIf="unansweredCount && chatPermissionForCurrentVenue; else countPlacegolder">
+          {{unansweredCount | prettyNumber}}
+        </span>
+        <ng-template #countPlacegolder>
+          <img src="../../../assets/images/dashboard/venue.png" alt="venue">
+        </ng-template>
+      </div>
+      <input
+        #searchInput
+        type="text"
+        [value]="selectedVenue.name"
+        (keyup)="search($event.target.value)"
+        (focus)="inputFocus()"
+        class="ellipsis"
+        placeholder="{{'Leftbar.selectVenue' | translate}}">
+      <i class="icon-arrow-down hoverable" (click)="toggleMenu()"></i>
+    </div>
+    <div
+      class="venue-menu"
+      [ngClass]="{'venue-menu_visible': venueMenuIsActive}">
+      <div class="" *ngIf="searchText">
+        <sl-threads
+          class="left-sidebar__threads"
+          *ngIf="searchText" [thread]="searchResults"
+          [chatPermissionForCurrentVenue]="chatPermissionForCurrentVenue"
+          (onSelectVenue)="chooseVenue($event)">
+        </sl-threads>
+      </div>
+      <div class="" *ngIf="!searchText">
+        <sl-threads
+          class="left-sidebar__threads"
+          *ngFor="let thread of threads"
+          [chatPermissionForCurrentVenue]="chatPermissionForCurrentVenue"
+          [thread]="thread"
+          (onSelectVenue)="chooseVenue($event)">
+        </sl-threads>
+      </div>
+    </div>
+  </div>
+</div>

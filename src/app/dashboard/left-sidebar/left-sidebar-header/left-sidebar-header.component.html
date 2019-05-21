@@ -1,0 +1,6 @@
+<div class="sidebar-header" (click)="goToDashboard()" [ngClass]="{'sidebar-header_collapsed': collapsed}">
+  <figure class="sidebar-header__figure">
+    <img *ngIf="!collapsed" class="sidebar-header__img" src="assets/images/logotype.png" alt="logo">
+    <img *ngIf="collapsed" class="sidebar-header__img" src="assets/images/logo.png" alt="logo">
+  </figure>
+</div>

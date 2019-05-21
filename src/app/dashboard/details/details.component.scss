@@ -1,0 +1,67 @@
+@import '~scss/_variables.scss';
+
+.wrapper {
+  padding: 50px;
+  overflow: auto;
+  padding-bottom: 300px;
+}
+
+.section {
+  &__left {
+    width: 45%;
+    margin-right: 40px;
+  }
+  &__right {
+    width: 65%;
+    margin-top: -24px;
+  }
+}
+
+.image {
+  width: 100%;
+  height: 200px;
+  max-width: 360px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@media only screen and (max-width: 1400px) {
+  .wrapper {
+    padding: 30px;
+  }
+  .section__left {
+    width: 300px;
+  }
+  .section__right {
+    width: calc(100% - 350px);
+  }
+}
+
+@media only screen and (max-width: 1700px) {
+  .section__right {
+    width: 54%;
+  }
+}
+
+@media only screen and (max-width: 1750px) {
+  .section__left {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .wrapper {
+    display: block;
+  }
+  .venue__img {
+    width: 100%;
+  }
+  .section__left {
+    margin-right: 0px;
+    width: 100%;
+  }
+  .section__right {
+    width: 100%;
+  }
+}

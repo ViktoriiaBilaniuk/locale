@@ -1,0 +1,45 @@
+<div class="content">
+  <div class="schedule">
+    <div class="flex datetime">
+      <div class="date flex">
+        <mat-datepicker-toggle #dateIcon class="date__icon" matSuffix [for]="datePicker">
+          <i matDatepickerToggleIcon class="date__icon icon-calendar"></i>
+        </mat-datepicker-toggle>
+        <div (click)="datePicker.open()">
+          <span class="date-placeholder" *ngIf="!date.value" translate>Channels.selectDate</span>
+          <input
+            name="fromPickerInput"
+            matInput
+            [(ngModel)]="date.value"
+            [matDatepicker]="datePicker"
+            (dateInput)="dateChange()"
+            disabled>
+        </div>
+        <span class="clear-icon" (click)="clearDate()">×</span>
+        <mat-datepicker #datePicker disabled="false"></mat-datepicker>
+        <span class="date-filters__date"></span>
+      </div>
+      <div class="time">
+        <i class="font-icon icon-clock"></i>
+        <input #time type="text" placeholder="00:00" [textMask]="{mask: timeMask}" [(ngModel)]="timeText" (input)="timeChange(time.value)">
+        <span class="clear-icon" (click)="clearTime()">×</span>
+      </div>
+    </div>
+    <div class="timezone">
+      <span class="timezone__title" translate>Channels.timezone</span>
+      <ng2-timezone-picker
+        (change)="timezoneChange($event)"
+        [(timezone)]="timezone"
+        placeholder="Select timezone"
+        country="'UA"
+        showOffset="true"
+        allowClear="true">
+      </ng2-timezone-picker>
+    </div>
+    <div *ngIf="scheduleError() && datetimeExist()" class="error" [@fadeInAnimation]="true">
+      <p translate>Channels.pastScheduleError</p>
+    </div>
+  </div>
+</div>
+
+

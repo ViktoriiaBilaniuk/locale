@@ -1,0 +1,46 @@
+@import '~scss/_variables.scss';
+
+.container {
+  padding: 0 50px;
+  padding-top: 48px;
+  font-family: Nunito;
+}
+
+header {
+  align-items: center;
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.empty {
+  text-align: center;
+  color: $black;
+  margin: 0 auto;
+  width: 100%;
+  box-shadow: 0px 0px 9px 0px rgba(185, 185, 185, 0.47058823529411764);
+  img {
+    height: 80px;
+    height: 50px;
+    margin-top: 20px;
+  }
+  &__title {
+    font-size: 16px;
+    margin: 20px 0;
+    font-weight: 600;
+  }
+  &__text {
+    font-size: 12px;
+    text-transform: initial;
+  }
+  button {
+    margin-top: 26px;
+    margin-bottom: 30px;
+  }
+}
+
+.loading {
+  text-align: center;
+  margin-top: 10%;
+}

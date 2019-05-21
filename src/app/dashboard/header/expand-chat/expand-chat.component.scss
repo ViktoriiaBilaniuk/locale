@@ -1,0 +1,97 @@
+@import '~scss/_variables.scss';
+
+.wrap {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.container {
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  height: $expand-height;
+  background-color: $white;
+  width: $right-section-width;
+  position: absolute;
+  &:before {
+    box-shadow: -3px 0px 5px 0px #e6e6e6;
+    content: '';
+    width: 48px;
+    background-color: $white;
+    height: 100%;
+    margin-left: -22px;
+    border-radius: 50% 0 0 50%;
+  }
+}
+
+.open {
+  width: $chat-width_open;
+}
+
+.closed {
+  width: $chat-header-width-closed;
+}
+
+.expanded {
+  width: $chat-width_expanded;
+}
+
+.arrow-btn {
+  border-right: 2px solid $tangerine;
+  color: $tangerine;
+  align-items: center;
+  display: flex;
+  &__title {
+    font-family: Nunito;
+    font-size: 16px;
+    font-weight: 600;
+    margin-left: 8px;
+    color: $black;
+  }
+  .icon {
+    font-weight: 600;
+    &_rotate {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.content {
+  justify-content: space-between;
+  width: 100%;
+  padding-right: 30px;
+  &__left {
+    margin-left: -18px;
+    cursor: pointer;
+  }
+}
+
+.icon-speech {
+  color: $tangerine;
+  margin-right: 8px;
+  font-size: 21px;
+  display: flex;
+  align-items: center;
+}
+
+.chat {
+  &__icon {
+    position: relative;
+    &_circle {
+      min-width: 20px;
+      height: 20px;
+      border-radius: 15px;
+      background-color: #ff8900;
+      color: #ffffff;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      float: right;
+      position: absolute;
+      font-style: normal;
+      top: -10px;
+      right: 0;
+    }
+  }
+}

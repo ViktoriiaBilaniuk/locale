@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/app/dashboard/performance/performance.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">All files</a> / <a href="index.html">src/app/dashboard/performance</a> performance.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">24% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>30/125</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/27</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">2.86% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/35</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">25.45% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>28/110</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {Component, OnDestroy, OnInit} from '@angular/core';
+import * as  moment from 'moment';
+import {VenueService} from '../../core/services/venue/venue.service';
+import {ActivatedRoute, Router} from '@angular/router';
+import {TrackingSerivce} from '../../core/services/tracking/tracking.service';
+import {Store} from '../../core/store/store';
+import {PermissionsService} from '../../core/services/permissions/permissions.service';
+import {Observable} from 'rxjs/Observable';
+import {CustomMetric} from '../../models/right-sidebar/customMetric';
+import {MetricsResponse} from '../../models/metricsResponse';
+import {fadeInAnimation} from '../../shared/animations/fade-in.animation';
+&nbsp;
+&nbsp;
+@Component({
+  selector: 'sl-performance',
+  templateUrl: './performance.component.html',
+  styleUrls: ['./performance.component.scss'],
+  animations: [fadeInAnimation],
+})
+export class PerformanceComponent implements OnInit, OnDestroy {
+  selectedChannel;
+  posts: Array&lt;any&gt;;
+  postsLoading;
+  groupedPosts: Array&lt;any&gt;;
+  postsIsOpen: Boolean;
+<span class="cstat-no" title="statement not covered" >  currentPostFilter = 'date';</span>
+  metrics$;
+<span class="cstat-no" title="statement not covered" >  fbMetrics = [];</span>
+<span class="cstat-no" title="statement not covered" >  twitterMetrics = [];</span>
+<span class="cstat-no" title="statement not covered" >  instagramMetrics = [];</span>
+  booking: any;
+  landing: any;
+  startDate: any;
+  endDate: any;
+  startDateUTC: any;
+  endDateUTC: any;
+  venueId: string;
+<span class="cstat-no" title="statement not covered" >  subscriptions = [];</span>
+<span class="cstat-no" title="statement not covered" >  metricsLoaded = false;</span>
+<span class="cstat-no" title="statement not covered" >  analiticsLoaded = false;</span>
+&nbsp;
+<span class="fstat-no" title="function not covered" >  constructor(</span>
+    private <span class="cstat-no" title="statement not covered" >venueService: VenueService,</span>
+    private <span class="cstat-no" title="statement not covered" >route: ActivatedRoute,</span>
+    private <span class="cstat-no" title="statement not covered" >router: Router,</span>
+    private <span class="cstat-no" title="statement not covered" >track: TrackingSerivce,</span>
+    private <span class="cstat-no" title="statement not covered" >store: Store,</span>
+    private <span class="cstat-no" title="statement not covered" >permissionsService: PermissionsService)</span> {
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  ngOnInit() {</span></span>
+<span class="cstat-no" title="statement not covered" >    this.subscriptions.push(this.store.select('venueId')</span>
+      .filter(<span class="fstat-no" title="function not covered" >(</span>res: any) =&gt; <span class="cstat-no" title="statement not covered" >res)</span>
+      .subscribe(<span class="fstat-no" title="function not covered" >venueId =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        this.venueId = venueId;</span>
+<span class="cstat-no" title="statement not covered" >        if (this.startDate &amp;&amp; this.endDate) {</span>
+<span class="cstat-no" title="statement not covered" >          this.showLoading();</span>
+<span class="cstat-no" title="statement not covered" >          this.fetchPerformanceMetrics();</span>
+<span class="cstat-no" title="statement not covered" >          this.fetchCustomMetrics();</span>
+        }
+      }),
+    );
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  get showSpinner() {</span>
+<span class="cstat-no" title="statement not covered" >    return !this.metricsLoaded &amp;&amp; !this.analiticsLoaded;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  showLoading() {</span>
+<span class="cstat-no" title="statement not covered" >    this.metricsLoaded = false;</span>
+<span class="cstat-no" title="statement not covered" >    this.analiticsLoaded = false;</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  onViewPostClick(</span>selectedChannel) {</span>
+<span class="cstat-no" title="statement not covered" >    this.postsLoading = true;</span>
+<span class="cstat-no" title="statement not covered" >    this.postsIsOpen = true;</span>
+<span class="cstat-no" title="statement not covered" >    this.selectedChannel = selectedChannel;</span>
+    const subscription = <span class="cstat-no" title="statement not covered" >this.venueService</span>
+    .fetchPerformancePosts(this.venueId, this.startDate, this.endDate, 'date', selectedChannel.channel._id)
+    .filter(<span class="fstat-no" title="function not covered" >(</span>posts: any) =&gt; <span class="cstat-no" title="statement not covered" >posts)</span>
+    .subscribe(<span class="fstat-no" title="function not covered" >(</span>posts) =&gt; {
+<span class="cstat-no" title="statement not covered" >      this.posts = posts.list;</span>
+<span class="cstat-no" title="statement not covered" >      this.sortByDate();</span>
+<span class="cstat-no" title="statement not covered" >      subscription.unsubscribe();</span>
+<span class="cstat-no" title="statement not covered" >      this.postsLoading = false;</span>
+    });
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private sortByDate() {</span>
+<span class="cstat-no" title="statement not covered" >    this.groupedPosts = this.posts.sort(<span class="fstat-no" title="function not covered" >(</span>a, b) =&gt; <span class="cstat-no" title="statement not covered" >moment(a.post.date).isAfter(b.post.date) ? 1 : -1)</span>;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  closePerformanceModal() {</span>
+<span class="cstat-no" title="statement not covered" >    this.postsIsOpen = false;</span>
+<span class="cstat-no" title="statement not covered" >    this.currentPostFilter = 'date';</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  private fetchNewPosts(</span>filterType) {</span>
+    const postSubscription = <span class="cstat-no" title="statement not covered" >this.venueService</span>
+      .fetchPerformancePosts(
+        this.venueId,
+        this.startDate,
+        this.endDate,
+        filterType,
+        this.selectedChannel.channel._id
+      )
+      .catch(this.handleForbiddenError.bind(this))
+      .subscribe(<span class="fstat-no" title="function not covered" >(</span>posts: any) =&gt; {
+<span class="cstat-no" title="statement not covered" >        this.posts = posts.list;</span>
+<span class="cstat-no" title="statement not covered" >        postSubscription.unsubscribe();</span>
+      });
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  onApplyFilter(</span>filterType) {
+<span class="cstat-no" title="statement not covered" >    this.currentPostFilter = filterType;</span>
+<span class="cstat-no" title="statement not covered" >    switch (filterType) {</span>
+      case 'date':
+<span class="cstat-no" title="statement not covered" >        this.sortByDate();</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      case 'performance':
+<span class="cstat-no" title="statement not covered" >        this.fetchNewPosts('total_performing');</span>
+<span class="cstat-no" title="statement not covered" >        this.groupedPosts = this.posts;</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      case 'likes':
+<span class="cstat-no" title="statement not covered" >        this.fetchNewPosts('total_likes');</span>
+<span class="cstat-no" title="statement not covered" >        this.groupedPosts = this.posts;</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      case 'reach':
+<span class="cstat-no" title="statement not covered" >        this.fetchNewPosts('total_reach');</span>
+<span class="cstat-no" title="statement not covered" >        this.groupedPosts = this.posts;</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      default:
+<span class="cstat-no" title="statement not covered" >        break;</span>
+    }
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  private fetchPerformanceMetrics() {</span></span>
+<span class="cstat-no" title="statement not covered" >    if (this.metrics$) {</span>
+<span class="cstat-no" title="statement not covered" >      this.metrics$.unsubscribe();</span>
+    }
+<span class="cstat-no" title="statement not covered" >    this.metrics$ = this.venueService.fetchPerformance(this.venueId, this.startDate, this.endDate)</span>
+      .subscribe(<span class="fstat-no" title="function not covered" >(</span>data: MetricsResponse) =&gt; {
+<span class="cstat-no" title="statement not covered" >        this.instagramMetrics = data.list.filter(<span class="fstat-no" title="function not covered" >channel =&gt; <span class="cstat-no" title="statement not covered" >channel.network === 'instagram')</span>;</span></span>
+<span class="cstat-no" title="statement not covered" >        this.fbMetrics = data.list.filter(<span class="fstat-no" title="function not covered" >channel =&gt; <span class="cstat-no" title="statement not covered" >channel.network === 'facebook')</span>;</span></span>
+<span class="cstat-no" title="statement not covered" >        this.twitterMetrics = data.list.filter(<span class="fstat-no" title="function not covered" >channel =&gt; <span class="cstat-no" title="statement not covered" >channel.network === 'twitter')</span>;</span></span>
+<span class="cstat-no" title="statement not covered" >        this.metricsLoaded = true;</span>
+      }, <span class="fstat-no" title="function not covered" >(</span>err) =&gt; {
+<span class="cstat-no" title="statement not covered" >        this.handleForbiddenError(err);</span>
+      });
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private handleForbiddenError (</span>err) {
+<span class="cstat-no" title="statement not covered" >    if (err.status === 403) {</span>
+<span class="cstat-no" title="statement not covered" >      this.permissionsService.fetchPermissionsByVenue(this.venueId);</span>
+<span class="cstat-no" title="statement not covered" >      this.router.navigate(['../details'], { relativeTo: this.route });</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return Observable.throw(err);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private fetchCustomMetrics () {</span>
+<span class="cstat-no" title="statement not covered" >    this.fetchSLAnalytics('booking');</span>
+<span class="cstat-no" title="statement not covered" >    this.fetchSLAnalytics('landing');</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  private fetchSLAnalytics(</span>eventType) {</span>
+    const analyticsSubscription = <span class="cstat-no" title="statement not covered" >this.venueService</span>
+      .fetchSlAnalytics(
+        this.venueId,
+        this.startDateUTC,
+        this.endDateUTC,
+        eventType
+      )
+      .catch(this.handleForbiddenError.bind(this))
+      .subscribe(<span class="fstat-no" title="function not covered" >(</span>analytics: {list: Array&lt;CustomMetric&gt;}) =&gt; {
+<span class="cstat-no" title="statement not covered" >        this[eventType] = this.mapCustomAnalytics(analytics.list);</span>
+<span class="cstat-no" title="statement not covered" >        analyticsSubscription.unsubscribe();</span>
+<span class="cstat-no" title="statement not covered" >        this.analiticsLoaded = true;</span>
+      });
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private mapCustomAnalytics (</span>list: Array&lt;CustomMetric&gt;) {
+<span class="cstat-no" title="statement not covered" >    return list.map(<span class="fstat-no" title="function not covered" >(</span>item) =&gt; <span class="cstat-no" title="statement not covered" >([ moment(item.date).toDate(), item.previousValue, item.currentValue]))</span>;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  onDateChange(</span>event) {
+<span class="cstat-no" title="statement not covered" >    this.showLoading();</span>
+<span class="cstat-no" title="statement not covered" >    this.startDate = event.startDate.clone().startOf('day').valueOf();</span>
+<span class="cstat-no" title="statement not covered" >    this.startDateUTC = event.startDate.startOf('day').add(moment().utcOffset(), 'minutes').utc().valueOf();</span>
+<span class="cstat-no" title="statement not covered" >    this.endDate = event.endDate.clone().endOf('day').valueOf();</span>
+<span class="cstat-no" title="statement not covered" >    this.endDateUTC = event.endDate.endOf('day').add(moment().utcOffset(), 'minutes').utc().valueOf();</span>
+<span class="cstat-no" title="statement not covered" >    this.track.socialPerformanceDateFiltered();</span>
+<span class="cstat-no" title="statement not covered" >    this.fetchPerformanceMetrics();</span>
+<span class="cstat-no" title="statement not covered" >    this.fetchCustomMetrics();</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  get hasBookings () {</span>
+<span class="cstat-no" title="statement not covered" >    return this.booking &amp;&amp; this.booking.length &amp;&amp; this.booking.filter(<span class="fstat-no" title="function not covered" >(</span>metric) =&gt; <span class="cstat-no" title="statement not covered" >metric[1] || metric[2])</span>.length;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  get hasLandings () {</span>
+<span class="cstat-no" title="statement not covered" >    return this.landing &amp;&amp; this.landing.length &amp;&amp; this.landing.filter(<span class="fstat-no" title="function not covered" >(</span>metric) =&gt; <span class="cstat-no" title="statement not covered" >metric[1] || metric[2])</span>.length;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ngOnDestroy() {</span>
+<span class="cstat-no" title="statement not covered" >    this.subscriptions.forEach(<span class="fstat-no" title="function not covered" >(</span>s) =&gt; <span class="cstat-no" title="statement not covered" >s.unsubscribe())</span>;</span>
+  }
+&nbsp;
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Oct 26 2018 12:25:15 GMT+0300 (EEST)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

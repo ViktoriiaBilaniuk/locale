@@ -1,0 +1,7 @@
+<div [@fadeInAnimation]="true" class="cookies-panel" *ngIf="isCookiesPanelShown">
+  <div>
+    <span translate>Cookies.weUse</span>
+    <a href="http://www.sociolocal.ie/privacy" target="_blank" class="cookies-panel__more-info" translate>Cookies.more</a>
+  </div>
+  <button translate (click)="closeCookiesPanel()">Cookies.gotIt</button>
+</div>

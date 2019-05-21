@@ -1,0 +1,16 @@
+<div class="profile-photo">
+  <h3 translate>Settings.profilePhoto</h3>
+  <div class="profile-photo__avatar-container" (click)="fileInput.click()" [ngClass]="{'error': error}">
+    <input (change)="fileChange()" type="file" #fileInput accept="image/*"/>
+    <sl-avatar *ngIf="!showLocalCover" class="avatar" [avatar]="avatarUrl"></sl-avatar>
+    <div *ngIf="showLocalCover" class="local-cover" [ngStyle]="localImageStyle"></div>
+    <div class="icon">
+      <i class="icon-camera font-icon font-icon-white"></i>
+    </div>
+  </div>
+  <div *ngIf="!isValid" class="sl-error-msg profile-photo__error">
+    <div *ngIf="!validSize" translate>Settings.invalidFileSize</div>
+    <div *ngIf="!validType" translate>Settings.invalidFileType</div>
+  </div>
+  <p translate>Settings.photoRequirements</p>
+</div>

@@ -1,0 +1,13 @@
+<div class="select flex" [ngClass]="{'hidden': collapsePublication}">
+  <ng-select
+    class="custom"
+    [items]="options"
+    [clearable]="false"
+    [clearOnBackspace]="false"
+    [searchable]="false"
+    [placeholder]="''"
+    [(ngModel)]="selectedOption"
+    (change)="onButtonChange($event)">
+  </ng-select>
+</div>
+

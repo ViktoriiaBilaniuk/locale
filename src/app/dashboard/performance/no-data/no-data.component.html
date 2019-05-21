@@ -1,0 +1,13 @@
+<div class="card">
+  <div *ngIf="dataNotExists; else noData" class="no-data">
+    <img src="../../../assets/images/social-performance/no-perf-data.png" alt="" class="no-data__img">
+    <p class="no-data__title" translate>Performance.noData</p>
+    <p class="no-data__mess" translate>Performance.toDisplay</p>
+    <button class="btn btn-fancy btn_small" (click)="viewSnipped()" translate>Performance.viewSnippet</button>
+  </div>
+
+  <ng-template #noData>
+    <p translate>Performance.noDataForPeriod</p>
+  </ng-template>
+</div>
+

@@ -1,0 +1,38 @@
+<div class="tutorial" [ngClass]="{'hidden': checkTutorialStatus()}">
+  <div class="tutorial__container" *ngIf="tutorialData">
+    <h2 class="tutorial__title">{{currentItem.title}}</h2>
+    <div class="tutorial__controls">
+      <div class="tutorial__btn-wrapper">
+        <button
+          class="btn btn-gray btn_small"
+          (click)="finishTutorial()"
+          translate>Skip</button>
+      </div>
+      <div class="tutorial__progress">
+        <div
+        class="tutorial__progress-item"
+        *ngFor="let step of tutorialData; let i = index"
+        [ngClass]="{'active': i === currentStep}"
+        ></div>
+      </div>
+      <div class="tutorial__btn-wrapper">
+        <button
+          class="btn btn-gray btn_small"
+          *ngIf="currentStep > 0"
+          (click)="backStep()"
+          translate>Back</button>
+        <button
+          class="btn btn-fancy btn_small"
+          *ngIf="currentStep < tutorialData.length - 1"
+          (click)="nextStep()"
+          translate>Next</button>
+        <button
+          class="btn btn-fancy btn_small"
+          *ngIf="currentStep === tutorialData.length - 1"
+          (click)="finishTutorial()"
+          translate>Exit</button>
+      </div>
+    </div>
+      <img class="tutorial__image" [src]="currentItem.image">
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="link-form">
+  <form [formGroup]="form" (ngSubmit)="submit()" autocomplete="off" >
+    <div class="form-group">
+      <input id="name" type="text" class="floated" [ngClass]="{'not-empty': form.value.name}" formControlName="name">
+      <label for="name" class="control-label" translate>Rightbar.name</label>
+
+      <div class="sl-error-msg"
+           *ngIf="nameCtrl.invalid && (nameCtrl.touched || formIsSubmitted)">
+        <div *ngIf="nameCtrl.errors.maxlength" translate>Validation.linkName.length</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input id="url" type="text" class="floated" [ngClass]="{'not-empty': form.value.url}" formControlName="url">
+      <label for="url" class="control-label" translate>Rightbar.url</label>
+
+      <div class="sl-error-msg"
+           *ngIf="urlCtrl.invalid && (urlCtrl.touched || formIsSubmitted)">
+        <div *ngIf="urlCtrl.errors.required" translate>Validation.linkUrl.required</div>
+        <div *ngIf="urlCtrl.errors.maxlength" translate>Validation.linkUrl.length</div>
+      </div>
+    </div>
+
+    <div class="formats">
+      <b>*bold*</b>
+      <i>_italic_</i>
+      <span>~strike~</span>
+    </div>
+
+    <button class="btn btn-white btn_small" (click)="delete($event)" *ngIf="item" translate>Rightbar.removeLink</button>
+    <button class="btn btn-white btn_small" (click)="onCancel($event)" translate>Rightbar.cancel</button>
+    <button class="btn btn-fancy btn_small" translate>Settings.save</button>
+
+  </form>
+</div>

@@ -1,0 +1,20 @@
+@import '~scss/_variables.scss';
+
+.container {
+  max-width: calc(100vw - #{$chat-width_open} - 300px);
+  overflow-x: auto;
+  padding: 0 50px;
+  min-height: 50vh;
+  @media (max-width: 1400px) {
+    max-width: calc(100vw - #{$chat-width_open} - 80px);
+  }
+  &.expanded {
+    max-width: calc(100vw - 300px);
+    @media (max-width: 1400px) {
+      max-width: calc(100vw - 80px);
+    }
+  }
+  &.collapsed {
+    max-width: calc(100vw - #{$chat-width_expanded} - 80px);
+  }
+}

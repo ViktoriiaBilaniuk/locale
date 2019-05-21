@@ -1,0 +1,21 @@
+<div
+  class="status-search"
+  (click)="toggleMenu($event)">
+    <span translate>StatusFilter.postStatus</span>
+    <div class="status-search__dropdown">
+        <input
+        type="text"
+        placeholder="{{allSelected ? ('StatusFilter.statuses'| translate) : activeStatuses.length + ' ' + ('StatusFilter.selected' | translate)}}"
+      >
+      <i class="icon-arrow-down hoverable"></i>
+    </div>
+</div>
+<div
+  class="status-search__menu"
+  [ngClass]="{'status-search__menu--visible': statusMenuIsActive}">
+    <sl-status-filter
+      [statuses]="statuses"
+      (clickOutside)="onClickedOutside($event)"
+      (confirm)="changeStatus($event)">
+    </sl-status-filter>
+</div>

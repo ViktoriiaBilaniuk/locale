@@ -1,0 +1,17 @@
+@import '~scss/_variables.scss';
+
+.description {
+  margin-top: 24px;
+}
+
+.description__more {
+  color: $tangerine;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.description:hover .icon-pencil {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.2s ease-out;
+}

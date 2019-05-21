@@ -1,0 +1,15 @@
+<div class="dropdown-wrap">
+  <div
+    *ngIf="show"
+    class="dropdown"
+    [ngClass]="{'dropdown__visible': show}"
+    [style.margin]="this.position">
+    <ul>
+      <li
+        *ngFor="let option of options"
+        (click)="optionClick(option.value)" translate>
+        {{ option.title }}
+      </li>
+    </ul>
+  </div>
+</div>

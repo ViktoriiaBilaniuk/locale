@@ -1,0 +1,85 @@
+@import '~scss/_variables.scss';
+
+.tutorial{
+  position: fixed;
+  background: $black;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  transition: 0.4s;
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s linear 0s, opacity 300ms;
+  &.hidden{
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 300ms, opacity 300ms;
+  }
+
+  &__container {
+    padding: 36px 0;
+    width: 940px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-family: Nunito, sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: $white-two;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    box-sizing: border-box;
+    padding: 0 60px;
+  }
+
+  &__btn-wrapper{
+    display: flex;
+    flex: 0 1 200px;
+    &:last-child {
+      justify-content: flex-end;
+    }
+  }
+
+  &__progress {
+    display: flex;
+    justify-content: center;
+
+  }
+  &__progress-item {
+    width: 40px;
+    height: 8px;
+    border-radius: 4px;
+    border: 2px solid $pinkish-grey;
+    box-sizing: border-box;
+    background-color: transparent;
+    &.active{
+      border: 0;
+      background-color: $tangerine;
+    }
+  }
+
+  &__image{
+    width: 100%;
+  }
+  .btn {
+    margin-right: 10px;
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+}
+
+.tutorial__progress-item + .tutorial__progress-item{
+  margin-left: 10px;
+}

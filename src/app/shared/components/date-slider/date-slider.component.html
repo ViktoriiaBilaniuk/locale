@@ -1,0 +1,5 @@
+<div class="date-slider">
+  <i class="icon-arrow-left hoverable"  (click)="back()" [ngClass]="{'disabled': !canMoveBack}"></i>
+  <span>{{ displayDate }}</span>
+  <i class="icon-arrow-right hoverable" (click)="next()" [ngClass]="{'disabled': !canMoveNext}"></i>
+</div>

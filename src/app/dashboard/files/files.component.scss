@@ -1,0 +1,54 @@
+@import '~scss/_variables.scss';
+
+.files {
+  &__wrapper {
+    &_top {
+      position: relative;
+    }
+    &_bottom {
+      height: calc(100vh - 130px);
+      overflow-y: auto;
+      padding: 5px 20px 0 20px;
+    }
+  }
+
+  &__empty{
+    padding: 125px 0 140px 0 ;
+    width: 100%;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    pointer-events: none;
+    p{
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 13px;
+      color: $greyish-brown-two;
+      margin-bottom: 200px;
+    }
+  }
+}
+
+.space-evenly {
+  justify-content: space-evenly;
+}
+
+.loading {
+  text-align: center;
+  margin-top: 250px;
+}
+
+.content {
+  position: relative;
+}
+
+.disable {
+  pointer-events: none;
+}
+
+sl-files-item {
+  z-index: 10;
+}

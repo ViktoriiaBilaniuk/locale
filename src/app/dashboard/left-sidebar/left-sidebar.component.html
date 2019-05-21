@@ -1,0 +1,46 @@
+<div
+  class="left-sidebar full-height"
+  [ngClass]="{'left-sidebar_collapsed': collapsed}" (window:resize)="checkResponsive()">
+  <sl-left-sidebar-header
+    [venueId]="venueId"
+    [collapsed]="collapsed"
+    class="left-sidebar__header">
+  </sl-left-sidebar-header>
+  <div class="menu-wrapper">
+    <ul class="menu">
+      <ng-container *ngFor="let menuItem of menuItems; index as i">
+        <div
+        *ngIf="menuItem.permission"
+        (mouseover)="mouseover(i)"
+        (mouseleave)="mouselive(i)">
+        <li
+          class="item"
+          [ngClass]="{'item_collapsed': collapsed}"
+          [routerLink]="[menuItem.navigationUrl]"
+          routerLinkActive="active">
+          <div class="tooltip" #tooltip id="tool-{{i}}" *ngIf="collapsed">
+            <sl-tooltip [content]="menuItem.title"></sl-tooltip>
+          </div>
+          <i class="item__icon" [ngClass]="[menuItem.icon]">
+            <!--<img src="../../../assets/images/menu-icons/{{menuItem.icon}}" alt="">-->
+          </i>
+          <span *ngIf="!collapsed" class="item__title" translate>{{menuItem.title}}</span>
+        </li>
+        <hr class="item__line">
+      </div>
+      </ng-container>
+    </ul>
+  </div>
+  <div
+    class="help-btn"
+    *ngIf="tutorialKey"
+    (click)="openTutorial()"
+    >
+    <div class="help-btn__icon-wrapper">
+        <i class="help-btn__icon icon-question"></i>
+    </div>
+    <span class="help-btn__text">
+        Help
+    </span>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+@import '~scss/_variables.scss';
+
+.dropdown-wrap {
+ position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  color: #414141;
+  width: 160px;
+  background: #fcfcfc;
+  z-index: 1;
+  font-family: Nunito;
+  font-size: 14px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+  & ul {
+    padding-left: 0px;
+    margin: 0px;
+    transition: all 0.3s;
+  }
+  & li {
+    padding: 10px 0;
+    padding-left: 30px;
+    text-align: left;
+    list-style-position: inside;
+    transition:background-color 0.3s ease-in;
+    list-style-type: none;
+    background-color: #fcfcfc;
+    &:hover {
+      cursor: pointer;
+      background-color: $white-four;
+      transition:background-color 0.3s ease-in;
+    }
+  }
+  &:after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    top: -9px;
+    right: 20px;
+    position: absolute;
+    transform: rotate(45deg);
+    background-color: #fcfcfc;
+    box-shadow: 0px 0px 10px 0px $pinkish-grey;
+    z-index: -1;
+  }
+  &__visible {
+    transition: all 0.3s;
+    visibility: visible;
+    opacity: 1;
+    z-index: 3;
+    box-shadow: 0px 0px 10px 0px $pinkish-grey;
+  }
+}

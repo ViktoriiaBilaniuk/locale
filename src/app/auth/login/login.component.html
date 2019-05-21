@@ -1,0 +1,35 @@
+<div class="login" [@fadeInAnimation]="true">
+  <form [formGroup]="loginForm" (ngSubmit)="login()" class="login__form" autocomplete="off">
+    <div class="form-group">
+      <input id="email" type="text" class="floated" [ngClass]="{'not-empty': loginForm.value.email}" formControlName="email">
+      <label for="email" class="control-label" translate>Auth.email</label>
+
+      <div class="sl-error-msg"
+           *ngIf="email.invalid && (email.touched || formIsSubmitted)">
+        <div *ngIf="email.errors.required" translate>Validation.email.required</div>
+        <div *ngIf="email.errors.pattern" translate>Validation.email.format</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <sl-show-hide-password>
+        <input id="password" class="floated" type="password" [ngClass]="{'not-empty': loginForm.value.password}" formControlName="password">
+        <label for="password" class="control-label" translate>Auth.password</label>
+      </sl-show-hide-password>
+
+      <div class="sl-error-msg"
+           *ngIf="password.invalid && (password.touched || formIsSubmitted)">
+        <div *ngIf="password.errors.required" translate>Validation.password.required</div>
+        <div *ngIf="password.errors.minlength || password.errors.maxlength" translate>
+          Validation.password.length
+        </div>
+      </div>
+    </div>
+
+    <button class="btn btn-fancy login__submit" translate>Auth.login</button>
+  </form>
+
+  <a [routerLink]="['./../forgot-pass']" (click)="track.forgotPasswordPressed()" class="login__forgot-link" translate>Auth.forgotPassword</a>
+</div>
+
+<sl-contact-us-link></sl-contact-us-link>

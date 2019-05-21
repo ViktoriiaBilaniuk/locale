@@ -1,0 +1,38 @@
+<div
+  class="container"
+  [@fadeInAnimation]="true"
+  #header
+  id="channelsHeader">
+  <div class="header flex flex_justify-content-space-between">
+    <div class="header__first flex">
+      <p class="title" translate>Channels.list</p>
+      <sl-channels-search
+        class="filters__channels"
+        [channelsPage]="true"
+        [channels]="allNetworks"
+        (onChangeChannels)="onChangeChannels($event)">
+      </sl-channels-search>
+    </div>
+    <button (click)="openModal()" class="btn btn_small btn-fancy" translate>Channels.addChannel</button>
+  </div>
+
+  <sl-channels-table
+    [data]="channels"
+    [venueId]="venueId"
+    [loading]="loading"
+    [totalCount]="allChannels.length"
+    (onAddChannelClick)="openModal()"
+    (onRefresh)="onRefreshData()">
+  </sl-channels-table>
+</div>
+
+<sl-connection-modal
+  *ngIf="visibleAddModal"
+  [networks]="networks"
+  [venueId]="venueId"
+  [connectionType]="channelsConnection"
+  (close)="closeModal()"
+  (onConnect)="onConnectChannels()">
+</sl-connection-modal>
+
+<router-outlet></router-outlet>

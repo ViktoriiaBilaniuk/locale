@@ -1,0 +1,15 @@
+<div class="drop-container" ngFileDrop (uploadOutput)="onUploadOutput($event)">
+  <div class="content" (drop)="drop($event)">
+    <ng-content></ng-content>
+  </div>
+  <div class="drag-wrapper" [ngClass]="{'drag-wrapper_active': drag}"></div>
+  <div *ngFor="let toast of toasts; index as index">
+    <sl-chat-toast
+      *ngIf="toast.show"
+      (cancel)="cancelUpload(index)"
+      [index]="index"
+      [contentPoolPage]="true"
+      [text]="('Chat.fileUpload' | translate) + ' (' + toast.text + ') ' + ('Chat.inProgress' | translate)">
+    </sl-chat-toast>
+  </div>
+</div>

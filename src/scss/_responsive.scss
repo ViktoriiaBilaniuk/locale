@@ -1,0 +1,67 @@
+@import '~scss/_variables.scss';
+
+$mScreenWidth: 1024px;
+$mScreenHeight: 768px;
+
+$lScreenWidth: 1152px;
+$lScreenHeight: 870px;
+
+$xlScreenWidth: 1280px;
+$xlScreenHeight: 960px;
+
+$xxlScreenWidth: 1600px;
+
+@media only screen and (max-width: $mScreenWidth) {
+/*  .video {
+    width: 300px !important;
+  }*/
+  .actions-area__controls {
+    justify-content: space-between !important;
+  }
+  .chat-body {
+    padding: 15px 15px 0 15px !important;
+  }
+}
+
+@media only screen and (max-width: $lScreenWidth) {
+  .files-item__text-content {
+    width: 176px !important;
+  }
+  .sidebar-current-user__menu {
+    width: 200px !important;
+  }
+  .textarea__btn {
+    min-width: 120px !important;
+    padding: 0px !important;
+  }
+  .menus__item_edit img {
+    width: 60px !important;
+  }
+  .performance__datepicker {
+    width: 120px !important;
+  }
+  .calendar {
+    width: 300px;
+  }
+  .actions-area__form {
+    display: block !important;
+  }
+  .actions-area__controls {
+    justify-content: flex-end !important;
+  }
+  .chat__child {
+    padding-top: 10px !important;
+    margin-top: -10px !important;
+  }
+}
+
+@media only screen and (max-width: 1650px) {
+  .details-content {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: $xxlScreenWidth) {
+
+
+}

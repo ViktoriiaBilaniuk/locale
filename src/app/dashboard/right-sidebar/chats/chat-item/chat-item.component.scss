@@ -1,0 +1,75 @@
+@import '~scss/_variables.scss';
+
+.right-sidebar__wrapper {
+  cursor: pointer;
+  transition: background-color 0.3s ease-out;
+  &:hover {
+    background-color: darken($white-two, 7%);;
+    transition: background-color 0.3s ease-in;
+  }
+}
+.chat {
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  cursor: pointer;
+  &__icon {
+    color: white;
+    font-weight: 900;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    background-color: $tangerine;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  &__content {
+    width: calc(100% - 124px);
+    padding-left: 16px;
+    font-family: Nunito;
+    &_name {
+      font-size: 16px;
+      line-height: 1.5;
+      color: $black;
+    }
+    &_desc {
+      font-size: 14px;
+      color: $warm-grey;
+      line-height: 1.43;
+    }
+  }
+
+  &__details {
+    display: block;
+    text-align: right;
+    width: 84px;
+    padding: 0 16px;
+    &_time {
+      color: $warm-grey;
+      font-family: Nunito;
+      font-size: 12px;
+      display: block;
+    }
+    &_count {
+      min-width: 24px;
+      height: 24px;
+      border-radius: 15px;
+      background-color: $tangerine;
+      color: $white-two;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      float: right;
+      padding: 0 6px;
+    }
+  }
+}
+
+hr {
+  background: $white-four;
+}

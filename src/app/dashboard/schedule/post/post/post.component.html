@@ -1,0 +1,79 @@
+<div class="post" (mouseleave)="menuIsActive = false">
+  <div class="cover"></div>
+  <div class="cover__content">
+    <i *ngIf="postManagementPermission" class="icon-options hoverable" (click)="menuIsActive = !menuIsActive"></i>
+    <button class="btn btn-fancy btn_small btn__view" (click)="openDetailsModal()" translate> Schedule.view </button>
+    <button
+      *ngIf="canOpenChat"
+      class="btn btn-fancy btn_small"
+      (click)="openChat()"
+      translate>
+      Schedule.openChat
+    </button>
+    <div *ngIf="postManagementPermission" class="menu" [ngClass]="{'menu_visible': menuIsActive}">
+      <div *ngFor="let option of menuItems" class="menu__option flex" (click)="optionClick(option)">
+        <i class="font-icon {{option.className}}"></i>
+        <span translate> Channels.{{ option.title }}</span>
+      </div>
+    </div>
+  </div>
+  <p class="channel">
+    <label>
+      <figure>
+        <img src="assets/images/channels/{{post.network}}.svg">
+      </figure>
+      <span class="name" [title]="post?.channel?.name">{{ post?.channel?.name }}</span>
+    </label>
+  </p>
+  <div class="post__media">
+    <sl-media-viewer *ngIf="media.length" [slides]="media"></sl-media-viewer>
+  </div>
+
+  <div class="post__body">
+    <div class="post__message {{post.network}}">
+      <p [innerHTML]= "post.message | mentionLink : post.mentions | linkify"></p>
+    </div>
+
+    <div class="date flex">
+      <i class="icon-clock font-icon"></i>
+      <div class="datetime-wrapp flex">
+        <span translate> Schedule.at </span>
+        <label>{{ postTimezoneDate().format('HH:mm') }}</label>
+        <span class="truncated-text timezone">(in {{getPostTimezoneText()}})</span>
+      </div>
+
+    </div>
+    <div class="description">
+      <div class="description__status">
+        <span class="status {{post.status}}">{{getPostStatus(post.status)}}</span>
+        <span *ngIf="isErrorPost()" class="error-message truncated-text">{{post?.error_message}}</span>
+      </div>
+      <div *ngIf="showWarning && canOpenChat" class="post__last">
+        <hr>
+        <p translate> Schedule.warning</p>
+      </div>
+      <div *ngIf="!canOpenChat" class="post__warning">
+        <hr>
+        <p translate> Schedule.updatesUnavailable</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<sl-dark-modal
+  *ngIf="visibleDetailsWindow"
+  (close)="closeDetailsModal()"
+  [title]="'Channels.viewPost'"
+  [width]="'640px'">
+  <sl-post-details [post]="post"></sl-post-details>
+</sl-dark-modal>
+
+
+<sl-modal *ngIf="visibleConfirmWindow" (close)="closeConfirmModal()">
+  <p class="modal-title" translate> Schedule.confirmDeletePost </p>
+  <div class="flex flex_justify-content-space-between modal-buttons">
+    <button class="btn btn-fancy textarea__btn" (click)="deleteClick()" translate> Schedule.delete </button>
+    <button class="btn btn-gray textarea__btn" (click)="closeConfirmModal()" translate> Schedule.cancel </button>
+  </div>
+</sl-modal>

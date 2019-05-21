@@ -1,0 +1,22 @@
+<div class="type-dropdown">
+  <div
+    (click)="allFilterChecked = !allFilterChecked"
+    class="type-dropdown__all-types">
+      <div class="type-dropdown__all-types--label" translate>Events.selectAllCategories</div>
+      <div class="box" [ngClass]="{'checked': allFilterChecked}">
+        <i class="icon checkmark"></i>
+      </div>
+  </div>
+  <ul class="type-dropdown__types">
+    <li
+      class="type-dropdown__types--item"
+      *ngFor="let filter of filtersList"
+      (click)="select(filter)">
+      <span translate>Events.categories.{{filter.category}}</span>
+      <div class="box" [ngClass]="{'checked': filter.selected}">
+          <i class="icon checkmark"></i>
+      </div>
+    </li>
+  </ul>
+</div>
+

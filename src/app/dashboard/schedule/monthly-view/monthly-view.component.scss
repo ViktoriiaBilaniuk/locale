@@ -1,0 +1,50 @@
+@import '~scss/_variables.scss';
+
+.container {
+  max-width: calc(100vw - #{$chat-width_open} - 300px);
+  overflow-x: auto;
+  padding: 0 50px;
+  min-height: 50vh;
+  min-width: 584px;
+  @media (max-width: 1400px) {
+    max-width: calc(100vw - #{$chat-width_open} - 80px);
+  }
+  mwl-calendar-month-view {
+    min-width: 484px;
+    width: calc(100vw - #{$chat-width_open} - 300px - 100px);
+    @media (max-width: 1400px) {
+      width: calc(100vw - #{$chat-width_open} - 80px - 100px);
+    }
+  }
+  &.expanded {
+    max-width: calc(100vw - 300px);
+    @media (max-width: 1400px) {
+      max-width: calc(100vw - 80px);
+    }
+    mwl-calendar-month-view {
+      width: calc(100vw - 300px - 100px);
+      @media (max-width: 1400px) {
+        width: calc(100vw - 80px - 100px);
+      }
+    }
+  }
+  &.collapsed {
+    max-width: calc(100vw - #{$chat-width_expanded} - 80px);
+    mwl-calendar-month-view {
+      width: calc(100vw - #{$chat-width_expanded} - 80px - 100px);
+    }
+  }
+}
+
+:host ::ng-deep .cal-cell:hover, :host ::ng-deep .cal-cell-row:hover, :host ::ng-deep .cal-today {
+  background-color: white !important;
+}
+
+:host ::ng-deep .cal-header .cal-cell {
+  background-color: $greyish-brown-two !important;
+  color: $white-two;
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+

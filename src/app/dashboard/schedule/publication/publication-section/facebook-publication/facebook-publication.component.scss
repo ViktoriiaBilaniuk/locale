@@ -1,0 +1,74 @@
+@import '~scss/_variables.scss';
+
+.type {
+  margin-bottom: 20px;
+  &__title {
+    font-size: 14px;
+    font-weight: 600;
+    font-family: Nunito;
+    line-height: 1.71;
+    color: $black;
+    margin-right: 10px;
+  }
+  &__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color: $greyish-brown-two;
+  }
+  &__name {
+    margin-right: 5px;
+  }
+  &__list-item {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 14px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    .circle {
+      margin-right: 7px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid  $greyish;
+      &__active {
+        border: 2px solid  $tangerine;
+        &::before {
+          position: relative;
+          left: 3px;
+          top: 3px;
+          content: '';
+          display: block;
+          width: 10px;
+          height: 10px;
+          background-color: $tangerine;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
+
+.modal-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.modal-text {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.modal-buttons {
+  width: 60%;
+  margin: 0 auto;
+}
+:host ::ng-deep {
+  .sl-modal__content {
+    top: 45vh !important;
+  }
+}

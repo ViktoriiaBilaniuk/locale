@@ -1,0 +1,36 @@
+@import '~scss/_variables.scss';
+
+.container {
+  position: relative;
+  margin-top: 10px;
+}
+
+.input {
+  &_default {
+    font-size: 12px;
+    line-height: 1.33;
+    color: #212121;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: white;
+    overflow: auto;
+    padding: 0 10px;
+    &::-webkit-input-placeholder {
+      color: $greyish;
+    }
+  }
+}
+
+i {
+  margin: 0 16px;
+}
+
+.disable {
+  color: $greyish;
+  pointer-events: none;
+  &:hover {
+    cursor: default;
+    color: $greyish;
+  }
+}

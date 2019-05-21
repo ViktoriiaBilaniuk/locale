@@ -1,0 +1,34 @@
+<section class="type flex">
+  <span class="type__title" translate>Channels.type</span>
+  <ul class="type__list">
+    <li
+      class="type__list-item"
+      *ngFor="let type of facebookPostTypes"
+      (click)="selectClick(type)">
+      <div class="circle" [ngClass]="{circle__active: type.selected}"></div>
+      <span class="type__name" translate>Channels.{{type.title}}</span> <span translate>Channels.post</span>
+    </li>
+  </ul>
+</section>
+
+<sl-publication-textarea
+  [subtype]="selectedType()"
+  [type]=NETWORKS.FACEBOOK>
+</sl-publication-textarea>
+
+<sl-photo-section
+  *ngIf="isFbStatusPost()"
+  [type]=NETWORKS.FACEBOOK
+  (onContentPoolOpen)="onContentPoolOpen($event)">
+</sl-photo-section>
+<sl-album-section *ngIf="isFbAlbumPost()"></sl-album-section>
+<sl-linked-section  *ngIf="isLinkedPost()"></sl-linked-section>
+
+<sl-modal *ngIf="visibleConfirmWindow" (close)="closeConfirmModal()">
+  <p class="modal-title" translate> Channels.confirmChangeFbPostType </p>
+  <p class="modal-text" translate>Channels.mediaFilesMightBeLost</p>
+  <div class="flex flex_justify-content-space-between modal-buttons">
+    <button class="btn btn-fancy textarea__btn" (click)="selectType()" translate> Channels.change </button>
+    <button class="btn btn-gray textarea__btn" (click)="closeConfirmModal()" translate> Channels.cancel </button>
+  </div>
+</sl-modal>

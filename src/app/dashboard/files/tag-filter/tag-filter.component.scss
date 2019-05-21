@@ -1,0 +1,17 @@
+@import '~scss/_variables.scss';
+
+.tag-filter{
+  position: absolute;
+  top: 20px;
+  z-index: 5;
+  left: 50px;
+  background-color: $white-four;
+  padding: 2px 5px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  i{
+    font-style: initial;
+    color: $greyish;
+  }
+}

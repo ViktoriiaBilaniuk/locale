@@ -1,0 +1,71 @@
+<div class="events">
+
+<!-- START: FILTERS SECTION -->
+  <section class="filters">
+    <!-- START: calendar picker -->
+    <sl-calendar-picker
+      [venueId]="venueId"
+      [calendarData]="calendarData"
+      [loading]="calendarLoading"
+      (onSetParametersForGettingCalendarData) = "onSetParametersForGettingCalendarData($event)"
+      (onSelectDate) = "onSelectDate($event)">
+    </sl-calendar-picker>
+    <!-- END: calendar picker -->
+
+    <!-- START: sorting radio buttons -->
+    <sl-sorting
+      [availableOptions]="availableOptions"
+      (onSortingChange)="sortingChange($event)">
+    </sl-sorting>
+    <!-- END: sorting radio buttons -->
+
+    <!-- START: radius slider -->
+    <sl-radius-range (onSliderChange)="sliderChange($event)" ></sl-radius-range>
+    <!-- END: radius slider -->
+
+    <!-- START: events type filter -->
+    <sl-types
+      [filtersList]="eventSettings.filters"
+      (onTypesSelected)="typesSelected($event)">
+    </sl-types>
+    <!-- END: events type filter -->
+  </section>
+  <!-- END: FILTERS SECTION -->
+
+
+  <!-- START: EVENTS SECTION -->
+  <section class="events-sections">
+    <!-- START: MY EVENTS -->
+    <div
+      class="events-sections__title" translate>Events.myEventsTitle</div>
+    <div class="loading" *ngIf="eventsListLoading">
+        <sl-loading></sl-loading>
+    </div>
+    <sl-event-list
+      *ngIf="!eventsListLoading"
+      [venueId]="venueId"
+      [myEvents]="myEvents"
+      [dataForGettingEvents]="dataForGettingEvents"
+      (onRemovingEvent)="onRemovingEvent($event)"
+      (onAddEvent)="onAddEvent($event)">
+    </sl-event-list>
+      <!-- END: MY EVENTS -->
+
+    <!-- START: ALL EVENTS -->
+    <div class="events-sections__title" translate>Events.allEventsTitle</div>
+    <div class="loading" *ngIf="eventsListLoading">
+        <sl-loading></sl-loading>
+    </div>
+    <sl-event-list
+      *ngIf="!eventsListLoading"
+      [venueId]="venueId"
+      [allEvents]="allEvents"
+      [dataForGettingEvents]="dataForGettingEvents"
+      (onRemovingEvent)="onRemovingEvent($event)"
+      (onAddEvent)="onAddEvent($event)">
+    </sl-event-list>
+    <!-- END: ALL EVENTS -->
+  </section>
+    <!-- END: EVENTS SECTION -->
+
+</div>

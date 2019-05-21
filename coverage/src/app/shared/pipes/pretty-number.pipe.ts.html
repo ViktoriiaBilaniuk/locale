@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/app/shared/pipes/pretty-number.pipe.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">All files</a> / <a href="index.html">src/app/shared/pipes</a> pretty-number.pipe.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">39.39% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>13/33</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">10% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">36.67% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>11/30</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Pipe, PipeTransform } from '@angular/core';
+&nbsp;
+<span class="fstat-no" title="function not covered" >@Pipe({name: 'prettyNumber'})</span>
+export class PrettyNumberPipe implements PipeTransform {
+  private <span class="cstat-no" title="statement not covered" >ranksSymbolMap = new Map([</span>
+    [0, ''],
+    [3, 'K'],
+    [6, 'M'],
+    [9, 'G'],
+    [12, 'T'],
+    [15, 'P'],
+    [18, 'E'],
+    [21, 'Z'],
+    [24, 'Y']
+  ]);
+<span class="fstat-no" title="function not covered" >  transform(</span>number, <span class="cstat-no" title="statement not covered" >decimal = 1)</span>: string {
+    const rank = <span class="cstat-no" title="statement not covered" >this.getRank(number);</span>
+    const roundedNumber = <span class="cstat-no" title="statement not covered" >this.getRoundedRankedNumber(number, rank, decimal);</span>
+<span class="cstat-no" title="statement not covered" >    return roundedNumber &gt;= 1000</span>
+      ? this.rankUp(number, rank, decimal)
+      : this.formatRankedNumber(roundedNumber, rank);
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private getRank(</span>number) {
+    const absNumber = <span class="cstat-no" title="statement not covered" >Math.abs(number);</span>
+<span class="cstat-no" title="statement not covered" >    if (absNumber &lt; 1) {</span>
+<span class="cstat-no" title="statement not covered" >      return 0;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return Math.floor(Math.log10(absNumber) / 3) * 3;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private getRoundedRankedNumber(</span>number, rank, decimal) {
+    const rankedNumber = <span class="cstat-no" title="statement not covered" >this.getRankedNumber(number, rank);</span>
+<span class="cstat-no" title="statement not covered" >    return this.roundToDecimal(rankedNumber, decimal);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private getRankedNumber(</span>number, rank) {
+<span class="cstat-no" title="statement not covered" >    return number / Math.pow(10, rank);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private roundToDecimal(</span>number, decimal) {
+    const delimeter = <span class="cstat-no" title="statement not covered" >Math.pow(10, decimal);</span>
+<span class="cstat-no" title="statement not covered" >    return Math.round(number * delimeter) / delimeter;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private rankUp(</span>number, rank, decimal) {
+    const newRank = <span class="cstat-no" title="statement not covered" >rank + 3;</span>
+    const rankedNumber = <span class="cstat-no" title="statement not covered" >this.getRoundedRankedNumber(number, newRank, decimal);</span>
+<span class="cstat-no" title="statement not covered" >    return this.formatRankedNumber(rankedNumber, newRank);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private formatRankedNumber(</span>rankedNumber, rank) {
+    const symbol = <span class="cstat-no" title="statement not covered" >this.getSymbol(rank);</span>
+<span class="cstat-no" title="statement not covered" >    return `${rankedNumber}${symbol}`;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private getSymbol(</span>rank) {
+<span class="cstat-no" title="statement not covered" >    return this.ranksSymbolMap.get(rank);</span>
+  }
+&nbsp;
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Oct 26 2018 12:25:15 GMT+0300 (EEST)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

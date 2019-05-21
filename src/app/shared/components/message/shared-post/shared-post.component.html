@@ -1,0 +1,21 @@
+<div class="shared-post" [ngClass]="{'expand': expand}">
+  <div class="shared-post__post">
+    <div class="channel {{network}}">
+      <i class="icon {{network}}"></i>
+      <span class="ellipsis">{{networkName}}</span>
+    </div>
+    <div class="media"
+         *ngIf="media.length"
+         [ngClass]="{'bottom-round': !description}"
+         [style.backgroundImage]="'url(' + image +')'">
+      <i class="icon-pencil font-icon" *ngIf="postType === 'video'"></i>
+    </div>
+    <div *ngIf="description" class="description ellipsis bottom-round" innerHTML = "{{ description }}"></div>
+  </div>
+  <div class="shared-post__info">
+    <span class="shared-post__author">{{moment(postDate).format('Do') + ' ' + moment(postDate).format('MMM').toUpperCase()}}</span>
+    <span class="shared-post__author" translate> Schedule.at </span>
+    <span class="shared-post__author">{{ moment(postDate).format('HH:mm') }}</span>
+    <span class="shared-post__status {{status}}">{{status}}</span>
+  </div>
+</div>

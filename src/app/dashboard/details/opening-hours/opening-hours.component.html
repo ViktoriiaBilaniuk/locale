@@ -1,0 +1,117 @@
+<div class="opening-hours">
+    <!-- START: Opening hours header and edit button -->
+  <div class="flex header">
+    <div class="section-title" translate>Rightbar.openingHours</div>
+    <i  (click)="editMode = !editMode;" *ngIf="canEdit" class="font-icon icon-pencil hoverable"></i>
+  </div>
+  <!-- END: Opening hours header and edit button -->
+
+  <div class="opening-hours__timetable" [ngClass]="{'opening-hours__timetable_edit': editMode}">
+    <!-- START: Opening hours time table -->
+    <table class="opening-hours section-text" *ngIf="!editMode; else editTemplate">
+      <tr *ngFor="let day of timetable;">
+        <!-- START: Weekday name -->
+        <th class="opening-hours__day">{{day.weekday}}</th>
+        <!-- END: Weekday name -->
+
+        <td class="opening-hours__content">
+          <!-- START: All Opening hours values -->
+          <span *ngIf="day.is_open; else closed">
+            <div *ngFor="let period of day.items;">
+              {{moment(period.from).format('HH:mm')}} - {{moment(period.to).format('HH:mm')}}
+              <span
+                class="opening-hours__period-label ellipsis"
+                [innerHTML]="period.label | italic | bold | strike"
+                title="{{period.label}}">
+              </span>
+            </div>
+          </span>
+          <!-- START: All Opening hours values -->
+
+          <!-- START: Closed label -->
+          <ng-template #closed>
+            <span class="opening-hours__closed" translate>Rightbar.closed</span>
+          </ng-template>
+          <!-- END: Closed label -->
+        </td>
+      </tr>
+    </table>
+    <!-- END: Opening hours table -->
+
+    <!-- START: Edit weekly time table -->
+    <ng-template #editTemplate>
+      <table
+        *ngFor="let weekday of timeEditor; let i = index;"
+        class="opening-hours opening-hours__editor section-text">
+        <tr>
+          <!-- START: Day active checkbox -->
+          <th class="opening-hours__day">
+            <mat-checkbox
+              [(ngModel)]="weekday.selected"
+              (change)="weekday.is_open = $event.checked ? 1 : 0;"
+            >{{ weekday.weekday }}</mat-checkbox>
+          </th>
+          <!-- END: Day active checkbox -->
+        </tr>
+        <tr>
+          <sl-time-slider
+            [hours]="editableHours"
+            [sliderMode]="weekday.sliderMode"
+            [top]="weekday.index"
+            (change)="changeTime(weekday.items[weekday.index], $event.values)">
+          </sl-time-slider>
+          <td *ngFor="let item of weekday.items; let i = index" class="opening-hours__editor_time_manager">
+            <div class="flex align">
+              <button
+                *ngIf="i === 0"
+                class="hoverable"
+                [ngClass]="{'disabled': !weekday.selected}"
+                [disabled]="!weekday.selected"
+                (click)="addTimeEntry(weekday)">
+                <i class="icon-plus icon_plus"></i>
+              </button>
+              <button
+                *ngIf="i !== 0"
+                class="hoverable"
+                [ngClass]="{'disabled': !weekday.selected}"
+                [disabled]="!weekday.selected"
+                (click)="removeTimeEntry(weekday, i)">
+                <i class="icon-close icon_delete"></i>
+              </button>
+              <div
+                (click)="toggleSliderMode(weekday, item, i)"
+                class="time-editor {{!weekday.selected? 'disabled' : ''}}">
+                <label>{{item.fromLabel}} - {{item.toLabel}}</label>
+                <i class="font-icon icon-clock"></i>
+              </div>
+              <input
+                type="text"
+                class="section-text"
+                [ngClass]="{'disabled': !weekday.selected}"
+                [(ngModel)]="item.label"
+                [disabled]="!weekday.selected"
+                maxlength="100"
+                [placeholder]="'Rightbar.addLabel' | translate">
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <div class="formats">
+        <b>*bold*</b>
+        <i>_italic_</i>
+        <span>~strike~</span>
+      </div>
+
+      <div class="slider-mode" [ngStyle]="{'visibility': sliderMode ? 'visible' : 'hidden' }" #slider>
+        <div id="slider" class="slider"></div>
+      </div>
+
+      <div class="flex btns">
+        <button class="btn btn-white btn_small" (click)="onCancelClick()" translate>Rightbar.cancel</button>
+        <button class="btn btn-fancy btn_small" (click)="onSaveClick()" translate>Rightbar.save</button>
+      </div>
+    </ng-template>
+      <!-- END: Edit weekly time table -->
+  </div>
+</div>

@@ -1,0 +1,43 @@
+@import '~scss/_variables.scss';
+
+.performance-modal-filter {
+  padding: 0 50px;
+  height: 48px;
+  background-color: $white;
+  display: flex;
+  align-items: center;
+
+  &__sort {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    img {
+      cursor: pointer;
+      margin-right: 6px;
+    }
+
+    &--label {
+      font-weight: 600;
+      margin-right: 6px;
+    }
+
+    &--option {
+      margin-right: 15px;
+    }
+
+    i {
+      font-size: 12px;
+    }
+  }
+}
+
+.performance-modal__menu {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+  &--visible {
+    visibility: visible;
+    opacity: 1;
+  }
+}

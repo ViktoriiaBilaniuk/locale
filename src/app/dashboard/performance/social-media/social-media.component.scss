@@ -1,0 +1,274 @@
+@import '~scss/_variables.scss';
+
+.wrapper {
+  margin-bottom: 40px;
+}
+
+table {
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  border-collapse: collapse;
+  border-radius: 4px;
+  overflow: hidden;
+  th {
+    background-color: $black;
+    color:$white-two;
+    font-size: 12px;
+    line-height: 1.33;
+    font-weight: normal;
+    padding: 8px 5px;
+    border-right: 2px solid white;
+    position: relative;
+    &:first-child {
+      div {
+        justify-content: left;
+        span {
+          text-align: left;
+        }
+      }
+    }
+    &:last-child {
+      border: none;
+    }
+  }
+  td {
+    padding: 11px 20px;
+    color: $black;
+    font-size: 12px;
+    text-align: center;
+    position: relative;
+    &:first-child {
+      text-align: left;
+    }
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  tr {
+    border-bottom: 1px solid $white-four;
+  }
+}
+
+.title-item {
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-eye {
+  cursor: pointer;
+  margin: 0px 10px;
+  position: absolute;
+  top: 5px;
+}
+
+.no-data {
+  text-align: center !important;
+}
+
+.header {
+  &__icon {
+    height: 24px;
+    width: 24px;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+  &__title {
+    vertical-align: middle;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.posts, .tweets {
+  width: 11%;
+}
+
+.shares, .comments, .likes, .total-reach, .followers, .mentions, .retweets {
+  width: 14.5%;
+}
+
+.paid-organic {
+  width: 12%;
+}
+
+.paid {
+  text-transform: capitalize;
+  &:before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: $tangerine;
+    margin-right: 4px;
+  }
+}
+
+.organic {
+  text-transform: capitalize;
+  &:before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: $dark-blue;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 4px;
+    margin-left: 10px;
+  }
+}
+
+
+td > span {
+  width: 36%;
+  display: inline-block;
+  &:first-child {
+    text-align: right;
+    margin-right: 4px;
+  }
+  &:last-child {
+    text-align: left;
+    margin-left: 4px;
+  }
+}
+
+.decrease {
+  color: $scarlet !important;
+  &::before{
+    content: '';
+  }
+}
+
+.increase {
+  position: relative;
+  padding-left: 5px;
+  color: #94dd44 !important;
+  &::before{
+    left: -1px;
+    position: absolute;
+    content: '+';
+  }
+}
+
+.reach-chart, .no-padd {
+  padding: 0px !important;
+}
+
+.truncated-text {
+  max-width: 1px;
+}
+
+.loading {
+  width: 25px;
+  margin: 0 auto;
+}
+
+::ng-deep .loader {
+  margin: 0px !important;
+  height: 40px !important;
+  padding: 0px !important;
+}
+
+.no-total {
+  text-align: center !important;
+  padding-bottom: 10px;
+}
+
+.disabledEye {
+  cursor: not-allowed;
+}
+
+.fb {
+  &__posts {
+    text-align: left !important;
+  }
+}
+
+@media only screen and (max-width: 1860px) {
+  .paid, .organic {
+    display: block;
+    text-align: left;
+    &::before {
+      margin-left: 0px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  td {
+    padding: 11px 5px !important;
+  }
+  .shares, .comments, .likes, .followers, .mentions, .retweets {
+    width: 13%;
+  }
+
+  .total-reach {
+    width: 16%;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .title-item {
+    font-size: 10px;
+  }
+  .header__icon {
+    height: 15px;
+    width: 15px;
+    margin-right: 4px;
+  }
+  th {
+    padding: 6px 2px !important;
+  }
+
+  .paid, .organic {
+    font-size: 10px;
+  }
+
+  table {
+    font-size: 12px;
+  }
+
+  td {
+    padding: 5px 5px !important;
+    font-size: 10px !important;
+  }
+
+  td > span {
+    &:last-child {
+      margin-left: 0px;
+    }
+  }
+
+  .icon-eye {
+    margin: 0px;
+    top: 3px;
+  }
+
+  .shares, .comments, .likes, .followers, .mentions, .retweets {
+    width: 12%;
+  }
+
+  .total-reach {
+    width: 19%;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .paid, .organic {
+    &::before {
+      width: 10px;
+      height: 10px;
+      margin-right: 2px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1470px) {
+  .total-reach-value {
+    text-align: left !important;
+  }
+}

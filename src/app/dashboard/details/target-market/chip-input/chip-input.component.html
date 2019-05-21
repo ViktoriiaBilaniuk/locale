@@ -1,0 +1,21 @@
+<div class="chip-input" (clickOutside)="clickOutside()">
+  <div class="list-wrapper {{searchInput.value ? 'active' : ''}}">
+    <sl-chip *ngFor="let item of venueOptions" [value]="item.title" (remove)="removeItem(item)"></sl-chip>
+    <input
+      #searchInput
+      type="text"
+      placeholder="Type here…"
+      maxlength="50"
+      (focus)="focusInput()"
+      (keyup)="search($event.target.value, $event)">
+    <div class="suggestions" *ngIf="showSuggestions">
+      <ul>
+        <li *ngFor="let item of suggestions" (click)="addItem(item)">
+          <label>
+            {{item.title}}
+          </label>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
